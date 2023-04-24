@@ -154,6 +154,7 @@
             this.txtEmail_Register.Size = new System.Drawing.Size(256, 44);
             this.txtEmail_Register.TabIndex = 0;
             this.txtEmail_Register.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail_Register.TextChanged += new System.EventHandler(this.txtEmail_Register_TextChanged);
             // 
             // picbox_Password
             // 

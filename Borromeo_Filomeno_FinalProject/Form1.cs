@@ -136,5 +136,19 @@ namespace Borromeo_Filomeno_FinalProject
 
 
         }
+
+        private void txtEmail_Register_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtEmail_Register.Text.Contains(' '))
+            {
+                errorProviderAll.SetError(txtEmail_Register, "Do not use space please");
+            }
+            else
+            {
+                errorProviderAll.Dispose();
+            }
+
+        }
     }
 }
