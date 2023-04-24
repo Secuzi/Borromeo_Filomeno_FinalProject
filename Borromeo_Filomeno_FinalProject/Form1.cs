@@ -15,7 +15,8 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class Register_Form : Form
     {
-        clsAccount test;
+        clsRegister accounts = new clsRegister();
+        
         
         public Register_Form()
         {
@@ -26,6 +27,9 @@ namespace Borromeo_Filomeno_FinalProject
         private void Form1_Load(object sender, EventArgs e)
         {
             txtPassword_Register.PasswordChar = '*';
+
+            //testing purposes accounts.AddAccount("harold", "mouz@321", "@gmail.com");
+            
         }
 
         private void chkbox_ShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -55,11 +59,9 @@ namespace Borromeo_Filomeno_FinalProject
             string username = txtUsername_Register.Text;
             string password = txtPassword_Register.Text;
 
-            
+            string email = txtEmail_Register.Text;
 
-
-
-
+            accounts.AddAccount(username, password, email);
 
         }
 
@@ -118,6 +120,10 @@ namespace Borromeo_Filomeno_FinalProject
 
             bool check = Regex.IsMatch(txtUsername_Register.Text, "[!@#$%^&*\"()_+[{}\\],./;':|?/<>=-]");
 
+
+            bool checkUser = accounts.IsUserExists(txtUsername_Register.Text);
+
+
             if (check)
             {
                 errorProviderAll.SetError(txtUsername_Register, "No special characters please!");
@@ -131,6 +137,12 @@ namespace Borromeo_Filomeno_FinalProject
             if (txtUsername_Register.Text.Contains(' '))
             {
                 errorProviderAll.SetError(txtUsername_Register, "Do not use space please");
+            }
+
+
+            if (checkUser)
+            {
+                errorProviderAll.SetError(txtUsername_Register, "Username is already taken!");
             }
 
 
