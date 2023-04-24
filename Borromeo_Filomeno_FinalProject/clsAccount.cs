@@ -42,8 +42,7 @@ namespace Borromeo_Filomeno_FinalProject
 
 
         public string ShowInfo()
-        {
-            
+        {           
             return $"Username: {Username}\nPassword: {Password}\nEmail: {Email}\nBalance: {Balance}";
         }
 

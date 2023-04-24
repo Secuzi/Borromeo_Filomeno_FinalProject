@@ -16,7 +16,8 @@ namespace Borromeo_Filomeno_FinalProject
     public partial class Register_Form : Form
     {
         clsRegister accounts = new clsRegister();
-        
+
+       
         
         public Register_Form()
         {
@@ -28,7 +29,8 @@ namespace Borromeo_Filomeno_FinalProject
         {
             txtPassword_Register.PasswordChar = '*';
 
-            //testing purposes accounts.AddAccount("harold", "mouz@321", "@gmail.com");
+            //Testing purposes
+            accounts.AddAccount("harold", "mouz@321", "@gmail.com");
             
         }
 
@@ -58,10 +60,22 @@ namespace Borromeo_Filomeno_FinalProject
         {
             string username = txtUsername_Register.Text;
             string password = txtPassword_Register.Text;
-
             string email = txtEmail_Register.Text;
 
-            accounts.AddAccount(username, password, email);
+            int errorUser = int.Parse(errorProviderUsername.Tag.ToString());
+            int errorPass = int.Parse(errorProviderRegister.Tag.ToString());
+            int errorEmail = int.Parse(errorProviderEmail.Tag.ToString());
+
+
+            if (errorUser == 0 || errorPass == 0 || errorEmail == 0)
+            {
+                MessageBox.Show("Invalid Registration");
+            }
+            else
+                accounts.AddAccount(username, password, email);
+
+
+
 
         }
 
@@ -69,22 +83,29 @@ namespace Borromeo_Filomeno_FinalProject
         {
             bool check = Regex.IsMatch(txtPassword_Register.Text, "[!@#$%^&*\"()_+[{}\\],./;':|?/<>=-]");
 
+            
 
             if (txtPassword_Register.Text.Length < 8)
             {
                 
                 if (!check)
                 {
-                    errorProviderAll.SetError(txtPassword_Register, "Use at least 1 special character and password must be at least 8 characters long!");
+                    errorProviderRegister.SetError(txtPassword_Register, "Use at least 1 special character and password must be at least 8 characters long!");
+                    errorProviderRegister.Tag = "0";
                 }
                 
 
                 if (txtPassword_Register.Text.Contains(' '))
                 {
-                    errorProviderAll.SetError(txtPassword_Register, "Do not use space please");
+                    errorProviderRegister.SetError(txtPassword_Register, "Do not use space please");
+                    errorProviderRegister.Tag = "0";
+
+
                 }
 
-                errorProviderAll.SetError(txtPassword_Register, "Password must be at least 8 characters long");
+                errorProviderRegister.SetError(txtPassword_Register, "Password must be at least 8 characters long");
+                errorProviderRegister.Tag = "0";
+
 
             }
             else
@@ -92,27 +113,32 @@ namespace Borromeo_Filomeno_FinalProject
 
                 if (!check)
                 {
-                    errorProviderAll.SetError(txtPassword_Register, "Use at least 1 special character!");
+                    errorProviderRegister.SetError(txtPassword_Register, "Use at least 1 special character!");
+                    errorProviderRegister.Tag = "0";
+
                 }
                 else
                 {
-                    errorProviderAll.Dispose();
+                    errorProviderRegister.Dispose();
+                    errorProviderRegister.Tag = "1";
+
                 }
 
                 if (txtPassword_Register.Text.Contains(' '))
                 {
-                    errorProviderAll.SetError(txtPassword_Register, "Do not use space please");
+                    errorProviderRegister.SetError(txtPassword_Register, "Do not use space please");
+                    errorProviderRegister.Tag = "0";
+
+
                 }
             }
 
-
-
             if (txtPassword_Register == null || txtPassword_Register.TextLength == 0)
             {
-                errorProviderAll.Dispose();
+                errorProviderRegister.Dispose();
             }
 
-
+            
         }
 
         private void txtUsername_Register_TextChanged(object sender, EventArgs e)
@@ -123,26 +149,31 @@ namespace Borromeo_Filomeno_FinalProject
 
             bool checkUser = accounts.IsUserExists(txtUsername_Register.Text);
 
+            
 
             if (check)
             {
-                errorProviderAll.SetError(txtUsername_Register, "No special characters please!");
+                errorProviderUsername.SetError(txtUsername_Register, "No special characters please!");
+                errorProviderUsername.Tag = "0";
 
             }
             else
             {
-                errorProviderAll.Dispose();
+                errorProviderUsername.Dispose();
+                errorProviderUsername.Tag = "1";
             }
 
             if (txtUsername_Register.Text.Contains(' '))
             {
-                errorProviderAll.SetError(txtUsername_Register, "Do not use space please");
+                errorProviderUsername.SetError(txtUsername_Register, "Do not use space please");
+                errorProviderUsername.Tag = "0";
             }
-
+            
 
             if (checkUser)
             {
-                errorProviderAll.SetError(txtUsername_Register, "Username is already taken!");
+                errorProviderUsername.SetError(txtUsername_Register, "Username is already taken!");
+                errorProviderUsername.Tag = "0";
             }
 
 
@@ -152,13 +183,30 @@ namespace Borromeo_Filomeno_FinalProject
         private void txtEmail_Register_TextChanged(object sender, EventArgs e)
         {
 
-            if (txtEmail_Register.Text.Contains(' '))
+            if (!txtEmail_Register.Text.Contains('@'))
             {
-                errorProviderAll.SetError(txtEmail_Register, "Do not use space please");
+                errorProviderEmail.SetError(txtEmail_Register, "Invalid email!");
+                errorProviderEmail.Tag = "0";
             }
             else
             {
-                errorProviderAll.Dispose();
+                errorProviderEmail.Dispose();
+                errorProviderEmail.Tag = "1";
+            }
+
+
+
+
+            if (txtEmail_Register.Text.Contains(' '))
+            {
+                errorProviderEmail.SetError(txtEmail_Register, "Do not use space please");
+                errorProviderEmail.Tag = "0";
+
+            }
+
+            if (txtEmail_Register.Text.Length == 0)
+            {
+                errorProviderEmail.Dispose();
             }
 
         }

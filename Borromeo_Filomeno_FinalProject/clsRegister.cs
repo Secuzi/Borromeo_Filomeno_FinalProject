@@ -22,8 +22,11 @@ namespace Borromeo_Filomeno_FinalProject
       
         public bool IsUserExists(string username)
         {
-            return accounts.Any(user => user.Username == username);
+            return accounts.Any(user => user.Username == username); 
         }
+
+        
+        
 
 
     }
