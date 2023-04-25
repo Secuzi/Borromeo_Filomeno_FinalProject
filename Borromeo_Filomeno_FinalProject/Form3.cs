@@ -58,6 +58,7 @@ namespace Borromeo_Filomeno_FinalProject
 
             if (checkLogIfAccountExists)
             {
+
                 clsAccount test = Log_Accounts.Find(b => b.Username == txtUsername_Login.Text);
 
 
@@ -72,6 +73,23 @@ namespace Borromeo_Filomeno_FinalProject
             }
 
 
+            if (txtPassword_Login.Text.Length == 0 || txtPassword_Login.Text == null)
+            {
+                errorProviderLogPass.SetError(txtPassword_Login, "Please populate this field!");
+            }
+            else
+            {
+                errorProviderLogPass.Dispose();
+            }
+
+            if (txtUsername_Login.Text.Length == 0 || txtUsername_Login.Text == null)
+            {
+                errorProviderLogUser.SetError(txtUsername_Login, "Please populate this field!");
+            }
+            else
+            {
+                errorProviderLogUser.Dispose();
+            }
 
 
 

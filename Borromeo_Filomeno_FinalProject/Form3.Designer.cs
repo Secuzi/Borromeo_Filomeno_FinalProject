@@ -48,6 +48,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.errorProviderLogUser = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLogPass = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Logo)).BeginInit();
@@ -55,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogPass)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsername_Login
@@ -65,6 +69,7 @@
             this.txtUsername_Login.Name = "txtUsername_Login";
             this.txtUsername_Login.Size = new System.Drawing.Size(256, 37);
             this.txtUsername_Login.TabIndex = 4;
+            this.txtUsername_Login.Tag = "3";
             this.txtUsername_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPassword_Login
@@ -76,6 +81,7 @@
             this.txtPassword_Login.PasswordChar = '*';
             this.txtPassword_Login.Size = new System.Drawing.Size(256, 37);
             this.txtPassword_Login.TabIndex = 5;
+            this.txtPassword_Login.Tag = "3";
             this.txtPassword_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // picbox_Password
@@ -195,6 +201,16 @@
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
             // 
+            // errorProviderLogUser
+            // 
+            this.errorProviderLogUser.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderLogUser.ContainerControl = this;
+            // 
+            // errorProviderLogPass
+            // 
+            this.errorProviderLogPass.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderLogPass.ContainerControl = this;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +243,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +271,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ErrorProvider errorProviderLogUser;
+        private System.Windows.Forms.ErrorProvider errorProviderLogPass;
     }
 }

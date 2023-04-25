@@ -45,19 +45,15 @@ namespace Borromeo_Filomeno_FinalProject
 
         public string CheckLoginStatus(string username, string password)
         {
-            if (username != Username)
+
+            if (username == Username && password != Password)
             {
-                
-                return $"The account {username} has not been created.";
-            }
-            else if (username == Username && password != Password)
-            {
-                
+
                 return $"Wrong password, please try again";
             }
             else
             {
-                
+
                 return $"Welcome to Compound Games!";
             }
 
