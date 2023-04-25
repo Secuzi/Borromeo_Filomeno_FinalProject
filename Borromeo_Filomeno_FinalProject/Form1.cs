@@ -63,16 +63,60 @@ namespace Borromeo_Filomeno_FinalProject
             string email = txtEmail_Register.Text;
 
             int errorUser = int.Parse(errorProviderUsername.Tag.ToString());
-            int errorPass = int.Parse(errorProviderRegister.Tag.ToString());
+            int errorPass = int.Parse(errorProviderPassword.Tag.ToString());
             int errorEmail = int.Parse(errorProviderEmail.Tag.ToString());
 
 
             if (errorUser == 0 || errorPass == 0 || errorEmail == 0)
             {
-                MessageBox.Show("Invalid Registration");
+
+                errorProviderEmail.SetError(txtEmail_Register, "Email cannot be empty!");
+                errorProviderPassword.SetError(txtPassword_Register, "Password cannot be empty!");
+                errorProviderUsername.SetError(txtUsername_Register, "Username cannot be empty!");
+
+            }
+             
+            if (errorUser == 3 || txtUsername_Register.Text.Length == 0)
+            {
+                errorProviderUsername.SetError(txtUsername_Register, "Username cannot be empty!");
             }
             else
+            {
+                errorProviderUsername.Dispose();
+            }
+             
+            if (errorPass == 3 || txtPassword_Register.Text.Length == 0)
+            {
+                errorProviderPassword.SetError(txtPassword_Register, "Password cannot be empty!");
+            }
+            else
+            {
+                errorProviderPassword.Dispose();
+            }
+          
+            if (errorEmail == 3 || txtEmail_Register.Text.Length == 0)
+            {
+                errorProviderEmail.SetError(txtEmail_Register, "Email cannot be empty!");
+
+            }
+            else
+            {
+                errorProviderEmail.Dispose();
+            }
+
+            if (errorUser == 1 && errorPass == 1 && errorEmail == 1)
+            {
                 accounts.AddAccount(username, password, email);
+                errorProviderEmail.Dispose();
+                errorProviderPassword.Dispose();
+                errorProviderUsername.Dispose();
+
+                MessageBox.Show("Account Created");
+            }
+            else
+            {
+                MessageBox.Show("Invalid Registeration!");
+            }
 
 
 
@@ -81,7 +125,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void txtPassword_Register_TextChanged(object sender, EventArgs e)
         {
-            bool check = Regex.IsMatch(txtPassword_Register.Text, "[!@#$%^&*\"()_+[{}\\],./;':|?/<>=-]");
+            bool check = Regex.IsMatch(txtPassword_Register.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
 
             
 
@@ -90,21 +134,21 @@ namespace Borromeo_Filomeno_FinalProject
                 
                 if (!check)
                 {
-                    errorProviderRegister.SetError(txtPassword_Register, "Use at least 1 special character and password must be at least 8 characters long!");
-                    errorProviderRegister.Tag = "0";
+                    errorProviderPassword.SetError(txtPassword_Register, "Use at least 1 special character and password must be at least 8 characters long!");
+                    errorProviderPassword.Tag = "0";
                 }
                 
 
                 if (txtPassword_Register.Text.Contains(' '))
                 {
-                    errorProviderRegister.SetError(txtPassword_Register, "Do not use space please");
-                    errorProviderRegister.Tag = "0";
+                    errorProviderPassword.SetError(txtPassword_Register, "Do not use space please");
+                    errorProviderPassword.Tag = "0";
 
 
                 }
 
-                errorProviderRegister.SetError(txtPassword_Register, "Password must be at least 8 characters long");
-                errorProviderRegister.Tag = "0";
+                errorProviderPassword.SetError(txtPassword_Register, "Password must be at least 8 characters long");
+                errorProviderPassword.Tag = "0";
 
 
             }
@@ -113,29 +157,30 @@ namespace Borromeo_Filomeno_FinalProject
 
                 if (!check)
                 {
-                    errorProviderRegister.SetError(txtPassword_Register, "Use at least 1 special character!");
-                    errorProviderRegister.Tag = "0";
+                    errorProviderPassword.SetError(txtPassword_Register, "Use at least 1 special character!");
+                    errorProviderPassword.Tag = "0";
 
                 }
                 else
                 {
-                    errorProviderRegister.Dispose();
-                    errorProviderRegister.Tag = "1";
+                    errorProviderPassword.Dispose();
+                    errorProviderPassword.Tag = "1";
 
                 }
 
                 if (txtPassword_Register.Text.Contains(' '))
                 {
-                    errorProviderRegister.SetError(txtPassword_Register, "Do not use space please");
-                    errorProviderRegister.Tag = "0";
+                    errorProviderPassword.SetError(txtPassword_Register, "Do not use space please");
+                    errorProviderPassword.Tag = "0";
 
 
                 }
             }
 
-            if (txtPassword_Register == null || txtPassword_Register.TextLength == 0)
+            if (txtPassword_Register.TextLength == 0)
             {
-                errorProviderRegister.Dispose();
+                errorProviderPassword.Tag = "0";
+                errorProviderPassword.Dispose();
             }
 
             
@@ -144,11 +189,15 @@ namespace Borromeo_Filomeno_FinalProject
         private void txtUsername_Register_TextChanged(object sender, EventArgs e)
         {
 
-            bool check = Regex.IsMatch(txtUsername_Register.Text, "[!@#$%^&*\"()_+[{}\\],./;':|?/<>=-]");
+            bool check = Regex.IsMatch(txtUsername_Register.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
 
 
             bool checkUser = accounts.IsUserExists(txtUsername_Register.Text);
 
+            if (txtUsername_Register.Text.Length == 0)
+            {
+                errorProviderUsername.Tag = "0";
+            }
             
 
             if (check)
@@ -182,19 +231,26 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void txtEmail_Register_TextChanged(object sender, EventArgs e)
         {
+            //For legit verification for formatting emails
+            //bool check = Regex.IsMatch(txtEmail_Register.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            
+            bool check = Regex.IsMatch(txtEmail_Register.Text, "[!#$%^&*`\"()_+[{}\\],/;':|?/<>=-]$");
 
-            if (!txtEmail_Register.Text.Contains('@'))
+           
+
+
+
+            if (check)
             {
                 errorProviderEmail.SetError(txtEmail_Register, "Invalid email!");
                 errorProviderEmail.Tag = "0";
+
             }
             else
             {
                 errorProviderEmail.Dispose();
                 errorProviderEmail.Tag = "1";
             }
-
-
 
 
             if (txtEmail_Register.Text.Contains(' '))
@@ -204,9 +260,10 @@ namespace Borromeo_Filomeno_FinalProject
 
             }
 
+            
             if (txtEmail_Register.Text.Length == 0)
             {
-                errorProviderEmail.Dispose();
+                errorProviderEmail.Tag = "0";
             }
 
         }
