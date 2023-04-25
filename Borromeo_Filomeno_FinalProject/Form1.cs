@@ -17,7 +17,7 @@ namespace Borromeo_Filomeno_FinalProject
     {
         clsRegister accounts = new clsRegister();
 
-       
+        LoginForm loginForm = new LoginForm();
         
         public Register_Form()
         {
@@ -30,7 +30,7 @@ namespace Borromeo_Filomeno_FinalProject
             txtPassword_Register.PasswordChar = '*';
 
             //Testing purposes
-            accounts.AddAccount("harold", "mouz@321", "@gmail.com");
+            //accounts.AddAccount("harold", "mouz@321", "@gmail.com");
             
         }
 
@@ -50,9 +50,9 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            var login = new LoginForm();
+            
             this.Hide();
-            login.ShowDialog();
+            loginForm.ShowDialog();
             this.Close();
         }
 
@@ -104,12 +104,18 @@ namespace Borromeo_Filomeno_FinalProject
                 errorProviderEmail.Dispose();
             }
 
+
+
             if (errorUser == 1 && errorPass == 1 && errorEmail == 1)
             {
                 accounts.AddAccount(username, password, email);
                 errorProviderEmail.Dispose();
                 errorProviderPassword.Dispose();
                 errorProviderUsername.Dispose();
+
+                loginForm.Username_Login = username;
+                loginForm.Password_Login = password;
+
 
                 MessageBox.Show("Account Created");
             }
@@ -236,11 +242,8 @@ namespace Borromeo_Filomeno_FinalProject
             
             bool check = Regex.IsMatch(txtEmail_Register.Text, "[!#$%^&*`\"()_+[{}\\],/;':|?/<>=-]$");
 
-           
 
-
-
-            if (check)
+            if (check || !txtEmail_Register.Text.Contains('@'))
             {
                 errorProviderEmail.SetError(txtEmail_Register, "Invalid email!");
                 errorProviderEmail.Tag = "0";

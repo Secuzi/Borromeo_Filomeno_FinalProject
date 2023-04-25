@@ -41,7 +41,7 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogIn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -73,6 +73,7 @@
             this.txtPassword_Login.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword_Login.Location = new System.Drawing.Point(403, 312);
             this.txtPassword_Login.Name = "txtPassword_Login";
+            this.txtPassword_Login.PasswordChar = '*';
             this.txtPassword_Login.Size = new System.Drawing.Size(256, 37);
             this.txtPassword_Login.TabIndex = 5;
             this.txtPassword_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -110,6 +111,7 @@
             this.chkbox_ShowPassword.TabIndex = 8;
             this.chkbox_ShowPassword.Text = "Show Password";
             this.chkbox_ShowPassword.UseVisualStyleBackColor = false;
+            this.chkbox_ShowPassword.CheckedChanged += new System.EventHandler(this.chkbox_ShowPassword_CheckedChanged);
             // 
             // timer1
             // 
@@ -126,17 +128,18 @@
             this.picbox_Logo.TabIndex = 9;
             this.picbox_Logo.TabStop = false;
             // 
-            // button1
+            // btnLogIn
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(474, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Start Gaming";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLogIn.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogIn.FlatAppearance.BorderSize = 0;
+            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogIn.Location = new System.Drawing.Point(474, 406);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(117, 23);
+            this.btnLogIn.TabIndex = 10;
+            this.btnLogIn.Text = "Start Gaming";
+            this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // label1
             // 
@@ -205,7 +208,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.txtUsername_Login);
             this.Controls.Add(this.txtPassword_Login);
             this.Controls.Add(this.picbox_Password);
@@ -243,7 +246,7 @@
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer timer5;
         private System.Windows.Forms.Timer timer6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;

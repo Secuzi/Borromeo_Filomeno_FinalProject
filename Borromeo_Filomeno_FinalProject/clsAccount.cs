@@ -10,8 +10,7 @@ namespace Borromeo_Filomeno_FinalProject
     internal class clsAccount
     {
         private string username;
-        private string password;
-        private byte age;
+        private string password; 
         private string email;
         private decimal balance;
         private bool loggedIn;
@@ -21,7 +20,7 @@ namespace Borromeo_Filomeno_FinalProject
         public bool SetLoggedIn { set { loggedIn = value; } }
         public bool GetLoggedIn { get { return loggedIn; } }
         public string Password { get { return password; } set { password = value; } }
-        public byte Age { get { return age; } set { age = value; } }
+        
         public string Email { get { return email; } set { email = value; } }
         public decimal Balance { get { return balance; } set { balance = value; } }
         public string Username { get { return username; } set { username = value; } }
