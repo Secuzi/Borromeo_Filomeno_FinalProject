@@ -18,6 +18,8 @@ namespace Borromeo_Filomeno_FinalProject
         clsRegister accounts = new clsRegister();
 
         LoginForm loginForm = new LoginForm();
+
+        List<clsAccount> checkExists;
         
         public Register_Form()
         {
@@ -104,27 +106,35 @@ namespace Borromeo_Filomeno_FinalProject
                 errorProviderEmail.Dispose();
             }
 
+            checkExists = accounts.TransferList();
+
+            bool isAccountMade = checkExists.Any(a => a.Username == username);
 
 
             if (errorUser == 1 && errorPass == 1 && errorEmail == 1)
             {
-                accounts.AddAccount(username, password, email);
-                errorProviderEmail.Dispose();
-                errorProviderPassword.Dispose();
-                errorProviderUsername.Dispose();
+                if (isAccountMade)
+                {
+                    MessageBox.Show("Account already exists!");
+                }
+                else
+                {
+                    accounts.AddAccount(username, password, email);
+                    errorProviderEmail.Dispose();
+                    errorProviderPassword.Dispose();
+                    errorProviderUsername.Dispose();
 
-                loginForm.Username_Login = username;
-                loginForm.Password_Login = password;
-                loginForm.log_Accounts = accounts.TransferList();
+                    loginForm.Username_Login = username;
+                    loginForm.Password_Login = password;
+                    loginForm.Log_Accounts = accounts.TransferList();
 
-                MessageBox.Show("Account Created");
+                    MessageBox.Show("Account Created");
+                }
             }
             else
             {
                 MessageBox.Show("Invalid Registeration!");
             }
-
-
 
 
         }

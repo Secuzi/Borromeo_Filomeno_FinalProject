@@ -14,10 +14,13 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class LoginForm : Form
     {
-        public string Username_Login;
-        public string Password_Login;
+        private string username_Login;
+        private string password_Login;
+        private List<clsAccount> log_Accounts;
 
-        public List<clsAccount> log_Accounts;
+        public string Username_Login { get { return username_Login; } set { username_Login = value; } }
+        public string Password_Login { get { return password_Login; } set { password_Login = value; } }
+        public List<clsAccount> Log_Accounts { get { return log_Accounts; } set { log_Accounts = value; } }
 
         public LoginForm()
         {
@@ -51,11 +54,11 @@ namespace Borromeo_Filomeno_FinalProject
         private void btnLogIn_Click(object sender, EventArgs e)
         {
 
-            bool checkLogIfAccountExists = log_Accounts.Any(a => a.Username == txtUsername_Login.Text);
+            bool checkLogIfAccountExists = Log_Accounts.Any(a => a.Username == txtUsername_Login.Text);
 
             if (checkLogIfAccountExists)
             {
-                clsAccount test = log_Accounts.Find(b => b.Username == txtUsername_Login.Text);
+                clsAccount test = Log_Accounts.Find(b => b.Username == txtUsername_Login.Text);
 
 
                 string checkedIfValidLog = test.CheckLoginStatus(txtUsername_Login.Text, txtPassword_Login.Text);
