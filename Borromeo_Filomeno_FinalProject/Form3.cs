@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace Borromeo_Filomeno_FinalProject
 {
@@ -14,6 +16,8 @@ namespace Borromeo_Filomeno_FinalProject
     {
         public string Username_Login;
         public string Password_Login;
+
+        public List<clsAccount> log_Accounts;
 
         public LoginForm()
         {
@@ -46,20 +50,44 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if (txtUsername_Login.Text != Username_Login)
+
+            bool checkLogIfAccountExists = log_Accounts.Any(a => a.Username == txtUsername_Login.Text);
+
+            if (checkLogIfAccountExists)
             {
-                MessageBox.Show("Invalid Username!");
+                clsAccount test = log_Accounts.Find(b => b.Username == txtUsername_Login.Text);
+
+
+                string checkedIfValidLog = test.CheckLoginStatus(txtUsername_Login.Text, txtPassword_Login.Text);
+
+                MessageBox.Show(checkedIfValidLog, "Yoo");
+
+            }
+            else
+            {
+                MessageBox.Show("Account does not exist!");
             }
 
-            if (txtPassword_Login.Text != Password_Login && txtUsername_Login.Text == Username_Login)
-            {
-                MessageBox.Show("Wrong Password!");
-            }
 
-            if (txtUsername_Login.Text == Username_Login && txtPassword_Login.Text == Password_Login)
-            {
-                MessageBox.Show("Welcome to Compound Games!");
-            }
+
+
+
+
+
+            //if (txtUsername_Login.Text != Username_Login)
+            //{
+            //    MessageBox.Show("Invalid Username!");
+            //}
+
+            //if (txtPassword_Login.Text != Password_Login && txtUsername_Login.Text == Username_Login)
+            //{
+            //    MessageBox.Show("Wrong Password!");
+            //}
+
+            //if (txtUsername_Login.Text == Username_Login && txtPassword_Login.Text == Password_Login)
+            //{
+            //    MessageBox.Show("Welcome to Compound Games!");
+            //}
 
 
         }

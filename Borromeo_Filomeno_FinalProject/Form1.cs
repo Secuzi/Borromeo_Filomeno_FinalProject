@@ -115,7 +115,7 @@ namespace Borromeo_Filomeno_FinalProject
 
                 loginForm.Username_Login = username;
                 loginForm.Password_Login = password;
-
+                loginForm.log_Accounts = accounts.TransferList();
 
                 MessageBox.Show("Account Created");
             }

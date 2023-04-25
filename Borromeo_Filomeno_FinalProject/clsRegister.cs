@@ -8,11 +8,11 @@ namespace Borromeo_Filomeno_FinalProject
 {
     internal class clsRegister
     {
-        List<clsAccount> accounts = new List<clsAccount>();
+        List<clsAccount> accounts;
 
         public clsRegister()
         {
-            
+             accounts = new List<clsAccount>();
         }
 
         public void AddAccount(string username, string password, string email)
@@ -25,7 +25,10 @@ namespace Borromeo_Filomeno_FinalProject
             return accounts.Any(user => user.Username == username); 
         }
 
-        
+        public List<clsAccount> TransferList()
+        {
+            return accounts;
+        }
         
 
 
