@@ -7,11 +7,10 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    internal class clsAccount
+    internal class clsAccount : clsAuthentication
     {
         private string username;
         private string password;
-        private byte age;
         private string email;
         private decimal balance;
         private bool loggedIn;
@@ -21,7 +20,6 @@ namespace Borromeo_Filomeno_FinalProject
         public bool SetLoggedIn { set { loggedIn = value; } }
         public bool GetLoggedIn { get { return loggedIn; } }
         public string Password { get { return password; } set { password = value; } }
-        public byte Age { get { return age; } set { age = value; } }
         public string Email { get { return email; } set { email = value; } }
         public decimal Balance { get { return balance; } set { balance = value; } }
         public string Username { get { return username; } set { username = value; } }
@@ -37,15 +35,12 @@ namespace Borromeo_Filomeno_FinalProject
             Username = username;
             Password = password;
             Email = email;
+            Balance = 0;
 
         }
 
 
-        public string ShowInfo()
-        {
-            
-            return $"Username: {Username}\nPassword: {Password}\nAge: {Age}\nEmail: {Email}\nBalance: {Balance}";
-        }
+      
 
 
         public string CheckLoginStatus(string username, string password)
@@ -68,7 +63,10 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-
+        public override bool IsAuthenticated()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

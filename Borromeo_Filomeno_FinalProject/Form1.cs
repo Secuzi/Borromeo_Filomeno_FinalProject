@@ -15,7 +15,8 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class Register_Form : Form
     {
-        clsAccount test;
+        List<clsAccount> accounts;
+        clsDatabase db;
         
         public Register_Form()
         {
@@ -26,6 +27,12 @@ namespace Borromeo_Filomeno_FinalProject
         private void Form1_Load(object sender, EventArgs e)
         {
             txtPassword_Register.PasswordChar = '*';
+
+
+            accounts = new List<clsAccount>();
+
+            accounts.Add(new clsAccount() { Username = "Harold", Email = "wtf@gmail.com", Password = "Secret" });
+            accounts.Add(new clsAccount() { Username = "Afterparty", Email = "zzz@gmail.com", Password = "Secret" });
         }
 
         private void chkbox_ShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -54,10 +61,24 @@ namespace Borromeo_Filomeno_FinalProject
         {
             string username = txtUsername_Register.Text;
             string password = txtPassword_Register.Text;
+            string email = txtUsername_Register.Text;
+
+            db = new clsDatabase();
+            //db.ImportAccountsToDatabase(accounts);
+
+            //MessageBox.Show($"zz");
+
+
+            List<clsAccount> tests = new List<clsAccount>();
+
+            tests = db.GetAccountsInDatabase();
+
+            db.BalanceChanges("Harold", 0M, tests);
 
             
+            MessageBox.Show("Done");
 
-
+            
 
 
 

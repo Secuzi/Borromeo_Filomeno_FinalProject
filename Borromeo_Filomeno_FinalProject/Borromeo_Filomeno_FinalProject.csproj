@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAccount.cs" />
+    <Compile Include="clsAuthentication.cs" />
+    <Compile Include="clsDatabase.cs" />
+    <Compile Include="clsLogin.cs" />
+    <Compile Include="clsRegister.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
