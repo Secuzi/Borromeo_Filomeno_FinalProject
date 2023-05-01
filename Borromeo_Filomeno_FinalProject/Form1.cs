@@ -18,8 +18,9 @@ namespace Borromeo_Filomeno_FinalProject
         List<clsAccount> accounts;
         clsDatabase db;
         clsRegister account_Register;
-        bool isPasswordValid;
-        bool isUsernameValid;
+        bool isPasswordValid = false;
+        bool isUsernameValid = false;
+        bool isEmailValid = false;
         public Register_Form()
         {
             InitializeComponent();
@@ -29,9 +30,9 @@ namespace Borromeo_Filomeno_FinalProject
         private void Form1_Load(object sender, EventArgs e)
         {
             txtPassword_Register.PasswordChar = '*';
-
+            db = new clsDatabase();
             account_Register = new clsRegister();
-            accounts = new List<clsAccount>();
+            accounts = new List<clsAccount>(db.GetAccountsInDatabase());
 
             //accounts.Add(new clsAccount() { Username = "Harold", Email = "wtf@gmail.com", Password = "Secret" });
             //accounts.Add(new clsAccount() { Username = "Afterparty", Email = "zzz@gmail.com", Password = "Secret" });
@@ -62,7 +63,7 @@ namespace Borromeo_Filomeno_FinalProject
         private void btn_Register_Click(object sender, EventArgs e)
         {
 
-            if (!isPasswordValid && !isUsernameValid)
+            if (!isPasswordValid || !isUsernameValid || !isEmailValid)
             {
                 MessageBox.Show("Register Invalid");
             }
@@ -70,29 +71,17 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 string username = txtUsername_Register.Text;
                 string password = txtPassword_Register.Text;
-                string email = txtUsername_Register.Text;
+                string email = txtEmail_Register.Text;
 
-                //db = new clsDatabase();
-                ////db.ImportAccountsToDatabase(accounts);
-
-                ////MessageBox.Show($"zz");
-
-
-
-
-                //List<clsAccount> tests = new List<clsAccount>();
-
-                //tests = db.GetAccountsInDatabase();
-
-                //db.BalanceChanges("Harold", 0M, tests);
-
+                accounts.Add(new clsAccount(username, password, email));
+             
+                db.ImportAccountsToDatabase(accounts);
 
                 MessageBox.Show("Done");
+                txtUsername_Register.Clear();
+                txtPassword_Register.Clear();
+                txtEmail_Register.Clear();
             }
-            
-
-            
-
 
 
         }
@@ -118,14 +107,7 @@ namespace Borromeo_Filomeno_FinalProject
         private void txtEmail_Register_TextChanged(object sender, EventArgs e)
         {
 
-            if (txtEmail_Register.Text.Contains(' '))
-            {
-                errorProviderUsername.SetError(txtEmail_Register, "Do not use space please");
-            }
-            else
-            {
-                errorProviderUsername.Dispose();
-            }
+            isEmailValid = account_Register.IsEmailValid(errorProviderEmail, txtEmail_Register);
 
         }
     }

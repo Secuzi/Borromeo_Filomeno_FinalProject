@@ -14,7 +14,11 @@ namespace Borromeo_Filomeno_FinalProject
         clsDatabase db;
 
         List<clsAccount> accounts;
-
+        public clsRegister()
+        {
+            db = new clsDatabase();
+            accounts = db.GetAccountsInDatabase();
+        }
         
         public bool IsPasswordValid(ErrorProvider errorChange, TextBox txtChange)
         {
@@ -71,7 +75,7 @@ namespace Borromeo_Filomeno_FinalProject
                 else if (txtChange.Text.Length == 0)
                 {
                     errorChange.Tag = "0";
-                    errorChange.Dispose();
+                    errorChange.SetError(txtChange, "Please populate this field!");
                     return false;
                 }
                 else
@@ -92,19 +96,13 @@ namespace Borromeo_Filomeno_FinalProject
         public bool IsUsernameValid(ErrorProvider errorChange, TextBox txtChange)
         {
             bool check = Regex.IsMatch(txtChange.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
-            db = new clsDatabase();
-            accounts = db.GetAccountsInDatabase();
-
-
-
+            
             bool checkUser = accounts.Any(a => a.Username == txtChange.Text);
-
-
-            //bool checkUser = accounts.IsUserExists(txtChange.Text);
 
             if (txtChange.Text.Length == 0)
             {
                 errorChange.Tag = "0";
+                errorChange.SetError(txtChange, "Please populate this field!");
                 return false;
             }
             else if (check)
@@ -141,13 +139,58 @@ namespace Borromeo_Filomeno_FinalProject
 
             }
 
-            
+        }
 
+        public bool IsEmailValid(ErrorProvider errorChange, TextBox txtChange)
+        {
+            bool check = Regex.IsMatch(txtChange.Text, "[!#$%^&*`\"()_+[{}\\],/;':|?/<>=-]$");
+            
+            bool checkUser = accounts.Any(a => a.Email == txtChange.Text);
+
+            
+            if (txtChange.Text.Length == 0)
+            {
+                errorChange.Tag = "0";
+                errorChange.SetError(txtChange, "Please populate this field!");
+                return false;
+            }
+            else if (check || !txtChange.Text.Contains('@'))
+            {
+
+                if (txtChange.Text.Contains(" "))
+                {
+                    errorChange.SetError(txtChange, "Do not use space please");
+                    errorChange.Tag = "0";
+                    return false;
+                }
+                else
+                {
+                    errorChange.SetError(txtChange, "Invalid email!");
+                    errorChange.Tag = "0";
+                    return false;
+                }
+            }
+            else
+            {
+                if (checkUser)
+                {
+                    errorChange.SetError(txtChange, "Email is already taken!");
+                    errorChange.Tag = "0";
+                    return false;
+                }
+                else
+                {
+                    errorChange.Dispose();
+                    errorChange.Tag = "1";
+                    return true;
+                }
+            }
+
+
+            
 
             
         }
-
-
 
         public void RegexConfirm(string username, string password, string email)
         {

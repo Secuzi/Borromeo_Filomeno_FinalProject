@@ -11,6 +11,8 @@ namespace Borromeo_Filomeno_FinalProject
     {
         bool IsPasswordValid(ErrorProvider errorChange, TextBox txtChange);
         bool IsUsernameValid (ErrorProvider errorChange, TextBox txtChange);
+
+        bool IsEmailValid(ErrorProvider errorChange, TextBox txtChange);
     
     }
 }
