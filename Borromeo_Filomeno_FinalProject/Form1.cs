@@ -17,7 +17,7 @@ namespace Borromeo_Filomeno_FinalProject
     {
         List<clsAccount> accounts;
         clsDatabase db;
-        
+        clsRegister account_Register;
         public Register_Form()
         {
             InitializeComponent();
@@ -68,7 +68,9 @@ namespace Borromeo_Filomeno_FinalProject
 
             //MessageBox.Show($"zz");
 
-
+            
+            
+               
             List<clsAccount> tests = new List<clsAccount>();
 
             tests = db.GetAccountsInDatabase();

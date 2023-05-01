@@ -73,6 +73,7 @@ namespace Borromeo_Filomeno_FinalProject
             List<string> output = new List<string>();
            
             clsAccount account = null;
+            //Checking if the account username is in the database
             foreach (var line in lines)
             {
                 string[] strSplit = line.Split(',');

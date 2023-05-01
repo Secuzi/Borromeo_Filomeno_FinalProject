@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    abstract class clsAuthentication
+    internal interface IAuthentication
     {
-
-
-        abstract public bool IsAuthenticated();
+        bool isAuthenticated();
     }
 }

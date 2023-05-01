@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    internal class clsAccount : clsAuthentication
+    internal class clsAccount
     {
         private string username;
         private string password;
@@ -63,10 +63,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-        public override bool IsAuthenticated()
-        {
-            throw new NotImplementedException();
-        }
+        
 
     }
 }

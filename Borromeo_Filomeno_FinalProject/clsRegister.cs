@@ -7,13 +7,16 @@ using System.Text.RegularExpressions;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    internal class clsRegister : clsAccount
+    internal class clsRegister : clsAccount, IAuthentication
     {
 
+        public bool isAuthenticated()
+        {
+            return true;
+        }
 
 
-
-        public void RegexConfirm()
+        public void RegexConfirm(string username, string password, string email)
         {
 
         }
