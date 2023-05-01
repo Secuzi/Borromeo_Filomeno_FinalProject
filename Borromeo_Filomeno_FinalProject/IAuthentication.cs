@@ -8,6 +8,6 @@ namespace Borromeo_Filomeno_FinalProject
 {
     internal interface IAuthentication
     {
-        bool isAuthenticated();
+        bool isAuthenticated(string username, string password, string email);
     }
 }

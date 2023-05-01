@@ -10,8 +10,11 @@ namespace Borromeo_Filomeno_FinalProject
     internal class clsRegister : clsAccount, IAuthentication
     {
 
-        public bool isAuthenticated()
+        public bool isAuthenticated(string username, string password, string email)
         {
+            if (Username == username)
+
+
             return true;
         }
 
