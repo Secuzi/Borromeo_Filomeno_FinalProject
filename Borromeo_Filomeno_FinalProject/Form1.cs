@@ -18,6 +18,8 @@ namespace Borromeo_Filomeno_FinalProject
         List<clsAccount> accounts;
         clsDatabase db;
         clsRegister account_Register;
+        bool isPasswordValid;
+        bool isUsernameValid;
         public Register_Form()
         {
             InitializeComponent();
@@ -28,11 +30,11 @@ namespace Borromeo_Filomeno_FinalProject
         {
             txtPassword_Register.PasswordChar = '*';
 
-
+            account_Register = new clsRegister();
             accounts = new List<clsAccount>();
 
-            accounts.Add(new clsAccount() { Username = "Harold", Email = "wtf@gmail.com", Password = "Secret" });
-            accounts.Add(new clsAccount() { Username = "Afterparty", Email = "zzz@gmail.com", Password = "Secret" });
+            //accounts.Add(new clsAccount() { Username = "Harold", Email = "wtf@gmail.com", Password = "Secret" });
+            //accounts.Add(new clsAccount() { Username = "Afterparty", Email = "zzz@gmail.com", Password = "Secret" });
         }
 
         private void chkbox_ShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -59,26 +61,35 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
-            string username = txtUsername_Register.Text;
-            string password = txtPassword_Register.Text;
-            string email = txtUsername_Register.Text;
 
-            db = new clsDatabase();
-            //db.ImportAccountsToDatabase(accounts);
+            if (!isPasswordValid && !isUsernameValid)
+            {
+                MessageBox.Show("Register Invalid");
+            }
+            else
+            {
+                string username = txtUsername_Register.Text;
+                string password = txtPassword_Register.Text;
+                string email = txtUsername_Register.Text;
 
-            //MessageBox.Show($"zz");
+                //db = new clsDatabase();
+                ////db.ImportAccountsToDatabase(accounts);
 
+                ////MessageBox.Show($"zz");
+
+
+
+
+                //List<clsAccount> tests = new List<clsAccount>();
+
+                //tests = db.GetAccountsInDatabase();
+
+                //db.BalanceChanges("Harold", 0M, tests);
+
+
+                MessageBox.Show("Done");
+            }
             
-            
-               
-            List<clsAccount> tests = new List<clsAccount>();
-
-            tests = db.GetAccountsInDatabase();
-
-            db.BalanceChanges("Harold", 0M, tests);
-
-            
-            MessageBox.Show("Done");
 
             
 
@@ -88,50 +99,9 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void txtPassword_Register_TextChanged(object sender, EventArgs e)
         {
-            bool check = Regex.IsMatch(txtPassword_Register.Text, "[!@#$%^&*\"()_+[{}\\],./;':|?/<>=-]");
+            
 
-
-            if (txtPassword_Register.Text.Length < 8)
-            {
-                
-                if (!check)
-                {
-                    errorProviderAll.SetError(txtPassword_Register, "Use at least 1 special character and password must be at least 8 characters long!");
-                }
-                
-
-                if (txtPassword_Register.Text.Contains(' '))
-                {
-                    errorProviderAll.SetError(txtPassword_Register, "Do not use space please");
-                }
-
-                errorProviderAll.SetError(txtPassword_Register, "Password must be at least 8 characters long");
-
-            }
-            else
-            {
-
-                if (!check)
-                {
-                    errorProviderAll.SetError(txtPassword_Register, "Use at least 1 special character!");
-                }
-                else
-                {
-                    errorProviderAll.Dispose();
-                }
-
-                if (txtPassword_Register.Text.Contains(' '))
-                {
-                    errorProviderAll.SetError(txtPassword_Register, "Do not use space please");
-                }
-            }
-
-
-
-            if (txtPassword_Register == null || txtPassword_Register.TextLength == 0)
-            {
-                errorProviderAll.Dispose();
-            }
+            isPasswordValid = account_Register.IsPasswordValid(errorProviderPassword, txtPassword_Register);
 
 
         }
@@ -139,23 +109,8 @@ namespace Borromeo_Filomeno_FinalProject
         private void txtUsername_Register_TextChanged(object sender, EventArgs e)
         {
 
-            bool check = Regex.IsMatch(txtUsername_Register.Text, "[!@#$%^&*\"()_+[{}\\],./;':|?/<>=-]");
-
-            if (check)
-            {
-                errorProviderAll.SetError(txtUsername_Register, "No special characters please!");
-
-            }
-            else
-            {
-                errorProviderAll.Dispose();
-            }
-
-            if (txtUsername_Register.Text.Contains(' '))
-            {
-                errorProviderAll.SetError(txtUsername_Register, "Do not use space please");
-            }
-
+           
+            isUsernameValid = account_Register.IsUsernameValid(errorProviderUsername, txtUsername_Register);
 
 
         }
@@ -165,11 +120,11 @@ namespace Borromeo_Filomeno_FinalProject
 
             if (txtEmail_Register.Text.Contains(' '))
             {
-                errorProviderAll.SetError(txtEmail_Register, "Do not use space please");
+                errorProviderUsername.SetError(txtEmail_Register, "Do not use space please");
             }
             else
             {
-                errorProviderAll.Dispose();
+                errorProviderUsername.Dispose();
             }
 
         }

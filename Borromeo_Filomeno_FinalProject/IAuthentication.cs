@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    internal interface IAuthentication
+    public interface IAuthentication
     {
-        void isPasswordValid(string username, string password, string email, ErrorProvider errorChange, TextBox txtChange);
-        void isUsernameValid (string username, string password, string email, ErrorProvider errorChange, TextBox txtChange);
+        bool IsPasswordValid(ErrorProvider errorChange, TextBox txtChange);
+        bool IsUsernameValid (ErrorProvider errorChange, TextBox txtChange);
     
     }
 }

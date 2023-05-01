@@ -10,7 +10,7 @@ using System.Security.Principal;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    internal class clsDatabase
+    public class clsDatabase
     {
         private const string filePath = @"D:\Harold Sheesh\Desktop\Borromeo_Filomeno_FinalProject\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 

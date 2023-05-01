@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    internal class clsLogin : clsAccount
+    public class clsLogin : clsAccount
     {
         
 

@@ -40,13 +40,17 @@
             this.picbox_Password = new System.Windows.Forms.PictureBox();
             this.picbox_Username = new System.Windows.Forms.PictureBox();
             this.chkbox_ShowPassword = new System.Windows.Forms.CheckBox();
-            this.errorProviderAll = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Logo)).BeginInit();
             this.panel_Register.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Username)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
             this.SuspendLayout();
             // 
             // picbox_Logo
@@ -189,9 +193,17 @@
             this.chkbox_ShowPassword.UseVisualStyleBackColor = true;
             this.chkbox_ShowPassword.CheckedChanged += new System.EventHandler(this.chkbox_ShowPassword_CheckedChanged);
             // 
-            // errorProviderAll
+            // errorProviderUsername
             // 
-            this.errorProviderAll.ContainerControl = this;
+            this.errorProviderUsername.ContainerControl = this;
+            // 
+            // errorProviderPassword
+            // 
+            this.errorProviderPassword.ContainerControl = this;
+            // 
+            // errorProviderEmail
+            // 
+            this.errorProviderEmail.ContainerControl = this;
             // 
             // Register_Form
             // 
@@ -213,7 +225,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Username)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,7 +244,9 @@
         private System.Windows.Forms.TextBox txtEmail_Register;
         private System.Windows.Forms.PictureBox picbox_Password;
         private System.Windows.Forms.PictureBox picbox_Username;
-        private System.Windows.Forms.ErrorProvider errorProviderAll;
+        private System.Windows.Forms.ErrorProvider errorProviderUsername;
+        private System.Windows.Forms.ErrorProvider errorProviderPassword;
+        private System.Windows.Forms.ErrorProvider errorProviderEmail;
     }
 }
 

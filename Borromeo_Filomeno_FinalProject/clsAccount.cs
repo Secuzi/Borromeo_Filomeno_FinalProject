@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    internal class clsAccount
+    public class clsAccount
     {
         private string username;
         private string password;
