@@ -10,35 +10,30 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsLogin : clsAccount
     {
+        public List<clsAccount> accounts;
 
-        public clsLogin(List<clsAccount> accounts)
+        public clsLogin()
         {
-            int i = 0;
-            while(accounts.Count > i)
-            {
-                Username = accounts[i].Username;
-                Password = accounts[i].Password;
-                Email = accounts[i].Email;
-                Balance = accounts[i].Balance;
-                i++;
-            }
+            accounts = new List<clsAccount>();
         }
-
 
         public bool CheckLoginStatus(string logInput, string password)
         {
+            bool userValid = accounts.Any(a => a.Username == logInput);
+            bool emailValid = accounts.Any(a => a.Email == logInput);
+            bool passwordValid = accounts.Any(a => a.Password == password);
 
-            if (logInput != Username && !logInput.Contains('@'))
-            {               
+            if (!userValid && !logInput.Contains('@'))
+            {
                 MessageBox.Show($"The account {logInput} has not been created.");
-                return false;               
+                return false;
             }
-            else if (logInput != Email && logInput.Contains('@'))
+            else if (!emailValid && logInput.Contains('@'))
             {
                 MessageBox.Show($"The email {logInput} has not been registered.");
                 return false;
             }
-            else if ((logInput == Username && password != Password) || (logInput == Email && password != Password)) 
+            else if ((userValid && !passwordValid) || (emailValid && !passwordValid))
             {
                 //if (logInput == Email && password != Password)
                 MessageBox.Show($"Wrong password, please try again");
