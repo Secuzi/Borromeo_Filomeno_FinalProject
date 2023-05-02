@@ -1,1 +1,3 @@
 hardy,hardy@123,hardy@gmail.com,0
+secuzi,secuzi@123,secuzi@gmail.com,0
+test1,test@123,test@gmail.com,0

@@ -39,7 +39,7 @@ namespace Borromeo_Filomeno_FinalProject
             string logInput = txtUsername_Login.Text;
             string password = txtPassword_Login.Text;
 
-            bool check = logIn.CheckLoginStatus(logInput, password);
+            
 
             if (logInput.Length < 1)
             {
@@ -51,6 +51,7 @@ namespace Borromeo_Filomeno_FinalProject
             }
             else
             {
+                bool check = logIn.CheckLoginStatus(logInput, password);
                 if (check)
                 {
                     //Homepage

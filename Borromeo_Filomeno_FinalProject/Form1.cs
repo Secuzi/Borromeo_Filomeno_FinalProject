@@ -81,6 +81,9 @@ namespace Borromeo_Filomeno_FinalProject
                 txtUsername_Register.Clear();
                 txtPassword_Register.Clear();
                 txtEmail_Register.Clear();
+                errorProviderEmail.Dispose();
+                errorProviderPassword.Dispose();
+                errorProviderUsername.Dispose();
             }
 
 
