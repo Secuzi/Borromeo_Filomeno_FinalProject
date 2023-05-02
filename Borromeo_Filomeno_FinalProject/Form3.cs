@@ -12,15 +12,14 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class LoginForm : Form
     {
-        clsDatabase db;
-        List<clsAccount> accounts;
+        clsDatabase db;       
         clsLogin logIn;
         public LoginForm()
         {
             InitializeComponent();
-            db = new clsDatabase();
-            accounts = new List<clsAccount>(db.GetAccountsInDatabase());
-            logIn = new clsLogin(accounts);
+            db = new clsDatabase();           
+            logIn = new clsLogin();
+            logIn.accounts = db.GetAccountsInDatabase();
         }
 
         private void Form3_Load(object sender, EventArgs e)
