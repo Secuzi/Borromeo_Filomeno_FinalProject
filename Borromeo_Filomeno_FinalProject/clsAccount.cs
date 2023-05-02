@@ -41,27 +41,39 @@ namespace Borromeo_Filomeno_FinalProject
       
 
 
-        public string CheckLoginStatus(string username, string password)
-        {
-            if (username != Username)
-            {
-                SetLoggedIn = false;
-                return $"The account {username} has not been created.";
-            }
-            else if (username == Username && password != Password)
-            {
-                SetLoggedIn = false;
-                return $"Wrong password, please try again";
-            }
-            else
-            {
-                SetLoggedIn = true;
-                return $"Welcome to Compound Games!";
-            }
+        //public string CheckLoginStatusUsername(string username, string password)
+        //{
+        //    if (username != Username)
+        //    {             
+        //        return $"The account {username} has not been created.";
+        //    }
+        //    else if (username == Username && password != Password)
+        //    {               
+        //        return $"Wrong password, please try again";
+        //    }
+        //    else
+        //    {                
+        //        return $"Welcome to Compound Games!";
+        //    }
 
-        }
+        //}
 
-        
+        //public string CheckLoginStatusEmail(string email, string password)
+        //{
+        //    if (email != Email)
+        //    {
+        //        return $"The email {email} has not been registered.";
+        //    }
+        //    else if (username == Username && password != Password)
+        //    {
+        //        return $"Wrong password, please try again";
+        //    }
+        //    else
+        //    {
+        //        return $"Welcome to Compound Games!";
+        //    }
+
+        //}
 
     }
 }
