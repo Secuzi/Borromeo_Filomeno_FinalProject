@@ -78,6 +78,7 @@ namespace Borromeo_Filomeno_FinalProject
                 db.ImportAccountsToDatabase(accounts);
 
                 MessageBox.Show("Done");
+                chkbox_ShowPassword.Checked = false;
                 txtUsername_Register.Clear();
                 txtPassword_Register.Clear();
                 txtEmail_Register.Clear();
