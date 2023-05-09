@@ -59,9 +59,11 @@ namespace Borromeo_Filomeno_FinalProject
                     errorProviderLogInput.Dispose();
                     errorProviderPassword.Dispose();
                 }
+                errorProviderLogInput.Dispose();
+                errorProviderPassword.Dispose();
             }
             
-           
+
 
 
 

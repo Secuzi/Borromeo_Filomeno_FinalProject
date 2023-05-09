@@ -163,6 +163,16 @@ namespace Borromeo_Filomeno_FinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_gif_transparent {
+            get {
+                object obj = ResourceManager.GetObject("bg gif transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exclamation_16 {
             get {
                 object obj = ResourceManager.GetObject("Exclamation 16", resourceCulture);
