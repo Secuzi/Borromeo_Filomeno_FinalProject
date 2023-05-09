@@ -44,7 +44,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_UberVoid_Click(object sender, EventArgs e)
         {
-
+            OpenForm(new Uber_Void());
         }
     }
 }
