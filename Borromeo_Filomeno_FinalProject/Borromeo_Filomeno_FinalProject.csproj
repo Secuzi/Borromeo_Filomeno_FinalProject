@@ -86,6 +86,9 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -177,6 +180,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg gif transparent.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compound Games.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\racing 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\math 24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
