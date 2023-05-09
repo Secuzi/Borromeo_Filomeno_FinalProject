@@ -54,8 +54,10 @@ namespace Borromeo_Filomeno_FinalProject
                 if (check)
                 {
                     //Homepage
-
-                    MessageBox.Show("Eek eek... Welcome to homepage");
+                    var homePage = new HomePage();
+                    this.Hide();
+                    homePage.ShowDialog();
+                    this.Close();
                     errorProviderLogInput.Dispose();
                     errorProviderPassword.Dispose();
                 }
