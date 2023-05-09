@@ -169,5 +169,8 @@
   <ItemGroup>
     <None Include="Resources\logo_transparent1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg gif transparent.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

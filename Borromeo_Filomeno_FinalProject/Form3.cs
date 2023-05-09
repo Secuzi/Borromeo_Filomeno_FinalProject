@@ -59,9 +59,11 @@ namespace Borromeo_Filomeno_FinalProject
                     errorProviderLogInput.Dispose();
                     errorProviderPassword.Dispose();
                 }
+                errorProviderLogInput.Dispose();
+                errorProviderPassword.Dispose();
             }
             
-           
+
 
 
 
@@ -73,6 +75,24 @@ namespace Borromeo_Filomeno_FinalProject
                 txtPassword_Login.PasswordChar = '\0';
             else
                 txtPassword_Login.PasswordChar = '*';
+        }
+
+        private void btnCreateaccount_Click(object sender, EventArgs e)
+        {
+            var register = new Register_Form();
+            this.Hide();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void lblRegister_MouseHover(object sender, EventArgs e)
+        {
+            btnCreateaccount.ForeColor = Color.AliceBlue;
+        }
+
+        private void lblRegister_MouseLeave(object sender, EventArgs e)
+        {
+            btnCreateaccount.ForeColor = Color.Black;
         }
     }
 }
