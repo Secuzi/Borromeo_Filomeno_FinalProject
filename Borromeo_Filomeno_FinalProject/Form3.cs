@@ -76,5 +76,23 @@ namespace Borromeo_Filomeno_FinalProject
             else
                 txtPassword_Login.PasswordChar = '*';
         }
+
+        private void btnCreateaccount_Click(object sender, EventArgs e)
+        {
+            var register = new Register_Form();
+            this.Hide();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void lblRegister_MouseHover(object sender, EventArgs e)
+        {
+            btnCreateaccount.ForeColor = Color.AliceBlue;
+        }
+
+        private void lblRegister_MouseLeave(object sender, EventArgs e)
+        {
+            btnCreateaccount.ForeColor = Color.Black;
+        }
     }
 }

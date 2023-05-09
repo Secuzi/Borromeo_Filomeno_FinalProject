@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.txtUsername_Login = new System.Windows.Forms.TextBox();
             this.txtPassword_Login = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRegister = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.picbox_Password = new System.Windows.Forms.PictureBox();
             this.picbox_Username = new System.Windows.Forms.PictureBox();
@@ -71,17 +71,19 @@
             this.txtPassword_Login.Tag = "3";
             this.txtPassword_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
+            // lblRegister
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(340, 528);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 16);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Don\'t have an account? ";
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.BackColor = System.Drawing.Color.Transparent;
+            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.ForeColor = System.Drawing.Color.Yellow;
+            this.lblRegister.Location = new System.Drawing.Point(340, 528);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(172, 16);
+            this.lblRegister.TabIndex = 22;
+            this.lblRegister.Text = "Don\'t have an account? ";
+            this.lblRegister.MouseLeave += new System.EventHandler(this.lblRegister_MouseLeave);
+            this.lblRegister.MouseHover += new System.EventHandler(this.lblRegister_MouseHover);
             // 
             // btnLogin
             // 
@@ -167,6 +169,7 @@
             this.btnCreateaccount.TabIndex = 24;
             this.btnCreateaccount.Text = "Create Account";
             this.btnCreateaccount.UseVisualStyleBackColor = false;
+            this.btnCreateaccount.Click += new System.EventHandler(this.btnCreateaccount_Click);
             // 
             // panel1
             // 
@@ -185,7 +188,7 @@
             this.ClientSize = new System.Drawing.Size(1057, 608);
             this.Controls.Add(this.txtUsername_Login);
             this.Controls.Add(this.txtPassword_Login);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.picbox_Password);
             this.Controls.Add(this.picbox_Username);
@@ -212,7 +215,7 @@
 
         private System.Windows.Forms.TextBox txtUsername_Login;
         private System.Windows.Forms.TextBox txtPassword_Login;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRegister;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox picbox_Password;
         private System.Windows.Forms.PictureBox picbox_Username;
