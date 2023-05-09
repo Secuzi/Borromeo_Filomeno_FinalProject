@@ -200,5 +200,8 @@
   <ItemGroup>
     <None Include="Resources\math 24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Space Shooter\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
