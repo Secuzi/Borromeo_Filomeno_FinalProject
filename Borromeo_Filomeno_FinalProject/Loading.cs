@@ -26,7 +26,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+            //shows the quadrant 2
+
             pb1.Visible = true;
             timer1.Stop();
 
@@ -40,6 +41,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // hides all the picture boxes
+            checkBox1.Visible = false;
             pb1.Visible = false;
             pb2.Visible = false;
             pb3.Visible = false;
@@ -54,6 +57,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            //shows the quadrant 1
+
             pb2.Visible = true;
             timer2.Stop();
 
@@ -61,6 +66,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void timer3_Tick(object sender, EventArgs e)
         {
+            //shows the quadrant 3
+
             pb3.Visible = true;
             timer3.Stop();
 
@@ -68,6 +75,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void timer4_Tick(object sender, EventArgs e)
         {
+            //shows the quadrant 4
+
             pb4.Visible = true;
             timer4.Stop();
 
@@ -75,12 +84,14 @@ namespace Borromeo_Filomeno_FinalProject
 
         public void timer5_Tick(object sender, EventArgs e)
         {
+            //when the time has come, checks the checkbox
             timer5.Stop();
             checkBox1.Checked = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            // when the checkbox has been checked, then the program loads the registration form
             if (checkBox1.Checked)
             {
                 var register = new Register_Form();

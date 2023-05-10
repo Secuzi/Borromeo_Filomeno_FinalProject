@@ -23,6 +23,7 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 this.panel_form.Controls.RemoveAt(0);
             }
+            // turns the object into a Form and then adds the controls and tag of the form into the panel
             Form currentform = form as Form;
             currentform.TopLevel = false;
             currentform.Dock = DockStyle.Fill;
@@ -32,19 +33,15 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-        private void btn_Racing_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        // opens the form into the panel
         private void btn_Math_Click(object sender, EventArgs e)
         {
-
+            OpenForm(new Math_Zilla());
         }
 
         private void btn_UberVoid_Click(object sender, EventArgs e)
         {
-            OpenForm(new Uber_Void());
+            
         }
     }
 }
