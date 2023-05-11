@@ -42,15 +42,13 @@
             this.panel_Problem = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_Display_Numeric_Problem = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel_Answering = new System.Windows.Forms.Panel();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.btn_Clue = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_Name.SuspendLayout();
             this.panel_Problem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_Answering.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,7 +190,6 @@
             this.panel_Problem.BackColor = System.Drawing.Color.Transparent;
             this.panel_Problem.Controls.Add(this.label6);
             this.panel_Problem.Controls.Add(this.lbl_Display_Numeric_Problem);
-            this.panel_Problem.Controls.Add(this.pictureBox2);
             this.panel_Problem.Location = new System.Drawing.Point(23, 225);
             this.panel_Problem.Name = "panel_Problem";
             this.panel_Problem.Size = new System.Drawing.Size(801, 131);
@@ -218,14 +215,6 @@
             this.lbl_Display_Numeric_Problem.Text = "temp 5 x 4";
             this.lbl_Display_Numeric_Problem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(132, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 35);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel_Answering
             // 
             this.panel_Answering.BackColor = System.Drawing.Color.Transparent;
@@ -238,18 +227,6 @@
             this.panel_Answering.Name = "panel_Answering";
             this.panel_Answering.Size = new System.Drawing.Size(774, 114);
             this.panel_Answering.TabIndex = 7;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.FlatAppearance.BorderSize = 0;
-            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Location = new System.Drawing.Point(350, 74);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 27);
-            this.btnSubmit.TabIndex = 4;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btn_Clue
             // 
@@ -271,6 +248,18 @@
             this.label3.Size = new System.Drawing.Size(93, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Need help?";
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Location = new System.Drawing.Point(350, 74);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 27);
+            this.btnSubmit.TabIndex = 4;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // Math_Zilla
             // 
@@ -296,7 +285,6 @@
             this.panel_Name.PerformLayout();
             this.panel_Problem.ResumeLayout(false);
             this.panel_Problem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel_Answering.ResumeLayout(false);
             this.panel_Answering.PerformLayout();
             this.ResumeLayout(false);
@@ -318,7 +306,6 @@
         private System.Windows.Forms.TextBox txt_Player2Name;
         private System.Windows.Forms.TextBox txt_Player1Name;
         private System.Windows.Forms.Panel panel_Problem;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel_Answering;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbl_Display_Numeric_Problem;
