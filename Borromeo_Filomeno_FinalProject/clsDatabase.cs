@@ -12,7 +12,7 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsDatabase
     {
-        private const string filePath = @"D:\Harold Sheesh\Desktop\Borromeo_Filomeno_FinalProject\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
+        private const string filePath = @"D:\c#\school\Final Project\homepage start\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 
         //public string GetAccountsInDatabase
         //{

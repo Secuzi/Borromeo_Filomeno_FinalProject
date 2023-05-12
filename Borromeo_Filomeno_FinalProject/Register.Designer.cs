@@ -183,10 +183,10 @@
             // chkbox_ShowPassword
             // 
             this.chkbox_ShowPassword.AutoSize = true;
-            this.chkbox_ShowPassword.Font = new System.Drawing.Font("Javanese Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkbox_ShowPassword.Location = new System.Drawing.Point(292, 114);
+            this.chkbox_ShowPassword.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkbox_ShowPassword.Location = new System.Drawing.Point(292, 117);
             this.chkbox_ShowPassword.Name = "chkbox_ShowPassword";
-            this.chkbox_ShowPassword.Size = new System.Drawing.Size(106, 29);
+            this.chkbox_ShowPassword.Size = new System.Drawing.Size(110, 20);
             this.chkbox_ShowPassword.TabIndex = 3;
             this.chkbox_ShowPassword.Text = "Show Password";
             this.chkbox_ShowPassword.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

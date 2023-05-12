@@ -54,6 +54,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            // opens the login form
             var login = new LoginForm();
             this.Hide();
             login.ShowDialog();
@@ -62,7 +63,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
-
+            // registers the user
             if (!isPasswordValid || !isUsernameValid || !isEmailValid)
             {
                 MessageBox.Show("Register Invalid");

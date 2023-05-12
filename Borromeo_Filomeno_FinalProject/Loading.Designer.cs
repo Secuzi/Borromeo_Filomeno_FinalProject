@@ -127,12 +127,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.BackgroundImage = global::Borromeo_Filomeno_FinalProject.Properties.Resources.Compound_Games;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(881, 563);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.pb4);
             this.Controls.Add(this.pb3);
             this.Controls.Add(this.pb2);
             this.Controls.Add(this.checkBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loading_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

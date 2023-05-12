@@ -173,6 +173,16 @@ namespace Borromeo_Filomeno_FinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blue_gradient_bg {
+            get {
+                object obj = ResourceManager.GetObject("blue gradient bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Compound_Games {
             get {
                 object obj = ResourceManager.GetObject("Compound Games", resourceCulture);
@@ -283,6 +293,16 @@ namespace Borromeo_Filomeno_FinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MathZilla_title {
+            get {
+                object obj = ResourceManager.GetObject("MathZilla title", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap password {
             get {
                 object obj = ResourceManager.GetObject("password", resourceCulture);
@@ -306,6 +326,16 @@ namespace Borromeo_Filomeno_FinalProject.Properties {
         internal static System.Drawing.Bitmap racing_24 {
             get {
                 object obj = ResourceManager.GetObject("racing 24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ubervoid_logo {
+            get {
+                object obj = ResourceManager.GetObject("ubervoid logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

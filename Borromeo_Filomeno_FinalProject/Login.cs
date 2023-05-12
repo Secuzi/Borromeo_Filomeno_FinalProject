@@ -80,7 +80,8 @@ namespace Borromeo_Filomeno_FinalProject
         }
 
         private void btnCreateaccount_Click(object sender, EventArgs e)
-        {
+        { 
+            // goes back to the registration form to register an account
             var register = new Register_Form();
             this.Hide();
             register.ShowDialog();

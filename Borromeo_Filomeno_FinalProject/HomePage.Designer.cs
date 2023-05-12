@@ -33,7 +33,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_UberVoid = new System.Windows.Forms.Button();
             this.btn_Math = new System.Windows.Forms.Button();
-            this.btn_Racing = new System.Windows.Forms.Button();
             this.panel_top = new System.Windows.Forms.Panel();
             this.panel_side.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,7 +54,6 @@
             this.panel_side.Controls.Add(this.pictureBox1);
             this.panel_side.Controls.Add(this.btn_UberVoid);
             this.panel_side.Controls.Add(this.btn_Math);
-            this.panel_side.Controls.Add(this.btn_Racing);
             this.panel_side.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_side.Location = new System.Drawing.Point(0, 33);
             this.panel_side.Name = "panel_side";
@@ -66,9 +64,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.Compound_Games;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(-19, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 190);
+            this.pictureBox1.Size = new System.Drawing.Size(233, 237);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -80,14 +78,15 @@
             this.btn_UberVoid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_UberVoid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
             this.btn_UberVoid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_UberVoid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_UberVoid.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_UberVoid.ForeColor = System.Drawing.Color.Yellow;
+            this.btn_UberVoid.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.ubervoid_logo;
             this.btn_UberVoid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_UberVoid.Location = new System.Drawing.Point(0, 318);
+            this.btn_UberVoid.Location = new System.Drawing.Point(1, 318);
             this.btn_UberVoid.Name = "btn_UberVoid";
             this.btn_UberVoid.Size = new System.Drawing.Size(194, 30);
             this.btn_UberVoid.TabIndex = 2;
-            this.btn_UberVoid.Text = "Uber Void";
+            this.btn_UberVoid.Text = "    Uber Void";
             this.btn_UberVoid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_UberVoid.UseVisualStyleBackColor = false;
             this.btn_UberVoid.Click += new System.EventHandler(this.btn_UberVoid_Click);
@@ -99,38 +98,18 @@
             this.btn_Math.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_Math.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
             this.btn_Math.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Math.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Math.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Math.ForeColor = System.Drawing.Color.Yellow;
             this.btn_Math.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.math_24;
             this.btn_Math.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Math.Location = new System.Drawing.Point(0, 282);
+            this.btn_Math.Location = new System.Drawing.Point(1, 282);
             this.btn_Math.Name = "btn_Math";
             this.btn_Math.Size = new System.Drawing.Size(194, 30);
             this.btn_Math.TabIndex = 2;
-            this.btn_Math.Text = "   Mathematics";
-            this.btn_Math.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Math.Text = "     MathZilla";
             this.btn_Math.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Math.UseVisualStyleBackColor = false;
             this.btn_Math.Click += new System.EventHandler(this.btn_Math_Click);
-            // 
-            // btn_Racing
-            // 
-            this.btn_Racing.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Racing.FlatAppearance.BorderSize = 0;
-            this.btn_Racing.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-            this.btn_Racing.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
-            this.btn_Racing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Racing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Racing.ForeColor = System.Drawing.Color.Yellow;
-            this.btn_Racing.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.racing_24;
-            this.btn_Racing.Location = new System.Drawing.Point(0, 246);
-            this.btn_Racing.Name = "btn_Racing";
-            this.btn_Racing.Size = new System.Drawing.Size(199, 30);
-            this.btn_Racing.TabIndex = 2;
-            this.btn_Racing.Text = " Racing Simulator";
-            this.btn_Racing.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Racing.UseVisualStyleBackColor = false;
-            this.btn_Racing.Click += new System.EventHandler(this.btn_Racing_Click);
             // 
             // panel_top
             // 
@@ -168,7 +147,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_UberVoid;
         private System.Windows.Forms.Button btn_Math;
-        private System.Windows.Forms.Button btn_Racing;
         private System.Windows.Forms.Panel panel_top;
     }
 }
