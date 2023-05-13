@@ -45,6 +45,7 @@
             this.btn_Clue = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_Name.SuspendLayout();
             this.panel_Problem.SuspendLayout();
@@ -187,6 +188,7 @@
             // panel_Problem
             // 
             this.panel_Problem.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Problem.Controls.Add(this.label4);
             this.panel_Problem.Controls.Add(this.lbl_Display_Numeric_Problem);
             this.panel_Problem.Location = new System.Drawing.Point(23, 225);
             this.panel_Problem.Name = "panel_Problem";
@@ -250,6 +252,17 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(361, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "sdasjdhasjkda";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Math_Zilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -300,5 +313,6 @@
         private System.Windows.Forms.Button btn_Clue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label label4;
     }
 }
