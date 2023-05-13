@@ -40,7 +40,6 @@
             this.txt_Player2Name = new System.Windows.Forms.TextBox();
             this.txt_Player1Name = new System.Windows.Forms.TextBox();
             this.panel_Problem = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.lbl_Display_Numeric_Problem = new System.Windows.Forms.Label();
             this.panel_Answering = new System.Windows.Forms.Panel();
             this.btn_Clue = new System.Windows.Forms.Button();
@@ -188,21 +187,11 @@
             // panel_Problem
             // 
             this.panel_Problem.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Problem.Controls.Add(this.label6);
             this.panel_Problem.Controls.Add(this.lbl_Display_Numeric_Problem);
             this.panel_Problem.Location = new System.Drawing.Point(23, 225);
             this.panel_Problem.Name = "panel_Problem";
             this.panel_Problem.Size = new System.Drawing.Size(801, 131);
             this.panel_Problem.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(221, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(323, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "mu create og 5 ka pictures og 4 ka pictures\r\n";
             // 
             // lbl_Display_Numeric_Problem
             // 
@@ -307,7 +296,6 @@
         private System.Windows.Forms.TextBox txt_Player1Name;
         private System.Windows.Forms.Panel panel_Problem;
         private System.Windows.Forms.Panel panel_Answering;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbl_Display_Numeric_Problem;
         private System.Windows.Forms.Button btn_Clue;
         private System.Windows.Forms.Label label3;
