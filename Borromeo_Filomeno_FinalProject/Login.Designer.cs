@@ -88,6 +88,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(69)))), ((int)(((byte)(100)))));
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(69)))), ((int)(((byte)(100)))));
@@ -160,6 +161,7 @@
             // btnCreateaccount
             // 
             this.btnCreateaccount.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateaccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateaccount.FlatAppearance.BorderSize = 0;
             this.btnCreateaccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(69)))), ((int)(((byte)(100)))));
             this.btnCreateaccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(69)))), ((int)(((byte)(100)))));
