@@ -77,7 +77,7 @@ namespace Borromeo_Filomeno_FinalProject
             pbPlayer.Image = Resources.playerIdle;
             
             clsAccount playerG = new clsAccount();
-
+                                                       //Change this to User if production na
             playerG = accounts.Find(a => a.Username == "secuzi");
 
             player = new UVPlayer(pbPlayer, 10);
@@ -150,6 +150,7 @@ namespace Borromeo_Filomeno_FinalProject
                 if (player.Score > player.HighScore)
                 {
                     player.HighScore = player.Score;
+                                             //Change secuzi to User if production na
                     uberGameData.ScoreChanges("secuzi", player.HighScore, accounts);
                 }
 
