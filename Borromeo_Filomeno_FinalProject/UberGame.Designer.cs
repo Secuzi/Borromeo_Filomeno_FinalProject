@@ -358,6 +358,7 @@
             // 
             // pbBg0
             // 
+            this.pbBg0.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.bg0;
             this.pbBg0.Location = new System.Drawing.Point(0, -713);
             this.pbBg0.Name = "pbBg0";
             this.pbBg0.Size = new System.Drawing.Size(818, 716);
@@ -397,16 +398,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 713);
+            this.Controls.Add(this.pbAmmoCrate);
+            this.Controls.Add(this.pbEnemyBig0);
+            this.Controls.Add(this.pbEnemyMedium1);
+            this.Controls.Add(this.pbEnemySmall0);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pbEnemySmall2);
-            this.Controls.Add(this.pbEnemyBig0);
-            this.Controls.Add(this.pbAmmoCrate);
-            this.Controls.Add(this.pbEnemySmall0);
-            this.Controls.Add(this.pbEnemyMedium1);
-            this.Controls.Add(this.pbBullet);
             this.Controls.Add(this.pbEnemyMedium0);
+            this.Controls.Add(this.pbEnemySmall2);
             this.Controls.Add(this.pbEnemyBig1);
+            this.Controls.Add(this.pbBullet);
             this.Controls.Add(this.panelOptions);
             this.Controls.Add(this.lblBulletCount);
             this.Controls.Add(this.lblBullet);
