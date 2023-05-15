@@ -183,6 +183,7 @@
             this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbBack.TabIndex = 22;
             this.pbBack.TabStop = false;
+            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
             // 
             // label1
             // 
