@@ -194,5 +194,14 @@ namespace Borromeo_Filomeno_FinalProject
         {
             Application.Exit();
         }
+
+        private void pbBack_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            HomePage homePage = new HomePage();
+            homePage.ShowDialog();
+            this.Close();
+        }
     }
 }
