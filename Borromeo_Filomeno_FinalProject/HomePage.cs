@@ -12,6 +12,9 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class HomePage : Form
     {
+        clsDatabase storage = new clsDatabase();
+        public string Username { get; set; }
+
         public HomePage()
         {
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace Borromeo_Filomeno_FinalProject
         {
             this.Hide();
             UberGame game = new UberGame();
+            game.User = Username;
             game.ShowDialog();
             this.Close();
 

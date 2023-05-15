@@ -55,6 +55,7 @@ namespace Borromeo_Filomeno_FinalProject
                 {
                     //Homepage
                     var homePage = new HomePage();
+                    homePage.Username = logInput;
                     this.Hide();
                     homePage.ShowDialog();
                     this.Close();

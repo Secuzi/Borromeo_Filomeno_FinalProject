@@ -12,7 +12,10 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsDatabase
     {
-        private const string filePath = @"D:\c#\school\Final Project\homepage start\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
+        private const string filePath = @"D:\Harold Sheesh\Desktop\Please\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
+
+        
+
 
         //public string GetAccountsInDatabase
         //{
@@ -37,7 +40,7 @@ namespace Borromeo_Filomeno_FinalProject
                     account.Username = entries[0];
                     account.Password = entries[1];
                     account.Email = entries[2];
-                    account.Balance = decimal.Parse(entries[3]);
+                    account.Score = int.Parse(entries[3]);
 
                     accountsList.Add(account);
                 }
@@ -52,6 +55,8 @@ namespace Borromeo_Filomeno_FinalProject
             
         }
 
+        
+
         //Import Account to the database
         public void ImportAccountsToDatabase(List<clsAccount> accounts)
         {
@@ -60,14 +65,14 @@ namespace Borromeo_Filomeno_FinalProject
             foreach(var account in accounts)
             {
 
-                output.Add($"{account.Username},{account.Password},{account.Email},{account.Balance}");
+                output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
             }
 
             File.WriteAllLines(filePath, output);
 
         }
 
-        public void BalanceChanges(string username, decimal balance, List<clsAccount> accounts)
+        public void ScoreChanges(string username, int score, List<clsAccount> accounts)
         {
             List<string> lines = File.ReadAllLines(filePath).ToList();
             List<string> output = new List<string>();
@@ -79,20 +84,41 @@ namespace Borromeo_Filomeno_FinalProject
                 string[] strSplit = line.Split(',');
 
 
-                //clsAccount clsUsername = accounts.Find(a => a.Username == username);
-
-                if (strSplit[0] == username)
+                #region if things go bad
+                /*
+                 * if (strSplit[0] == username || strSplit[2] == username)
                 {
                     account = accounts.Find(user => user.Username == username);
 
-                    account.Balance = balance;
-                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Balance}");
+                    account.Score = score;
+                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
 
                 }
                 else
                 {
                     account = accounts.Find(user => user.Username != username);
-                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Balance}");
+                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
+
+                }
+                */
+                #endregion
+
+
+
+                //Checks if the input the user has entered is their mail or username.
+
+                if (strSplit[0] == username || strSplit[2] == username)
+                {
+                    account = accounts.Find(user => user.Username == username);
+
+                    account.Score = score;
+                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
+
+                }
+                else
+                {
+                    account = accounts.Find(user => user.Username != username);
+                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
 
                 }
 

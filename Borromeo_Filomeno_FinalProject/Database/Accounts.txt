@@ -1,6 +1,2 @@
-hardy,hardy@123,hardy@gmail.com,0
-secuzi,secuzi@123,secuzi@gmail.com,0
-test1,test@123,test@gmail.com,0
-mouz,mouz@123,mouz@gmail.com,0
-100records,metro@123,asd@yahoo.com,0
-smthn12,smthn@123,Joseph@yahoo.com,0
+secuzi,hardy@123,hardy@gmail.com,11
+hardy,hardy@123,hardyz@gmail.com,0

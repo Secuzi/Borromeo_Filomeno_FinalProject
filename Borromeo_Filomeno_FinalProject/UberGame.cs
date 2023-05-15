@@ -13,12 +13,19 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class UberGame : Form
     {
+        clsDatabase uberGameData;
+        public string User { get; set; }
+        public List<clsAccount> accounts;
+
+
         UVPlayer player;
         Uber_Form_Game game = new Uber_Form_Game();
         Bullet bullet = new Bullet();
         public UberGame()
         {
             InitializeComponent();
+            uberGameData = new clsDatabase();
+            accounts = new List<clsAccount>(uberGameData.GetAccountsInDatabase());
             GameStart();
         }
 
@@ -31,6 +38,8 @@ namespace Borromeo_Filomeno_FinalProject
                 GameStart();
             }
         }
+        
+
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
@@ -66,8 +75,18 @@ namespace Borromeo_Filomeno_FinalProject
 
             game.IsGameOver = false;
             pbPlayer.Image = Resources.playerIdle;
-            //timerGame.Start();
+            
+            clsAccount playerG = new clsAccount();
+                                                       //Change this to User if production na
+            playerG = accounts.Find(a => a.Username == "secuzi");
+
             player = new UVPlayer(pbPlayer, 10);
+
+
+
+            player.Name = User;
+            player.HighScore = playerG.Score;
+
             player.IsShooting = false;
             player.bullet = bullet;
             UVEnemy.SortEnemies(this.Controls);
@@ -131,6 +150,8 @@ namespace Borromeo_Filomeno_FinalProject
                 if (player.Score > player.HighScore)
                 {
                     player.HighScore = player.Score;
+                                             //Change secuzi to User if production na
+                    uberGameData.ScoreChanges("secuzi", player.HighScore, accounts);
                 }
 
                 pbPlayer.Image = Resources.explosion;
@@ -192,6 +213,13 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void pbExit_Click(object sender, EventArgs e)
         {
+
+            if (player.Score > player.HighScore)
+            {
+                player.HighScore = player.Score;
+                uberGameData.ScoreChanges("secuzi", player.HighScore, accounts);
+            }
+
             Application.Exit();
         }
 
