@@ -36,12 +36,17 @@ namespace Borromeo_Filomeno_FinalProject
         // opens the form into the panel
         private void btn_Math_Click(object sender, EventArgs e)
         {
-            OpenForm(new Math_Zilla());
+            OpenForm(new MathZilla());
         }
 
         private void btn_UberVoid_Click(object sender, EventArgs e)
         {
-            
+            OpenForm(new MathZilla());
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
