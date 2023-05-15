@@ -12,14 +12,14 @@ namespace Borromeo_Filomeno_FinalProject
         private string username;
         private string password;
         private string email;
-        private decimal balance;
+        private int score;
         
 
         //Make another class that accepts clsAccount to form a list
 
         public string Password { get { return password; } set { password = value; } }
         public string Email { get { return email; } set { email = value; } }
-        public decimal Balance { get { return balance; } set { balance = value; } }
+        public int Score { get { return score; } set { score = value; } }
         public string Username { get { return username; } set { username = value; } }
 
 
@@ -33,7 +33,7 @@ namespace Borromeo_Filomeno_FinalProject
             Username = username;
             Password = password;
             Email = email;
-            Balance = 0;
+            Score = 0;
 
         }
 
