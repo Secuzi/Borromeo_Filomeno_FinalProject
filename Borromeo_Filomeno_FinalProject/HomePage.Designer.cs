@@ -30,14 +30,14 @@
         {
             this.panel_form = new System.Windows.Forms.Panel();
             this.panel_side = new System.Windows.Forms.Panel();
-            this.panel_top = new System.Windows.Forms.Panel();
-            this.btn_Exit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_UberVoid = new System.Windows.Forms.Button();
             this.btn_Math = new System.Windows.Forms.Button();
+            this.panel_top = new System.Windows.Forms.Panel();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.panel_side.SuspendLayout();
-            this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_top.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_form
@@ -61,33 +61,6 @@
             this.panel_side.Name = "panel_side";
             this.panel_side.Size = new System.Drawing.Size(232, 647);
             this.panel_side.TabIndex = 3;
-            // 
-            // panel_top
-            // 
-            this.panel_top.BackColor = System.Drawing.Color.Black;
-            this.panel_top.Controls.Add(this.btn_Exit);
-            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_top.Location = new System.Drawing.Point(0, 0);
-            this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(1041, 33);
-            this.panel_top.TabIndex = 4;
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Location = new System.Drawing.Point(997, 0);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(44, 33);
-            this.btn_Exit.TabIndex = 0;
-            this.btn_Exit.Text = "X";
-            this.btn_Exit.UseVisualStyleBackColor = false;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // pictureBox1
             // 
@@ -140,6 +113,33 @@
             this.btn_Math.UseVisualStyleBackColor = false;
             this.btn_Math.Click += new System.EventHandler(this.btn_Math_Click);
             // 
+            // panel_top
+            // 
+            this.panel_top.BackColor = System.Drawing.Color.Black;
+            this.panel_top.Controls.Add(this.btn_Exit);
+            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
+            this.panel_top.Name = "panel_top";
+            this.panel_top.Size = new System.Drawing.Size(1041, 33);
+            this.panel_top.TabIndex = 4;
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.Color.White;
+            this.btn_Exit.Location = new System.Drawing.Point(997, 0);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(44, 33);
+            this.btn_Exit.TabIndex = 0;
+            this.btn_Exit.Text = "X";
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,13 +149,14 @@
             this.Controls.Add(this.panel_form);
             this.Controls.Add(this.panel_side);
             this.Controls.Add(this.panel_top);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePage";
             this.panel_side.ResumeLayout(false);
-            this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_top.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

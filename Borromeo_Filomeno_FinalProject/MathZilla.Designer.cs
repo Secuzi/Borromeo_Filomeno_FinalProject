@@ -81,8 +81,9 @@
             this.txt_p2_name.Location = new System.Drawing.Point(47, 367);
             this.txt_p2_name.Name = "txt_p2_name";
             this.txt_p2_name.Size = new System.Drawing.Size(129, 20);
-            this.txt_p2_name.TabIndex = 1;
+            this.txt_p2_name.TabIndex = 2;
             this.txt_p2_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_p2_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_p2_name_KeyDown);
             // 
             // label4
             // 
@@ -101,6 +102,7 @@
             this.txt_p1_name.Size = new System.Drawing.Size(129, 20);
             this.txt_p1_name.TabIndex = 1;
             this.txt_p1_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_p1_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_p1_name_KeyDown);
             // 
             // label3
             // 
@@ -111,7 +113,6 @@
             this.label3.Size = new System.Drawing.Size(66, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "Player 1";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -155,7 +156,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(590, 647);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btn_Clue
             // 
@@ -167,9 +167,10 @@
             this.btn_Clue.Location = new System.Drawing.Point(247, 477);
             this.btn_Clue.Name = "btn_Clue";
             this.btn_Clue.Size = new System.Drawing.Size(111, 40);
-            this.btn_Clue.TabIndex = 12;
+            this.btn_Clue.TabIndex = 4;
             this.btn_Clue.Text = "Clue";
             this.btn_Clue.UseVisualStyleBackColor = false;
+            this.btn_Clue.Click += new System.EventHandler(this.btn_Clue_Click);
             // 
             // label8
             // 
@@ -354,8 +355,9 @@
             this.txt_Answer.Location = new System.Drawing.Point(186, 375);
             this.txt_Answer.Name = "txt_Answer";
             this.txt_Answer.Size = new System.Drawing.Size(239, 55);
-            this.txt_Answer.TabIndex = 1;
+            this.txt_Answer.TabIndex = 3;
             this.txt_Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Answer.Click += new System.EventHandler(this.txt_Answer_Click);
             this.txt_Answer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Answer_KeyDown);
             // 
             // MathZilla
