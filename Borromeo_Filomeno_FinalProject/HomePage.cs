@@ -41,7 +41,12 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_UberVoid_Click(object sender, EventArgs e)
         {
-            OpenForm(new MathZilla());
+            this.Hide();
+            UberGame game = new UberGame();
+            game.ShowDialog();
+            this.Close();
+
+
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

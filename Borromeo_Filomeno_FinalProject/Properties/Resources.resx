@@ -238,4 +238,76 @@
   <data name="space-invaders 24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\space-invaders 24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ammoCrate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ammoCrate.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgnew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blackbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blackbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemyBig.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyMedium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemyMedium.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemySmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemySmall.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exitbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exitbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\explosion.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="explosionsound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\explosionsound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="getAmmoCrate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\getAmmoCrate.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gunShot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gunShot.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="musicbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\musicbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="noBullets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noBullets.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pausebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pausebutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerNew.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerShoot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerShoot.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="resumebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resumebutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sCursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stars_only_close_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stars only(close).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stars_only_far_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stars only(far).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

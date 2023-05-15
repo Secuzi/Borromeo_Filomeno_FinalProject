@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bullet.cs" />
     <Compile Include="clsAccount.cs" />
     <Compile Include="clsDatabase.cs" />
     <Compile Include="clsLogin.cs" />
@@ -85,6 +86,18 @@
     <Compile Include="MathZilla.Designer.cs">
       <DependentUpon>MathZilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="UberGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UberGame.Designer.cs">
+      <DependentUpon>UberGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uber_Form_Game.cs" />
+    <Compile Include="UVEnemy.cs" />
+    <Compile Include="UVEnemyBig.cs" />
+    <Compile Include="UVEnemyMedium.cs" />
+    <Compile Include="UVEnemySmall.cs" />
+    <Compile Include="UVPlayer.cs" />
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="MathZilla.resx">
       <DependentUpon>MathZilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UberGame.resx">
+      <DependentUpon>UberGame.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -246,5 +262,81 @@
   <ItemGroup>
     <None Include="Resources\space-invaders 24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgnew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemyBig.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemyMedium.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemySmall.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exitbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosion.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosionsound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\getAmmoCrate.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gunShot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musicbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noBullets.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pausebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerNew.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerShoot.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resumebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sCursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stars only%28close%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stars only%28far%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ammoCrate.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg0.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
