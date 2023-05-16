@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Borromeo_Filomeno_FinalProject.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,12 +14,17 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class HomePage : Form
     {
-        clsDatabase storage = new clsDatabase();
+
+        public bool IsGameOpen;
+
         public string Username { get; set; }
+        UberGameHomepage game = new UberGameHomepage();
+
 
         public HomePage()
         {
             InitializeComponent();
+            IsGameOpen = game.IsGameOpen;
         }
 
         public void OpenForm(object form)
@@ -44,11 +51,13 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_UberVoid_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            UberGame game = new UberGame();
-            game.User = Username;
-            game.ShowDialog();
-            this.Close();
+            OpenForm(new UberGameHomepage());
+
+            //this.Hide();
+            //UberGame game = new UberGame();
+            //game.User = Username;
+            //game.ShowDialog();
+            //this.Close();
 
 
         }
@@ -56,6 +65,24 @@ namespace Borromeo_Filomeno_FinalProject
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void timerMainHomePage_Tick(object sender, EventArgs e)
+        {
+           
+
+
+            if (IsGameOpen)
+            {
+                this.Hide();
+            }
+            else
+            {
+                this.Show();
+            }
+
+
+
         }
     }
 }

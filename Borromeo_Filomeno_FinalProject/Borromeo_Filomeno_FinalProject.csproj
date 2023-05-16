@@ -92,6 +92,12 @@
     <Compile Include="UberGame.Designer.cs">
       <DependentUpon>UberGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UberGameHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UberGameHomepage.Designer.cs">
+      <DependentUpon>UberGameHomepage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uber_Form_Game.cs" />
     <Compile Include="UVEnemy.cs" />
     <Compile Include="UVEnemyBig.cs" />
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UberGame.resx">
       <DependentUpon>UberGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UberGameHomepage.resx">
+      <DependentUpon>UberGameHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -333,6 +342,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubhomepage.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UBHomepageBG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
