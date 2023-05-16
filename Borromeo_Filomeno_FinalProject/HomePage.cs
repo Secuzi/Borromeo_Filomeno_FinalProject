@@ -15,8 +15,6 @@ namespace Borromeo_Filomeno_FinalProject
     public partial class HomePage : Form
     {
 
-        public bool IsGameOpen;
-
         public string Username { get; set; }
         UberGameHomepage game = new UberGameHomepage();
 
@@ -24,7 +22,7 @@ namespace Borromeo_Filomeno_FinalProject
         public HomePage()
         {
             InitializeComponent();
-            IsGameOpen = game.IsGameOpen;
+            
         }
 
         public void OpenForm(object form)
@@ -51,7 +49,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_UberVoid_Click(object sender, EventArgs e)
         {
-            OpenForm(new UberGameHomepage());
+            
+            OpenForm(game = new UberGameHomepage());
 
             //this.Hide();
             //UberGame game = new UberGame();
@@ -69,10 +68,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void timerMainHomePage_Tick(object sender, EventArgs e)
         {
-           
-
-
-            if (IsGameOpen)
+            if (game.IsFormHidden)
             {
                 this.Hide();
             }
@@ -80,8 +76,6 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 this.Show();
             }
-
-
 
         }
     }
