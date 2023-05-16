@@ -256,6 +256,7 @@ namespace Borromeo_Filomeno_FinalProject
         private void pbBack_Click(object sender, EventArgs e)
         {
 
+
             if (player.Score > player.HighScore)
             {
                 player.HighScore = player.Score;
@@ -263,9 +264,8 @@ namespace Borromeo_Filomeno_FinalProject
                 uberGameData.ScoreChanges(User, player.HighScore, accounts);
             }
 
-            this.Hide();
-            HomePage homePage = new HomePage();
-            homePage.ShowDialog();
+
+
         }
     }
 }
