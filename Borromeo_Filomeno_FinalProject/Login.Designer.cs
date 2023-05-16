@@ -200,6 +200,7 @@
             this.Controls.Add(this.btnCreateaccount);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picbox_Logo);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

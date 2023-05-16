@@ -214,6 +214,7 @@
             this.ClientSize = new System.Drawing.Size(1122, 714);
             this.Controls.Add(this.panel_Register);
             this.Controls.Add(this.picbox_Logo);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Register_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
