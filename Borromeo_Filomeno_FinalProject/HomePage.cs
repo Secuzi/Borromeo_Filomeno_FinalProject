@@ -45,6 +45,26 @@ namespace Borromeo_Filomeno_FinalProject
         private void btn_Math_Click(object sender, EventArgs e)
         {
             OpenForm(new MathZilla());
+
+            /*
+            char[] charArray = ans.ToCharArray;
+
+            Random rnd = new Random();
+
+            int digit = rnd.Next(0, charArray.Length + 1) rnd(inclusive, exclusive) mao nang + 1
+            12345 example
+    
+            1 = 0 + 1 (digit)
+                                    value
+            string clue = charArray[digit].ToString();
+
+            Clue.Text = $"{digit + 1} is the {clue}";
+            */
+
+
+
+
+
         }
 
         private void btn_UberVoid_Click(object sender, EventArgs e)
