@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,65 @@ namespace Borromeo_Filomeno_FinalProject
         public int p2_ans;
         public int Num1;
         public int Num2;
-        public int P1Score;
-        public int P2Score;
+
+        private int p1Score;
+        private int p2Score;
+
+        public int P1Score
+        {
+            get { return p1Score; }
+            set
+            {
+                if (value < 0)
+                    p1Score = 0;
+                else
+                    p1Score = value;
+            }
+        }
+
+
+        public int P2Score
+        {
+            get { return p2Score; }
+            set
+            {
+                if (value < 0)
+                    p2Score = 0;
+                else
+                    p2Score = value;
+            }
+        }
+
         public int Result;
         public bool P1Turn;
         public bool P2Turn;
         public bool Playing;
+
+
+        public void GetWinner(Label score1, Label score2)
+        {
+            if (P1Score == 2)
+            {
+                MessageBox.Show("Player 1 wins!");
+                P1Score = 0;
+                P2Score = 0;
+
+                score1.Text = p1Score.ToString();
+                score2.Text = p2Score.ToString();
+
+            }
+
+            if (P2Score == 2)
+            {
+                MessageBox.Show("Player 2 wins!");
+                P1Score = 0;
+                P2Score = 0;
+            }
+
+
+
+        }
+
 
         public clsMathZilla()
         {

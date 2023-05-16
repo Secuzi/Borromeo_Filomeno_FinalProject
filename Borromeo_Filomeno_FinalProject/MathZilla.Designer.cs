@@ -36,11 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.btn_Clue = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_ClueDisplay = new System.Windows.Forms.Label();
             this.lbl_p2_score = new System.Windows.Forms.Label();
             this.lbl_p1_score = new System.Windows.Forms.Label();
+            this.lblTurn = new System.Windows.Forms.Label();
+            this.lblDigit = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_p2_name = new System.Windows.Forms.Label();
             this.lbl_p1_Name = new System.Windows.Forms.Label();
@@ -52,9 +55,7 @@
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.lbl_Problem = new System.Windows.Forms.Label();
             this.txt_Answer = new System.Windows.Forms.TextBox();
-            this.lblDigit = new System.Windows.Forms.Label();
-            this.lblTurn = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_Operators.SuspendLayout();
@@ -149,6 +150,7 @@
             this.panel2.Controls.Add(this.lbl_p1_score);
             this.panel2.Controls.Add(this.lblTurn);
             this.panel2.Controls.Add(this.lblDigit);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lbl_p2_name);
             this.panel2.Controls.Add(this.lbl_p1_Name);
@@ -162,6 +164,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(590, 647);
             this.panel2.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(219, 253);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 27);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Turn:";
             // 
             // btn_Clue
             // 
@@ -227,6 +240,31 @@
             this.lbl_p1_score.Size = new System.Drawing.Size(60, 55);
             this.lbl_p1_score.TabIndex = 11;
             this.lbl_p1_score.Text = "0 ";
+            // 
+            // lblTurn
+            // 
+            this.lblTurn.AutoSize = true;
+            this.lblTurn.BackColor = System.Drawing.Color.Transparent;
+            this.lblTurn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurn.ForeColor = System.Drawing.Color.White;
+            this.lblTurn.Location = new System.Drawing.Point(273, 254);
+            this.lblTurn.Name = "lblTurn";
+            this.lblTurn.Size = new System.Drawing.Size(98, 26);
+            this.lblTurn.TabIndex = 11;
+            this.lblTurn.Text = "Player 1";
+            // 
+            // lblDigit
+            // 
+            this.lblDigit.AutoSize = true;
+            this.lblDigit.BackColor = System.Drawing.Color.Transparent;
+            this.lblDigit.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDigit.ForeColor = System.Drawing.Color.White;
+            this.lblDigit.Location = new System.Drawing.Point(140, 612);
+            this.lblDigit.Name = "lblDigit";
+            this.lblDigit.Size = new System.Drawing.Size(311, 26);
+            this.lblDigit.TabIndex = 11;
+            this.lblDigit.Text = "The clue is from the 2nd digit";
+            this.lblDigit.Visible = false;
             // 
             // label6
             // 
@@ -350,9 +388,8 @@
             this.lbl_Problem.ForeColor = System.Drawing.Color.White;
             this.lbl_Problem.Location = new System.Drawing.Point(175, 295);
             this.lbl_Problem.Name = "lbl_Problem";
-            this.lbl_Problem.Size = new System.Drawing.Size(240, 109);
+            this.lbl_Problem.Size = new System.Drawing.Size(0, 109);
             this.lbl_Problem.TabIndex = 0;
-            this.lbl_Problem.Text = "5 x 5";
             // 
             // txt_Answer
             // 
@@ -367,41 +404,17 @@
             this.txt_Answer.Click += new System.EventHandler(this.txt_Answer_Click);
             this.txt_Answer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Answer_KeyDown);
             // 
-            // lblDigit
+            // label7
             // 
-            this.lblDigit.AutoSize = true;
-            this.lblDigit.BackColor = System.Drawing.Color.Transparent;
-            this.lblDigit.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDigit.ForeColor = System.Drawing.Color.White;
-            this.lblDigit.Location = new System.Drawing.Point(140, 612);
-            this.lblDigit.Name = "lblDigit";
-            this.lblDigit.Size = new System.Drawing.Size(311, 26);
-            this.lblDigit.TabIndex = 11;
-            this.lblDigit.Text = "The clue is from the 2nd digit";
-            this.lblDigit.Visible = false;
-            // 
-            // lblTurn
-            // 
-            this.lblTurn.AutoSize = true;
-            this.lblTurn.BackColor = System.Drawing.Color.Transparent;
-            this.lblTurn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurn.ForeColor = System.Drawing.Color.White;
-            this.lblTurn.Location = new System.Drawing.Point(273, 254);
-            this.lblTurn.Name = "lblTurn";
-            this.lblTurn.Size = new System.Drawing.Size(98, 26);
-            this.lblTurn.TabIndex = 11;
-            this.lblTurn.Text = "Player 1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(219, 253);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 27);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Turn:";
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(207, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(177, 26);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "First to 10 wins!";
             // 
             // MathZilla
             // 
@@ -410,6 +423,7 @@
             this.ClientSize = new System.Drawing.Size(809, 647);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MathZilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -456,5 +470,6 @@
         private System.Windows.Forms.Label lblTurn;
         private System.Windows.Forms.Label lblDigit;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
     }
 }

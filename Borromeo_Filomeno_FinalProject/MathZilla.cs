@@ -21,6 +21,7 @@ namespace Borromeo_Filomeno_FinalProject
         private void temp_Load(object sender, EventArgs e)
         {
             lbl_Problem.Visible = false;
+            lbl_Problem.Text = null;
             lbl_ClueDisplay.Visible = false;
             player.P1Turn = true;
             player.P2Turn = false;
@@ -30,6 +31,9 @@ namespace Borromeo_Filomeno_FinalProject
         {
             if (e.KeyCode == Keys.Enter)
             {
+
+                
+
                 // if correct/wrong i messagebox siya  
                 // inig answer ky i check kung sakto ba then score dayun og swap players
                 int playerInput = int.Parse(txt_Answer.Text);
@@ -39,12 +43,16 @@ namespace Borromeo_Filomeno_FinalProject
                     player.p1_ans = playerInput;
 
                     bool IsCorrect = player.CheckPlayer1Answer(player);
-                    if (IsCorrect)
-                    {
+
+                    if (IsCorrect)   
+                        
                         player.P1Score++;
-                        lbl_p1_score.Text = player.P1Score.ToString();
-                    }
+                                           
+                    else                   
+                        player.P1Score--;
                     
+                    
+
                 }
 
                 if (lblTurn.Text == "Player 2" && player.P2Turn)
@@ -53,12 +61,18 @@ namespace Borromeo_Filomeno_FinalProject
 
                     bool IsCorrect = player.CheckPlayer2Answer(player);
                     if (IsCorrect)
-                    {
+
                         player.P2Score++;
-                        lbl_p2_score.Text = player.P2Score.ToString();
-                    }
+                        
+                    else                    
+                        player.P2Score--;
+                    
+                    
 
                 }
+
+               
+
 
                 if (player.P1Turn)
                 {
@@ -72,8 +86,10 @@ namespace Borromeo_Filomeno_FinalProject
                     player.P2Turn = false;
                     lblTurn.Text = "Player 1";
                 }
+                lbl_p1_score.Text = player.P1Score.ToString();
+                lbl_p2_score.Text = player.P2Score.ToString();
 
-
+                player.GetWinner(lbl_p1_score, lbl_p2_score);
                 lbl_Problem.Text = null;
                 txt_Answer.Clear();
                 
@@ -130,7 +146,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Clue_Click(object sender, EventArgs e)
         {
-            if (lbl_Problem.Text != null)
+            if (lbl_Problem.Text != null && lbl_Problem.Text != "")
             {
                 lbl_ClueDisplay.Visible = true;
                 lblDigit.Visible = true;
