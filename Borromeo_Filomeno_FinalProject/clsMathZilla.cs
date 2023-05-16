@@ -55,7 +55,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         public void GetWinner(Label score1, Label score2)
         {
-            if (P1Score == 2)
+            if (P1Score == 10)
             {
                 MessageBox.Show("Player 1 wins!");
                 P1Score = 0;
@@ -66,7 +66,7 @@ namespace Borromeo_Filomeno_FinalProject
 
             }
 
-            if (P2Score == 2)
+            if (P2Score == 10)
             {
                 MessageBox.Show("Player 2 wins!");
                 P1Score = 0;
