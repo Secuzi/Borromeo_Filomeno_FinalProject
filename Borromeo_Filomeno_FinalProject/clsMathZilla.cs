@@ -24,6 +24,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         public int P1Score
         {
+            //Such that the score cannot be a negative number
             get { return p1Score; }
             set
             {
