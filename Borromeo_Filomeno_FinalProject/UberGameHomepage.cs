@@ -18,6 +18,7 @@ namespace Borromeo_Filomeno_FinalProject
         public bool IsFormHidden;
 
         public bool IsHelpClicked;
+        public string User { get; set; }
 
         public UberGameHomepage()
         {
@@ -75,7 +76,8 @@ namespace Borromeo_Filomeno_FinalProject
                 timerHomePageUB.Stop();
 
                 UberGame game = new UberGame();
-                game.Show();
+                
+                game.ShowDialog();
                 
                 this.Close();
                 

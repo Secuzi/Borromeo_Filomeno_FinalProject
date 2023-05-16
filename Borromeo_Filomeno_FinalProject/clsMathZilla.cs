@@ -91,12 +91,24 @@ namespace Borromeo_Filomeno_FinalProject
             problem.Text = $"{Num1} / {Num2}";
         }
 
-        public int ShowClue()
+        public int ShowClue(Label clue)
         {
-            Random rnd = new Random();     
-            char[] digits = Result.ToString().ToCharArray();
-            int digit = digits[rnd.Next(0, digits.Length)];
-            return digit;
+            Random rnd = new Random();
+
+            string sDigit = Result.ToString();
+
+            int index = rnd.Next(0, sDigit.Length);
+
+            if (index == 0)            
+                clue.Text = $"The clue is from the {index + 1}st digit";           
+            else if (index == 1)         
+                clue.Text = $"The clue is from the {index + 1}nd digit";          
+            else if (index == 2)
+                clue.Text = $"The clue is from the {index + 1}rd digit";
+            else
+                clue.Text = $"The clue is from the {index + 1}th digit";
+
+            return Convert.ToInt32(sDigit[index].ToString());
 
 
         }

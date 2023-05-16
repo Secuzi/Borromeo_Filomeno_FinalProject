@@ -52,6 +52,9 @@
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.lbl_Problem = new System.Windows.Forms.Label();
             this.txt_Answer = new System.Windows.Forms.TextBox();
+            this.lblDigit = new System.Windows.Forms.Label();
+            this.lblTurn = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_Operators.SuspendLayout();
@@ -138,11 +141,14 @@
             // 
             this.panel2.BackgroundImage = global::Borromeo_Filomeno_FinalProject.Properties.Resources.blue_gradient_bg;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btn_Clue);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.lbl_ClueDisplay);
             this.panel2.Controls.Add(this.lbl_p2_score);
             this.panel2.Controls.Add(this.lbl_p1_score);
+            this.panel2.Controls.Add(this.lblTurn);
+            this.panel2.Controls.Add(this.lblDigit);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lbl_p2_name);
             this.panel2.Controls.Add(this.lbl_p1_Name);
@@ -164,7 +170,7 @@
             this.btn_Clue.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
             this.btn_Clue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Clue.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Clue.Location = new System.Drawing.Point(247, 477);
+            this.btn_Clue.Location = new System.Drawing.Point(237, 527);
             this.btn_Clue.Name = "btn_Clue";
             this.btn_Clue.Size = new System.Drawing.Size(111, 40);
             this.btn_Clue.TabIndex = 4;
@@ -189,12 +195,12 @@
             this.lbl_ClueDisplay.AutoSize = true;
             this.lbl_ClueDisplay.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ClueDisplay.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ClueDisplay.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_ClueDisplay.Location = new System.Drawing.Point(249, 520);
+            this.lbl_ClueDisplay.ForeColor = System.Drawing.Color.White;
+            this.lbl_ClueDisplay.Location = new System.Drawing.Point(285, 570);
             this.lbl_ClueDisplay.Name = "lbl_ClueDisplay";
-            this.lbl_ClueDisplay.Size = new System.Drawing.Size(109, 23);
+            this.lbl_ClueDisplay.Size = new System.Drawing.Size(21, 23);
             this.lbl_ClueDisplay.TabIndex = 11;
-            this.lbl_ClueDisplay.Text = "Clue asdasd";
+            this.lbl_ClueDisplay.Text = "1";
             this.lbl_ClueDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ClueDisplay.Visible = false;
             // 
@@ -262,7 +268,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Location = new System.Drawing.Point(186, 430);
+            this.panel3.Location = new System.Drawing.Point(176, 480);
             this.panel3.Margin = new System.Windows.Forms.Padding(6);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(239, 2);
@@ -342,7 +348,7 @@
             this.lbl_Problem.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Problem.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Problem.ForeColor = System.Drawing.Color.White;
-            this.lbl_Problem.Location = new System.Drawing.Point(185, 254);
+            this.lbl_Problem.Location = new System.Drawing.Point(175, 295);
             this.lbl_Problem.Name = "lbl_Problem";
             this.lbl_Problem.Size = new System.Drawing.Size(240, 109);
             this.lbl_Problem.TabIndex = 0;
@@ -353,13 +359,49 @@
             this.txt_Answer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(217)))), ((int)(((byte)(237)))));
             this.txt_Answer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Answer.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Answer.Location = new System.Drawing.Point(186, 375);
+            this.txt_Answer.Location = new System.Drawing.Point(176, 425);
             this.txt_Answer.Name = "txt_Answer";
             this.txt_Answer.Size = new System.Drawing.Size(239, 55);
             this.txt_Answer.TabIndex = 3;
             this.txt_Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Answer.Click += new System.EventHandler(this.txt_Answer_Click);
             this.txt_Answer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Answer_KeyDown);
+            // 
+            // lblDigit
+            // 
+            this.lblDigit.AutoSize = true;
+            this.lblDigit.BackColor = System.Drawing.Color.Transparent;
+            this.lblDigit.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDigit.ForeColor = System.Drawing.Color.White;
+            this.lblDigit.Location = new System.Drawing.Point(140, 612);
+            this.lblDigit.Name = "lblDigit";
+            this.lblDigit.Size = new System.Drawing.Size(311, 26);
+            this.lblDigit.TabIndex = 11;
+            this.lblDigit.Text = "The clue is from the 2nd digit";
+            this.lblDigit.Visible = false;
+            // 
+            // lblTurn
+            // 
+            this.lblTurn.AutoSize = true;
+            this.lblTurn.BackColor = System.Drawing.Color.Transparent;
+            this.lblTurn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurn.ForeColor = System.Drawing.Color.White;
+            this.lblTurn.Location = new System.Drawing.Point(273, 254);
+            this.lblTurn.Name = "lblTurn";
+            this.lblTurn.Size = new System.Drawing.Size(98, 26);
+            this.lblTurn.TabIndex = 11;
+            this.lblTurn.Text = "Player 1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(219, 253);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 27);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Turn:";
             // 
             // MathZilla
             // 
@@ -411,5 +453,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_Problem;
         private System.Windows.Forms.TextBox txt_Answer;
+        private System.Windows.Forms.Label lblTurn;
+        private System.Windows.Forms.Label lblDigit;
+        private System.Windows.Forms.Label label5;
     }
 }
