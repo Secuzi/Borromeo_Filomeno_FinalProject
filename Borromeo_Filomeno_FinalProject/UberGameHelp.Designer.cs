@@ -153,6 +153,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UberGameHelp";
             this.Text = "UberGameHelp";
+            this.Load += new System.EventHandler(this.UberGameHelp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBackTohome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

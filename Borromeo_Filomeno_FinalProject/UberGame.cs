@@ -17,7 +17,7 @@ namespace Borromeo_Filomeno_FinalProject
         clsDatabase uberGameData;
         public string User { get; set; }
         public List<clsAccount> accounts;
-
+      
 
         UVPlayer player;
         Uber_Form_Game game = new Uber_Form_Game();
@@ -49,18 +49,30 @@ namespace Borromeo_Filomeno_FinalProject
 
             if (e.KeyCode == Keys.Escape)
             {
-                panelOptions.Enabled = !panelOptions.Enabled;
-                panelOptions.Visible = !panelOptions.Visible;
-                panelOptions.BringToFront();
-
-                if (panelOptions.Visible)
+                if (game.IsGameOver)
                 {
-                    timerGame.Stop();
+                    pbResume.Enabled = false;
+                    panelOptions.Enabled = true;
+                    panelOptions.Visible = true;
+                    panelOptions.BringToFront();
                 }
                 else
                 {
-                    timerGame.Start();
+                    panelOptions.Enabled = !panelOptions.Enabled;
+                    panelOptions.Visible = !panelOptions.Visible;
+                    panelOptions.BringToFront();
+
+                    if (panelOptions.Visible)
+                    {
+                        timerGame.Stop();
+                    }
+                    else
+                    {
+                        timerGame.Start();
+                    }
                 }
+
+                
 
             }
         }
@@ -71,6 +83,7 @@ namespace Borromeo_Filomeno_FinalProject
             Cursor customCursor = new Cursor(Resources.sCursor.GetHicon());
             this.Cursor = customCursor;
 
+            
             panelOptions.Enabled = false;
             panelOptions.Visible = false;
 
@@ -148,6 +161,7 @@ namespace Borromeo_Filomeno_FinalProject
 
             if (game.IsGameOver == true)
             {
+                timerGame.Stop();
                 if (player.Score > player.HighScore)
                 {
                     player.HighScore = player.Score;
@@ -156,10 +170,13 @@ namespace Borromeo_Filomeno_FinalProject
                 }
 
                 pbPlayer.Image = Resources.explosion;
-                timerGame.Stop();
-
-
-
+                lblGameOver.Visible = true;
+                panelOptions.BringToFront();
+                panelOptions.Enabled = true;
+                panelOptions.Visible = true;
+                lblRestart.Visible = true;
+                
+                
             }
             else
             {
@@ -209,6 +226,7 @@ namespace Borromeo_Filomeno_FinalProject
                 panelOptions.Enabled = false;
                 panelOptions.Visible = false;
                 timerGame.Start();
+                
             }
         }
 

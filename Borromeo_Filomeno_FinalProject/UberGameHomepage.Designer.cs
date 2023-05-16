@@ -75,6 +75,7 @@
             this.lblExit.Size = new System.Drawing.Size(107, 48);
             this.lblExit.TabIndex = 0;
             this.lblExit.Text = "EXIT";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // timerHomePageUB
             // 

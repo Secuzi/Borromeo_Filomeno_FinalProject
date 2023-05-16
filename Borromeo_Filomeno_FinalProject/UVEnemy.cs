@@ -26,7 +26,7 @@ namespace Borromeo_Filomeno_FinalProject
                 SoundPlayer explosionSound = new SoundPlayer(Resources.explosionsound);
                 explosionSound.Play();
                 game.IsGameOver = true;
-                MessageBox.Show("Game Over!");
+                
             }
 
         }
