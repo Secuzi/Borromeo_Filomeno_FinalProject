@@ -92,7 +92,7 @@ namespace Borromeo_Filomeno_FinalProject
                 player.GetWinner(lbl_p1_score, lbl_p2_score);
                 lbl_Problem.Text = null;
                 txt_Answer.Clear();
-                
+                lblDigit.Text = null;
                 lbl_ClueDisplay.Visible = false;
             }
         }
