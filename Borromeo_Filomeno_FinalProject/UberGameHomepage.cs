@@ -16,7 +16,8 @@ namespace Borromeo_Filomeno_FinalProject
         public bool IsPlayClicked;
 
         public bool IsFormHidden;
-       
+
+        public bool IsHelpClicked;
 
         public UberGameHomepage()
         {
@@ -80,6 +81,14 @@ namespace Borromeo_Filomeno_FinalProject
                 
             }
         
+        }
+
+        private void lblHelp_Click(object sender, EventArgs e)
+        {
+            
+            IsHelpClicked = true;
+
+
         }
     }
 }

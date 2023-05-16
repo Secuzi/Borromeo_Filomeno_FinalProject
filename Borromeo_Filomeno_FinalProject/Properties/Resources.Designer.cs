@@ -193,6 +193,16 @@ namespace Borromeo_Filomeno_FinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backhome {
+            get {
+                object obj = ResourceManager.GetObject("backhome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_1 {
             get {
                 object obj = ResourceManager.GetObject("bg 1", resourceCulture);
@@ -424,6 +434,26 @@ namespace Borromeo_Filomeno_FinalProject.Properties {
         internal static System.IO.UnmanagedMemoryStream gunShot {
             get {
                 return ResourceManager.GetStream("gunShot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HelpBg {
+            get {
+                object obj = ResourceManager.GetObject("HelpBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HelpBg1 {
+            get {
+                object obj = ResourceManager.GetObject("HelpBg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
