@@ -226,10 +226,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void pbBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            HomePage homePage = new HomePage();
-            homePage.Show();
-            
+            this.Close();
+
         }
     }
 }
