@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Borromeo_Filomeno_FinalProject.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,12 @@ namespace Borromeo_Filomeno_FinalProject
         {
             IsBackToHome = true;
 
+        }
+
+        private void UberGameHelp_Load(object sender, EventArgs e)
+        {
+            Cursor newCursor = new Cursor(Resources.sCursor.GetHicon());
+            this.Cursor = newCursor;
         }
     }
 }

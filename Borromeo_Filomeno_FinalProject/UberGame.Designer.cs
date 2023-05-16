@@ -49,6 +49,7 @@
             this.lblCurrentScore = new System.Windows.Forms.Label();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.panelOptions = new System.Windows.Forms.Panel();
+            this.lblGameOver = new System.Windows.Forms.Label();
             this.lblBulletCount = new System.Windows.Forms.Label();
             this.lblBullet = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.timerGame = new System.Windows.Forms.Timer(this.components);
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pbBg1 = new System.Windows.Forms.PictureBox();
+            this.lblRestart = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemySmall2)).BeginInit();
@@ -296,18 +298,33 @@
             this.panelOptions.BackColor = System.Drawing.Color.Black;
             this.panelOptions.BackgroundImage = global::Borromeo_Filomeno_FinalProject.Properties.Resources.bgnew;
             this.panelOptions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelOptions.Controls.Add(this.lblHighscore);
-            this.panelOptions.Controls.Add(this.pbBack);
-            this.panelOptions.Controls.Add(this.label1);
-            this.panelOptions.Controls.Add(this.pbResume);
-            this.panelOptions.Controls.Add(this.label2);
-            this.panelOptions.Controls.Add(this.pbPauseIcon);
             this.panelOptions.Controls.Add(this.lblCurrentScore);
+            this.panelOptions.Controls.Add(this.lblHighscore);
+            this.panelOptions.Controls.Add(this.label1);
+            this.panelOptions.Controls.Add(this.lblRestart);
+            this.panelOptions.Controls.Add(this.label2);
+            this.panelOptions.Controls.Add(this.pbBack);
+            this.panelOptions.Controls.Add(this.pbResume);
+            this.panelOptions.Controls.Add(this.pbPauseIcon);
             this.panelOptions.Controls.Add(this.pbExit);
+            this.panelOptions.Controls.Add(this.lblGameOver);
             this.panelOptions.Location = new System.Drawing.Point(233, 143);
             this.panelOptions.Name = "panelOptions";
             this.panelOptions.Size = new System.Drawing.Size(348, 370);
             this.panelOptions.TabIndex = 53;
+            // 
+            // lblGameOver
+            // 
+            this.lblGameOver.AutoSize = true;
+            this.lblGameOver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
+            this.lblGameOver.Font = new System.Drawing.Font("Harmonic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameOver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(159)))), ((int)(((byte)(89)))));
+            this.lblGameOver.Location = new System.Drawing.Point(56, 212);
+            this.lblGameOver.Name = "lblGameOver";
+            this.lblGameOver.Size = new System.Drawing.Size(237, 48);
+            this.lblGameOver.TabIndex = 25;
+            this.lblGameOver.Text = "Game Over!";
+            this.lblGameOver.Visible = false;
             // 
             // lblBulletCount
             // 
@@ -394,6 +411,19 @@
             this.pbBg1.TabIndex = 52;
             this.pbBg1.TabStop = false;
             // 
+            // lblRestart
+            // 
+            this.lblRestart.AutoSize = true;
+            this.lblRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
+            this.lblRestart.Font = new System.Drawing.Font("Harmonic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestart.ForeColor = System.Drawing.Color.White;
+            this.lblRestart.Location = new System.Drawing.Point(34, 272);
+            this.lblRestart.Name = "lblRestart";
+            this.lblRestart.Size = new System.Drawing.Size(280, 24);
+            this.lblRestart.TabIndex = 25;
+            this.lblRestart.Text = "Please enter to restart";
+            this.lblRestart.Visible = false;
+            // 
             // UberGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,10 +436,10 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbEnemyMedium0);
-            this.Controls.Add(this.pbEnemySmall2);
             this.Controls.Add(this.pbEnemyBig1);
-            this.Controls.Add(this.pbBullet);
+            this.Controls.Add(this.pbEnemySmall2);
             this.Controls.Add(this.panelOptions);
+            this.Controls.Add(this.pbBullet);
             this.Controls.Add(this.lblBulletCount);
             this.Controls.Add(this.lblBullet);
             this.Controls.Add(this.lblScore);
@@ -477,5 +507,7 @@
         private System.Windows.Forms.Timer timerGame;
         private System.Windows.Forms.PictureBox pbPlayer;
         private System.Windows.Forms.PictureBox pbBg1;
+        private System.Windows.Forms.Label lblGameOver;
+        private System.Windows.Forms.Label lblRestart;
     }
 }

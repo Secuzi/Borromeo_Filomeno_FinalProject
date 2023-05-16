@@ -90,5 +90,10 @@ namespace Borromeo_Filomeno_FinalProject
 
 
         }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

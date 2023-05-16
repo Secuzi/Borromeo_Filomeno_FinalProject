@@ -83,7 +83,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void timerMainHomePage_Tick(object sender, EventArgs e)
