@@ -34,7 +34,7 @@ namespace Borromeo_Filomeno_FinalProject
                 // inig answer ky i check kung sakto ba then score dayun og swap players
                 int playerInput = int.Parse(txt_Answer.Text);
 
-                if (player.P1Turn)
+                if (lblTurn.Text == "Player 1" && player.P1Turn)
                 {
                     player.p1_ans = playerInput;
 
@@ -42,30 +42,41 @@ namespace Borromeo_Filomeno_FinalProject
                     if (IsCorrect)
                     {
                         player.P1Score++;
+                        lbl_p1_score.Text = player.P1Score.ToString();
                     }
                     
-                    player.P1Turn = false;
-                    player.P2Turn = true;
-
                 }
 
-                if (player.P2Turn)
+                if (lblTurn.Text == "Player 2" && player.P2Turn)
                 {
                     player.p2_ans = playerInput;
 
-                    bool IsCorrect = player.CheckPlayer1Answer(player);
+                    bool IsCorrect = player.CheckPlayer2Answer(player);
                     if (IsCorrect)
                     {
                         player.P2Score++;
+                        lbl_p2_score.Text = player.P2Score.ToString();
                     }
-
-                    player.P2Turn = false;
-                    player.P1Turn = true;
 
                 }
 
+                if (player.P1Turn)
+                {
+                    player.P1Turn = false;
+                    player.P2Turn = true;
+                    lblTurn.Text = "Player 2";
+                }
+                else
+                {
+                    player.P1Turn = true;
+                    player.P2Turn = false;
+                    lblTurn.Text = "Player 1";
+                }
 
 
+                lbl_Problem.Text = null;
+                txt_Answer.Clear();
+                
                 lbl_ClueDisplay.Visible = false;
             }
         }
@@ -119,10 +130,13 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Clue_Click(object sender, EventArgs e)
         {
+            if (lbl_Problem.Text != null)
+            {
+                lbl_ClueDisplay.Visible = true;
+                lblDigit.Visible = true;
+                lbl_ClueDisplay.Text = player.ShowClue(lblDigit).ToString();
 
-            lbl_ClueDisplay.Visible = true;
-
-            lbl_ClueDisplay.Text = player.ShowClue().ToString();
+            }
 
 
 
@@ -132,6 +146,11 @@ namespace Borromeo_Filomeno_FinalProject
         private void txt_Answer_Click(object sender, EventArgs e)
         {
             txt_Answer.Clear();
+        }
+
+        private void txt_Answer_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

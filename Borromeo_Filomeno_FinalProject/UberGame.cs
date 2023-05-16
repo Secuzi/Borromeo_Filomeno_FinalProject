@@ -27,6 +27,9 @@ namespace Borromeo_Filomeno_FinalProject
             InitializeComponent();
             uberGameData = new clsDatabase();
             accounts = new List<clsAccount>(uberGameData.GetAccountsInDatabase());
+            User = uberGameData.GetAccountFromForm();
+
+
             GameStart();
         }
 
@@ -36,6 +39,9 @@ namespace Borromeo_Filomeno_FinalProject
             player.KeyIsUpEvent(e);
             if (e.KeyCode == Keys.Enter && game.IsGameOver)
             {
+                pbResume.Enabled = true;
+                lblGameOver.Visible = false;            
+                lblRestart.Visible = false;
                 GameStart();
             }
         }
@@ -92,7 +98,7 @@ namespace Borromeo_Filomeno_FinalProject
             
             clsAccount playerG = new clsAccount();
                                                        //Change this to User if production na
-            playerG = accounts.Find(a => a.Username == "secuzi");
+            playerG = accounts.Find(a => a.Username == User || a.Email == User);
 
             player = new UVPlayer(pbPlayer, 10);
 
@@ -166,7 +172,7 @@ namespace Borromeo_Filomeno_FinalProject
                 {
                     player.HighScore = player.Score;
                                              //Change secuzi to User if production na
-                    uberGameData.ScoreChanges("secuzi", player.HighScore, accounts);
+                    uberGameData.ScoreChanges(User, player.HighScore, accounts);
                 }
 
                 pbPlayer.Image = Resources.explosion;
@@ -184,28 +190,30 @@ namespace Borromeo_Filomeno_FinalProject
                 UVEnemy.EnemyMovement(player, game);
                 UVPlayer.SpawnAmmoCrate(pbAmmoCrate, player);
                 player.ChangeBulletColor(lblBulletCount);
+
+                pbBg0.Top += 3;
+                pbBg1.Top += 3;
+
+                if (pbBg0.Top > 713)
+                {
+                    pbBg0.Top = -713;
+
+                }
+
+                if (pbBg1.Top > 713)
+                {
+                    pbBg1.Top = -713;
+
+                }
+
                 lblScore.Text = player.Score.ToString();
                 lblHighscore.Text = player.HighScore.ToString();
                 lblCurrentScore.Text = lblScore.Text;
                 lblBulletCount.Text = bullet.BulletCount.ToString();
             }
 
+            this.Invalidate();
 
-
-            pbBg0.Top += 3;
-            pbBg1.Top += 3;
-
-            if (pbBg0.Top > 713)
-            {
-                pbBg0.Top = -713;
-                
-            }
-
-            if (pbBg1.Top > 713)
-            {
-                pbBg1.Top = -713;
-                
-            }
 
             //Put game timer
 
@@ -216,7 +224,7 @@ namespace Borromeo_Filomeno_FinalProject
 
 
 
-            this.Invalidate();
+
         }
 
         private void pbResume_Click(object sender, EventArgs e)
@@ -236,14 +244,25 @@ namespace Borromeo_Filomeno_FinalProject
             if (player.Score > player.HighScore)
             {
                 player.HighScore = player.Score;
-                uberGameData.ScoreChanges("secuzi", player.HighScore, accounts);
+                                          //Change this to User when production na
+                uberGameData.ScoreChanges(User, player.HighScore, accounts);
             }
+
+            uberGameData.DestoryText();
 
             Application.Exit();
         }
 
         private void pbBack_Click(object sender, EventArgs e)
         {
+
+            if (player.Score > player.HighScore)
+            {
+                player.HighScore = player.Score;
+                //Change this to User when production na
+                uberGameData.ScoreChanges(User, player.HighScore, accounts);
+            }
+
             this.Hide();
             HomePage homePage = new HomePage();
             homePage.ShowDialog();

@@ -14,7 +14,8 @@ namespace Borromeo_Filomeno_FinalProject
     {
         private const string filePath = @"D:\Harold Sheesh\Desktop\Please\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 
-        
+        private const string filePathForm = @"D:\Harold Sheesh\Desktop\Please\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
+
 
 
         //public string GetAccountsInDatabase
@@ -57,6 +58,34 @@ namespace Borromeo_Filomeno_FinalProject
 
         
 
+        public void ImportAccountToForm(string username)
+        {
+            string[] output = { username };
+
+            File.WriteAllLines(filePathForm, output);
+        }
+
+        public string GetAccountFromForm()
+        {
+            List<string> lines = File.ReadAllLines(filePathForm).ToList();
+            string account = string.Empty;
+            //Searches for the account then returns as string
+            foreach(var line in lines)
+            {
+                account = line;
+            }
+            //Clears the txt file so that it will always have a unique entry
+
+            return account;
+
+        }
+
+        public void DestoryText()
+        {
+            File.WriteAllText(filePathForm, string.Empty);
+        }
+
+
         //Import Account to the database
         public void ImportAccountsToDatabase(List<clsAccount> accounts)
         {
@@ -76,8 +105,8 @@ namespace Borromeo_Filomeno_FinalProject
         {
             List<string> lines = File.ReadAllLines(filePath).ToList();
             List<string> output = new List<string>();
-           
-            clsAccount account = null;
+
+            clsAccount account = new clsAccount();
             //Checking if the account username is in the database
             foreach (var line in lines)
             {
@@ -109,7 +138,7 @@ namespace Borromeo_Filomeno_FinalProject
 
                 if (strSplit[0] == username || strSplit[2] == username)
                 {
-                    account = accounts.Find(user => user.Username == username);
+                    account = accounts.Find(user => user.Username == username || user.Email == username);
 
                     account.Score = score;
                     output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
@@ -117,7 +146,7 @@ namespace Borromeo_Filomeno_FinalProject
                 }
                 else
                 {
-                    account = accounts.Find(user => user.Username != username);
+                    account = accounts.Find(user => user.Username != username || user.Email != username);
                     output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
 
                 }

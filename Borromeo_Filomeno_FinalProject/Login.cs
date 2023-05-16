@@ -53,9 +53,10 @@ namespace Borromeo_Filomeno_FinalProject
                 bool check = logIn.CheckLoginStatus(logInput, password);
                 if (check)
                 {
+                    db.ImportAccountToForm(logInput);
+
                     //Homepage
-                    var homePage = new HomePage();
-                    homePage.Username = logInput;
+                    var homePage = new HomePage();                  
                     this.Hide();
                     homePage.ShowDialog();
                     this.Close();
