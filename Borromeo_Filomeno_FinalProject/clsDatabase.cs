@@ -146,8 +146,7 @@ namespace Borromeo_Filomeno_FinalProject
                 }
                 else
                 {
-                    account = accounts.Find(user => user.Username != username || user.Email != username);
-                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
+                    output.Add($"{strSplit[0]},{strSplit[1]},{strSplit[2]},{strSplit[3]}");
 
                 }
 
