@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_form = new System.Windows.Forms.Panel();
             this.panel_side = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -35,6 +36,7 @@
             this.btn_Math = new System.Windows.Forms.Button();
             this.panel_top = new System.Windows.Forms.Panel();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.timerMainHomePage = new System.Windows.Forms.Timer(this.components);
             this.panel_side.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_top.SuspendLayout();
@@ -140,6 +142,11 @@
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // timerMainHomePage
+            // 
+            this.timerMainHomePage.Interval = 20;
+            this.timerMainHomePage.Tick += new System.EventHandler(this.timerMainHomePage_Tick);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,5 +177,6 @@
         private System.Windows.Forms.Button btn_Math;
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.Timer timerMainHomePage;
     }
 }
