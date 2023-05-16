@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblPlay = new System.Windows.Forms.Label();
-            this.lblLeaderboards = new System.Windows.Forms.Label();
+            this.lblHelp = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.timerHomePageUB = new System.Windows.Forms.Timer(this.components);
             this.pbPlayer = new System.Windows.Forms.PictureBox();
@@ -51,17 +51,18 @@
             this.lblPlay.Text = "PLAY";
             this.lblPlay.Click += new System.EventHandler(this.lblPlay_Click);
             // 
-            // lblLeaderboards
+            // lblHelp
             // 
-            this.lblLeaderboards.AutoSize = true;
-            this.lblLeaderboards.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeaderboards.Font = new System.Drawing.Font("Squarish Sans CT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeaderboards.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(204)))), ((int)(((byte)(161)))));
-            this.lblLeaderboards.Location = new System.Drawing.Point(226, 359);
-            this.lblLeaderboards.Name = "lblLeaderboards";
-            this.lblLeaderboards.Size = new System.Drawing.Size(357, 48);
-            this.lblLeaderboards.TabIndex = 0;
-            this.lblLeaderboards.Text = "LEADERBOARDS";
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelp.Font = new System.Drawing.Font("Squarish Sans CT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(204)))), ((int)(((byte)(161)))));
+            this.lblHelp.Location = new System.Drawing.Point(341, 359);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(127, 48);
+            this.lblHelp.TabIndex = 0;
+            this.lblHelp.Text = "HELP";
+            this.lblHelp.Click += new System.EventHandler(this.lblHelp_Click);
             // 
             // lblExit
             // 
@@ -112,7 +113,7 @@
             this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblExit);
-            this.Controls.Add(this.lblLeaderboards);
+            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.lblPlay);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -129,7 +130,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblPlay;
-        private System.Windows.Forms.Label lblLeaderboards;
+        private System.Windows.Forms.Label lblHelp;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Timer timerHomePageUB;
         private System.Windows.Forms.PictureBox pbPlayer;

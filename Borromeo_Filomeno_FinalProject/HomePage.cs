@@ -17,7 +17,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         public string Username { get; set; }
         UberGameHomepage game = new UberGameHomepage();
-
+        UberGameHelp gameHelp = new UberGameHelp();
 
         public HomePage()
         {
@@ -96,6 +96,21 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 this.Show();
             }
+
+            if (game.IsHelpClicked)
+            {
+                OpenForm(gameHelp = new UberGameHelp());
+                game.IsHelpClicked = false;
+            }
+
+
+            if (gameHelp.IsBackToHome)
+            {
+                OpenForm(game = new UberGameHomepage());
+                gameHelp.IsBackToHome = false;
+            }
+            
+
 
         }
     }
