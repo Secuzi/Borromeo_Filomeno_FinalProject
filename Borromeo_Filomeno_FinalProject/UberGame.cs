@@ -174,7 +174,7 @@ namespace Borromeo_Filomeno_FinalProject
                                              //Change secuzi to User if production na
                     uberGameData.ScoreChanges(User, player.HighScore, accounts);
                 }
-
+                pbResume.Enabled = false;
                 pbPlayer.Image = Resources.explosion;
                 lblGameOver.Visible = true;
                 panelOptions.BringToFront();
@@ -264,7 +264,9 @@ namespace Borromeo_Filomeno_FinalProject
                 uberGameData.ScoreChanges(User, player.HighScore, accounts);
             }
 
-
+            this.Hide();
+            HomePage homePage = new HomePage();
+            homePage.ShowDialog();
 
         }
     }

@@ -2,5 +2,5 @@ secuzi,hardy@123,hardy@gmail.com,77
 mouse1,mouse@123,mouse@gmail.com,2
 chicken1,chicken@123,chick@gmail.com,3
 chicken2,chicken@123,chick1@gmail.com,5
-emans,emans@123,emans@gmail.com,17
+emans,emans@123,emans@gmail.com,34
 lucky,lucky@123,luck@gmail.com,5
