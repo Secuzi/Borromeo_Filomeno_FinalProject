@@ -144,6 +144,7 @@
             // 
             // timerMainHomePage
             // 
+            this.timerMainHomePage.Enabled = true;
             this.timerMainHomePage.Interval = 20;
             this.timerMainHomePage.Tick += new System.EventHandler(this.timerMainHomePage_Tick);
             // 

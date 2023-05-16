@@ -14,7 +14,10 @@ namespace Borromeo_Filomeno_FinalProject
     public partial class UberGameHomepage : Form
     {
         public bool IsPlayClicked;
-        public bool IsGameOpen;
+
+        public bool IsFormHidden;
+       
+
         public UberGameHomepage()
         {
             InitializeComponent();
@@ -65,12 +68,16 @@ namespace Borromeo_Filomeno_FinalProject
             
             if (pbPlayer.Top < -55)
             {
-                this.Hide();  
-                IsGameOpen = true;
+                this.Hide();
+                IsFormHidden = true;
+
                 timerHomePageUB.Stop();
+
                 UberGame game = new UberGame();
-                game.ShowDialog();
+                game.Show();
+                
                 this.Close();
+                
             }
         
         }
