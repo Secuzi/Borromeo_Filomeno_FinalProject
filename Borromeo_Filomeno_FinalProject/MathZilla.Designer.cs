@@ -46,19 +46,19 @@
             this.lbl_p1_Name = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel_Operators = new System.Windows.Forms.Panel();
-            this.picbox_Divide = new System.Windows.Forms.PictureBox();
-            this.picbox_Multiply = new System.Windows.Forms.PictureBox();
-            this.picbox_Subtract = new System.Windows.Forms.PictureBox();
-            this.picbox_Add = new System.Windows.Forms.PictureBox();
+            this.pbDivide = new System.Windows.Forms.PictureBox();
+            this.pbMultiply = new System.Windows.Forms.PictureBox();
+            this.pbSubtract = new System.Windows.Forms.PictureBox();
+            this.pbAdd = new System.Windows.Forms.PictureBox();
             this.lbl_Problem = new System.Windows.Forms.Label();
             this.txt_Answer = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_Operators.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Divide)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Multiply)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Subtract)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Add)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDivide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMultiply)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSubtract)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -196,6 +196,7 @@
             this.lbl_ClueDisplay.TabIndex = 11;
             this.lbl_ClueDisplay.Text = "Clue asdasd";
             this.lbl_ClueDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ClueDisplay.Visible = false;
             // 
             // lbl_p2_score
             // 
@@ -270,67 +271,67 @@
             // panel_Operators
             // 
             this.panel_Operators.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Operators.Controls.Add(this.picbox_Divide);
-            this.panel_Operators.Controls.Add(this.picbox_Multiply);
-            this.panel_Operators.Controls.Add(this.picbox_Subtract);
-            this.panel_Operators.Controls.Add(this.picbox_Add);
+            this.panel_Operators.Controls.Add(this.pbDivide);
+            this.panel_Operators.Controls.Add(this.pbMultiply);
+            this.panel_Operators.Controls.Add(this.pbSubtract);
+            this.panel_Operators.Controls.Add(this.pbAdd);
             this.panel_Operators.Location = new System.Drawing.Point(0, 35);
             this.panel_Operators.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel_Operators.Name = "panel_Operators";
             this.panel_Operators.Size = new System.Drawing.Size(628, 108);
             this.panel_Operators.TabIndex = 9;
             // 
-            // picbox_Divide
+            // pbDivide
             // 
-            this.picbox_Divide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbox_Divide.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.divide_64_white;
-            this.picbox_Divide.Location = new System.Drawing.Point(475, 22);
-            this.picbox_Divide.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.picbox_Divide.Name = "picbox_Divide";
-            this.picbox_Divide.Size = new System.Drawing.Size(90, 75);
-            this.picbox_Divide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picbox_Divide.TabIndex = 0;
-            this.picbox_Divide.TabStop = false;
-            this.picbox_Divide.Click += new System.EventHandler(this.picbox_Divide_Click);
+            this.pbDivide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbDivide.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.divide_64_white;
+            this.pbDivide.Location = new System.Drawing.Point(475, 22);
+            this.pbDivide.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pbDivide.Name = "pbDivide";
+            this.pbDivide.Size = new System.Drawing.Size(90, 75);
+            this.pbDivide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbDivide.TabIndex = 0;
+            this.pbDivide.TabStop = false;
+            this.pbDivide.Click += new System.EventHandler(this.picbox_Divide_Click);
             // 
-            // picbox_Multiply
+            // pbMultiply
             // 
-            this.picbox_Multiply.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbox_Multiply.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.multiply_white_64;
-            this.picbox_Multiply.Location = new System.Drawing.Point(332, 22);
-            this.picbox_Multiply.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.picbox_Multiply.Name = "picbox_Multiply";
-            this.picbox_Multiply.Size = new System.Drawing.Size(90, 75);
-            this.picbox_Multiply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picbox_Multiply.TabIndex = 0;
-            this.picbox_Multiply.TabStop = false;
-            this.picbox_Multiply.Click += new System.EventHandler(this.picbox_Multiply_Click);
+            this.pbMultiply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMultiply.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.multiply_white_64;
+            this.pbMultiply.Location = new System.Drawing.Point(332, 22);
+            this.pbMultiply.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pbMultiply.Name = "pbMultiply";
+            this.pbMultiply.Size = new System.Drawing.Size(90, 75);
+            this.pbMultiply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbMultiply.TabIndex = 0;
+            this.pbMultiply.TabStop = false;
+            this.pbMultiply.Click += new System.EventHandler(this.picbox_Multiply_Click);
             // 
-            // picbox_Subtract
+            // pbSubtract
             // 
-            this.picbox_Subtract.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbox_Subtract.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.subtrac_64_white;
-            this.picbox_Subtract.Location = new System.Drawing.Point(188, 22);
-            this.picbox_Subtract.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.picbox_Subtract.Name = "picbox_Subtract";
-            this.picbox_Subtract.Size = new System.Drawing.Size(90, 75);
-            this.picbox_Subtract.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picbox_Subtract.TabIndex = 0;
-            this.picbox_Subtract.TabStop = false;
-            this.picbox_Subtract.Click += new System.EventHandler(this.picbox_Subtract_Click);
+            this.pbSubtract.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSubtract.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.subtrac_64_white;
+            this.pbSubtract.Location = new System.Drawing.Point(188, 22);
+            this.pbSubtract.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pbSubtract.Name = "pbSubtract";
+            this.pbSubtract.Size = new System.Drawing.Size(90, 75);
+            this.pbSubtract.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSubtract.TabIndex = 0;
+            this.pbSubtract.TabStop = false;
+            this.pbSubtract.Click += new System.EventHandler(this.picbox_Subtract_Click);
             // 
-            // picbox_Add
+            // pbAdd
             // 
-            this.picbox_Add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbox_Add.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.plus_white_64;
-            this.picbox_Add.Location = new System.Drawing.Point(41, 22);
-            this.picbox_Add.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.picbox_Add.Name = "picbox_Add";
-            this.picbox_Add.Size = new System.Drawing.Size(90, 75);
-            this.picbox_Add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picbox_Add.TabIndex = 0;
-            this.picbox_Add.TabStop = false;
-            this.picbox_Add.Click += new System.EventHandler(this.picbox_Add_Click);
+            this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAdd.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources.plus_white_64;
+            this.pbAdd.Location = new System.Drawing.Point(41, 22);
+            this.pbAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pbAdd.Name = "pbAdd";
+            this.pbAdd.Size = new System.Drawing.Size(90, 75);
+            this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbAdd.TabIndex = 0;
+            this.pbAdd.TabStop = false;
+            this.pbAdd.Click += new System.EventHandler(this.picbox_Add_Click);
             // 
             // lbl_Problem
             // 
@@ -377,10 +378,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_Operators.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Divide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Multiply)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Subtract)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_Add)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDivide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMultiply)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSubtract)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,10 +396,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_Operators;
-        private System.Windows.Forms.PictureBox picbox_Divide;
-        private System.Windows.Forms.PictureBox picbox_Multiply;
-        private System.Windows.Forms.PictureBox picbox_Subtract;
-        private System.Windows.Forms.PictureBox picbox_Add;
+        private System.Windows.Forms.PictureBox pbDivide;
+        private System.Windows.Forms.PictureBox pbMultiply;
+        private System.Windows.Forms.PictureBox pbSubtract;
+        private System.Windows.Forms.PictureBox pbAdd;
         private System.Windows.Forms.Button btn_Clue;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_ClueDisplay;
