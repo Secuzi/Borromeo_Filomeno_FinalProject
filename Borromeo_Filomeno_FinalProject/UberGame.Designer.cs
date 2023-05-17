@@ -399,7 +399,7 @@
             // 
             // timerGame
             // 
-            this.timerGame.Interval = 15;
+            this.timerGame.Interval = 2;
             this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
             // 
             // pbPlayer
@@ -428,6 +428,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(816, 713);
             this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.pbAmmoCrate);

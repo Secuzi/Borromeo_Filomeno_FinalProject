@@ -33,8 +33,8 @@ namespace Borromeo_Filomeno_FinalProject
             //This will get the unique instance made from logging in
             
             User = uberGameData.GetAccountFromForm();
-
-
+            
+            
             GameStart();
         }
 
@@ -108,8 +108,8 @@ namespace Borromeo_Filomeno_FinalProject
 
             //Finds if the Username or Email of the user exists in the Accounts database.                                           
             playerG = accounts.Find(a => a.Username == User || a.Email == User);
-
-            player = new UVPlayer(pbPlayer, 10);
+                                            
+            player = new UVPlayer(pbPlayer, 6);
 
             player.Name = User;
             player.HighScore = playerG.Score;
@@ -177,8 +177,8 @@ namespace Borromeo_Filomeno_FinalProject
                 player.ChangeBulletColor(lblBulletCount);
 
                 //This will be responsible for the scrolling of the pictureboxes so that it gives the effect of moving.
-                pbBg0.Top += 3;
-                pbBg1.Top += 3;
+                pbBg0.Top += 1;
+                pbBg1.Top += 1;
 
                 if (pbBg0.Top > 713)
                 {

@@ -82,14 +82,14 @@ namespace Borromeo_Filomeno_FinalProject
 
                 if (enemy is UVEnemySmall)
                 {
-                    enemy.SetEnemySpeed(4);
+                    enemy.SetEnemySpeed(3);
                     enemy.MoveEnemy();
 
                 }
 
                 if (enemy is UVEnemyBig)
                 {
-                    enemy.SetEnemySpeed(2);
+                    enemy.SetEnemySpeed(3);
                     enemy.MoveEnemy();
 
                 }
