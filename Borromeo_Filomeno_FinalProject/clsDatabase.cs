@@ -18,14 +18,6 @@ namespace Borromeo_Filomeno_FinalProject
         private const string filePathForm = @"D:\Harold Sheesh\Desktop\shshs\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
 
 
-
-        //public string GetAccountsInDatabase
-        //{
-        //    get { return filePath; }
-        //}
-
-
-
         //Returns the accounts from the database
         public List<clsAccount> GetAccountsInDatabase()
         {
