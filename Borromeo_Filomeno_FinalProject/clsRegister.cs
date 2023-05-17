@@ -92,7 +92,7 @@ namespace Borromeo_Filomeno_FinalProject
 
 
         }
-        //CHANGE THIS FROM VOID TO BOOL
+        
         public bool IsUsernameValid(ErrorProvider errorChange, TextBox txtChange)
         {
             bool check = Regex.IsMatch(txtChange.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
@@ -190,11 +190,6 @@ namespace Borromeo_Filomeno_FinalProject
             
 
             
-        }
-
-        public void RegexConfirm(string username, string password, string email)
-        {
-
         }
 
     }

@@ -36,44 +36,5 @@ namespace Borromeo_Filomeno_FinalProject
             Score = 0;
 
         }
-
-
-      
-
-
-        //public string CheckLoginStatusUsername(string username, string password)
-        //{
-        //    if (username != Username)
-        //    {             
-        //        return $"The account {username} has not been created.";
-        //    }
-        //    else if (username == Username && password != Password)
-        //    {               
-        //        return $"Wrong password, please try again";
-        //    }
-        //    else
-        //    {                
-        //        return $"Welcome to Compound Games!";
-        //    }
-
-        //}
-
-        //public string CheckLoginStatusEmail(string email, string password)
-        //{
-        //    if (email != Email)
-        //    {
-        //        return $"The email {email} has not been registered.";
-        //    }
-        //    else if (username == Username && password != Password)
-        //    {
-        //        return $"Wrong password, please try again";
-        //    }
-        //    else
-        //    {
-        //        return $"Welcome to Compound Games!";
-        //    }
-
-        //}
-
     }
 }

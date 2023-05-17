@@ -117,9 +117,9 @@ namespace Borromeo_Filomeno_FinalProject
 
         public static void SortEnemies(Control.ControlCollection Controls)
         {
-            //Allocates memory so that there's an instance variable so that we can add objects
+            //Instantiates the properties from the Uber_Form_Game so that it can be used for the UVPlayer class
             Enemies = new List<UVEnemy>();
-            PbEnemies = new List<PictureBox>();
+            
             foreach (var enemy in Controls)
             {
                 if (enemy is PictureBox)
@@ -144,8 +144,6 @@ namespace Borromeo_Filomeno_FinalProject
                         Enemies.Add(new UVEnemySmall(pbEnemy));
 
                     }
-
-                    PbEnemies.Add(pbEnemy);
 
                 }
 

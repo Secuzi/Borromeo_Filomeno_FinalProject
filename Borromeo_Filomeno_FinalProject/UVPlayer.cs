@@ -26,7 +26,8 @@ namespace Borromeo_Filomeno_FinalProject
 
         public void ChangeBulletColor(Label text)
         {
-            //Need to make this more pleasing to the eyes shit
+            //Gradually changes the color to red depending on the bullet count
+
             if (bullet.BulletCount <= 30 && bullet.BulletCount > 23)
                 text.ForeColor = Color.White;
             else if (bullet.BulletCount == 23)
@@ -90,7 +91,7 @@ namespace Borromeo_Filomeno_FinalProject
             Random rnd = new Random();
             SoundPlayer getAmmo = new SoundPlayer(Resources.getAmmoCrate);
 
-
+            //If the player can't get the ammo crate and it exceeds 715 then it will reset it's y position.
             if (ammoCrate.Top > 715)
             {
                 ammoCrate.Top = -300;
@@ -98,6 +99,7 @@ namespace Borromeo_Filomeno_FinalProject
             }
             else
             {
+                //Else the ammoCrate will continue to move.
                 ammoCrate.Top += 1;
                 if (ammoCrate.Bounds.IntersectsWith(player.PbPlayer.Bounds))
                 {
@@ -125,10 +127,10 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 pbPlayer.Left += PlayerSpeed;
             }
-
+            
             if (IsShooting)
             {
-
+                //If IsShooting is true then the bullet will travel 25 pixels per gameTimer interval
                 bullet.BulletSpeed = 25;
                 bullet.PbBullet.Top -= bullet.BulletSpeed;
 
@@ -136,12 +138,14 @@ namespace Borromeo_Filomeno_FinalProject
             }
             else
             {
+                //If shooting is false then the picture bullet will leave the canvas
                 bullet.PbBullet.Left = -300;
                 bullet.BulletSpeed = 0;
             }
-
+            
             if (bullet.PbBullet.Top < -26)
             {
+                //If the bullet leaves the canvas the IsShooting is false to negate spamming the attack button.
                 IsShooting = false;
             }
 
@@ -149,7 +153,7 @@ namespace Borromeo_Filomeno_FinalProject
 
 
 
-
+            //Checks if the bullet collides with the enemy
             BulletCollision(Enemies);
             form.Invalidate();
         }
@@ -185,17 +189,24 @@ namespace Borromeo_Filomeno_FinalProject
             }
 
 
-
+            
             if (e.KeyCode == Keys.Space && bullet.BulletCount > 0 && !IsShooting)
             {
+                //When IsShooting is true it will then go to the GamerTickTimer event and will continue to move until it intersects with an enemy
+                //Or when it leaves the canvas.
                 IsShooting = true;
 
                 gunSound.Play();
                 bullet.BulletCount -= 1;
+
+                //This makes the bullet project in front of the player
                 bullet.PbBullet.Top = PbPlayer.Top - 10;
                 bullet.PbBullet.Left = PbPlayer.Left + 10;
             }
 
+
+
+            //Plays a sound if there are no bullets left.
             if (e.KeyCode == Keys.Space && bullet.BulletCount == 0 && !IsShooting)
             {
                 noAmmoSound.Play();
@@ -214,6 +225,8 @@ namespace Borromeo_Filomeno_FinalProject
                     Score++;
 
                     enemy.ResetEnemy();
+                    //IsShooting is set to false so that it when the bullet collides with the enemy
+                    //The bullet also disappears and lets you shoot again
                     IsShooting = false;
                 }
             }

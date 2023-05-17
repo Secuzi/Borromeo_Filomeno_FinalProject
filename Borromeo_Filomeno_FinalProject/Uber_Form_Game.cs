@@ -20,7 +20,6 @@ namespace Borromeo_Filomeno_FinalProject
 
         public int Score { get; set; }
 
-        public static List<PictureBox> PbEnemies { get; set; }
         public static List<UVEnemy> Enemies { get; set; }
 
 

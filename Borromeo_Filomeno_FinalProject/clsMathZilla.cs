@@ -11,16 +11,16 @@ namespace Borromeo_Filomeno_FinalProject
 {
     internal class clsMathZilla
     {
-        public string Player1_Name;
-        public string Player2_Name;
-        public string Game_Mode;
-        public int p1_ans;
-        public int p2_ans;
-        public int Num1;
-        public int Num2;
+        public string Player1_Name { get; set; }
+        public string Player2_Name { get; set; }
+        public string Game_Mode { get; set; }
+        public int p1_ans { get; set; }
+        public int p2_ans { get; set; }
+        public int Num1 { get; set; }
+        public int Num2 { get; set; }
 
-        private int p1Score;
-        private int p2Score;
+        private int p1Score { get; set; }
+        private int p2Score { get; set; }
 
         public int P1Score
         {
@@ -48,14 +48,16 @@ namespace Borromeo_Filomeno_FinalProject
             }
         }
 
-        public int Result;
-        public bool P1Turn;
-        public bool P2Turn;
-        public bool Playing;
+        public int Result { get; set; }
+        public bool P1Turn { get; set; }
+        public bool P2Turn { get; set; }
+        public bool Playing { get; set; }
 
 
         public void GetWinner(Label score1, Label score2)
         {
+
+            //Checks if either of the players' score gets to 10 then the messagebox will show and and score will reset.
             if (P1Score == 10)
             {
                 MessageBox.Show("Player 1 wins!");
@@ -90,17 +92,15 @@ namespace Borromeo_Filomeno_FinalProject
 
         public bool CheckPlayer1Answer(clsMathZilla player)
         {
-            if (player.p1_ans == Result)
-                return true;
-            else return false;
+            
+            return (player.p1_ans == Result) ? true : false;
 
         }
 
         public bool CheckPlayer2Answer(clsMathZilla player)
         {
-            if (player.p2_ans == Result)
-                return true;
-            else return false;
+
+            return (player.p2_ans == Result) ? true : false;
 
         }
 

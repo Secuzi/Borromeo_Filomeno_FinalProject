@@ -20,25 +20,24 @@ namespace Borromeo_Filomeno_FinalProject
         }
         private void temp_Load(object sender, EventArgs e)
         {
+            //Initalizes the controls false except the P1 turn so that P1 will always choose what problem to solve first
             lbl_Problem.Visible = false;
             lbl_Problem.Text = null;
             lbl_ClueDisplay.Visible = false;
             player.P1Turn = true;
             player.P2Turn = false;
+            lblTurn.Visible = false;
         }
 
         private void txt_Answer_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-
                 
-
-                // if correct/wrong i messagebox siya  
-                // inig answer ky i check kung sakto ba then score dayun og swap players
                 int playerInput = int.Parse(txt_Answer.Text);
 
-                if (lblTurn.Text == "Player 1" && player.P1Turn)
+                //Checks if it is player 1's turn
+                if (player.P1Turn)
                 {
                     player.p1_ans = playerInput;
 
@@ -51,11 +50,10 @@ namespace Borromeo_Filomeno_FinalProject
                     else                   
                         player.P1Score--;
                     
-                    
-
                 }
+                //Checks if it is player 2's turn
 
-                if (lblTurn.Text == "Player 2" && player.P2Turn)
+                if (player.P2Turn)
                 {
                     player.p2_ans = playerInput;
 
@@ -67,29 +65,25 @@ namespace Borromeo_Filomeno_FinalProject
                     else                    
                         player.P2Score--;
                     
-                    
-
                 }
-
-               
-
-
+                //If player 1's turn is done then it will set the next turn to be player 2's
                 if (player.P1Turn)
                 {
                     player.P1Turn = false;
                     player.P2Turn = true;
-                    lblTurn.Text = "Player 2";
+                    lblTurn.Text = player.Player2_Name;
                 }
                 else
                 {
                     player.P1Turn = true;
                     player.P2Turn = false;
-                    lblTurn.Text = "Player 1";
+                    lblTurn.Text = player.Player1_Name;
                 }
                 lbl_p1_score.Text = player.P1Score.ToString();
                 lbl_p2_score.Text = player.P2Score.ToString();
-
+                //Checks if a player gets to 10 points
                 player.GetWinner(lbl_p1_score, lbl_p2_score);
+
                 lbl_Problem.Text = null;
                 txt_Answer.Clear();
                 lblDigit.Text = null;
@@ -102,8 +96,6 @@ namespace Borromeo_Filomeno_FinalProject
         {
             lbl_Problem.Visible = true;
             player.Addition_Problem(lbl_Problem);
-
-            
 
         }
 
@@ -127,16 +119,20 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void txt_p1_name_KeyDown(object sender, KeyEventArgs e)
         {
+            //Sets the player 1 to the user's input
             if (e.KeyCode == Keys.Enter)
             {
                 lbl_p1_Name.Text = txt_p1_name.Text;
                 player.Player1_Name = txt_p1_name.Text;
+                lblTurn.Visible = true;
+                lblTurn.Text = player.Player1_Name;
 
             }
         }
 
         private void txt_p2_name_KeyDown(object sender, KeyEventArgs e)
         {
+            //Sets the player 2 to the user's input
             if (e.KeyCode == Keys.Enter)
             {
                 lbl_p2_name.Text = txt_p2_name.Text;
@@ -146,6 +142,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void btn_Clue_Click(object sender, EventArgs e)
         {
+            //This will only show if the user has generated a problem
             if (lbl_Problem.Text != null && lbl_Problem.Text != "")
             {
                 lbl_ClueDisplay.Visible = true;
@@ -153,10 +150,6 @@ namespace Borromeo_Filomeno_FinalProject
                 lbl_ClueDisplay.Text = player.ShowClue(lblDigit).ToString();
 
             }
-
-
-
-            // ang clue display.text ang ilisan sa clue, pwede ra ang 1st number sa answer ba or ang last number sa answer ang i hatag nga clue
         }
 
         private void txt_Answer_Click(object sender, EventArgs e)
