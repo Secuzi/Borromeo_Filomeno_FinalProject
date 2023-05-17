@@ -38,7 +38,8 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox_true = new System.Windows.Forms.CheckBox();
+            this.timer6 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
@@ -59,7 +60,7 @@
             // pb4
             // 
             this.pb4.Image = global::Borromeo_Filomeno_FinalProject.Properties.Resources._71;
-            this.pb4.Location = new System.Drawing.Point(460, 312);
+            this.pb4.Location = new System.Drawing.Point(460, 311);
             this.pb4.Name = "pb4";
             this.pb4.Size = new System.Drawing.Size(438, 253);
             this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,16 +112,22 @@
             this.timer5.Interval = 2000;
             this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
             // 
-            // checkBox1
+            // checkBox_true
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(204, 160);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox_true.AutoSize = true;
+            this.checkBox_true.Location = new System.Drawing.Point(204, 160);
+            this.checkBox_true.Name = "checkBox_true";
+            this.checkBox_true.Size = new System.Drawing.Size(80, 17);
+            this.checkBox_true.TabIndex = 2;
+            this.checkBox_true.Text = "checkBox1";
+            this.checkBox_true.UseVisualStyleBackColor = true;
+            this.checkBox_true.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // timer6
+            // 
+            this.timer6.Enabled = true;
+            this.timer6.Interval = 750;
+            this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
             // 
             // Loading_Form
             // 
@@ -134,7 +141,7 @@
             this.Controls.Add(this.pb4);
             this.Controls.Add(this.pb3);
             this.Controls.Add(this.pb2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBox_true);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loading_Form";
@@ -161,6 +168,7 @@
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer timer5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox_true;
+        private System.Windows.Forms.Timer timer6;
     }
 }

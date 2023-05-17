@@ -16,7 +16,7 @@ namespace Borromeo_Filomeno_FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Loading_Form());
             //Application.Run(new HomePage());
         }
     }

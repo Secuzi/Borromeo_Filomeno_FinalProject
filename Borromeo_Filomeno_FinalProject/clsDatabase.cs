@@ -13,9 +13,9 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsDatabase
     {
-        private const string filePath = @"D:\Harold Sheesh\Desktop\shshs\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
+        private const string filePath = @"D:\c#\school\Final Project\final v3\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 
-        private const string filePathForm = @"D:\Harold Sheesh\Desktop\shshs\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
+        private const string filePathForm = @"D:\c#\school\Final Project\final v3\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
 
 
         //Returns the accounts from the database

@@ -4,3 +4,6 @@ chicken1,chicken@123,chick@gmail.com,3
 chicken2,chicken@123,chick1@gmail.com,5
 emans,emans@123,emans@gmail.com,77
 lucky,lucky@123,luck@gmail.com,5
+john,johngwapo@,john@gmail.com,0
+john,johngwapo@,john@gmail.com,0
+Jm,jmgwapo@,jmgwapo@gmail.com,6
