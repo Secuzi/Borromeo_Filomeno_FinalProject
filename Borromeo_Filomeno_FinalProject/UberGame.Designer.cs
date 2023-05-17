@@ -49,6 +49,7 @@
             this.lblCurrentScore = new System.Windows.Forms.Label();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.panelOptions = new System.Windows.Forms.Panel();
+            this.lblRestart = new System.Windows.Forms.Label();
             this.lblGameOver = new System.Windows.Forms.Label();
             this.lblBulletCount = new System.Windows.Forms.Label();
             this.lblBullet = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.timerGame = new System.Windows.Forms.Timer(this.components);
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pbBg1 = new System.Windows.Forms.PictureBox();
-            this.lblRestart = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemySmall2)).BeginInit();
@@ -313,6 +313,19 @@
             this.panelOptions.Size = new System.Drawing.Size(348, 370);
             this.panelOptions.TabIndex = 53;
             // 
+            // lblRestart
+            // 
+            this.lblRestart.AutoSize = true;
+            this.lblRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
+            this.lblRestart.Font = new System.Drawing.Font("Harmonic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestart.ForeColor = System.Drawing.Color.White;
+            this.lblRestart.Location = new System.Drawing.Point(34, 272);
+            this.lblRestart.Name = "lblRestart";
+            this.lblRestart.Size = new System.Drawing.Size(280, 24);
+            this.lblRestart.TabIndex = 25;
+            this.lblRestart.Text = "Please enter to restart";
+            this.lblRestart.Visible = false;
+            // 
             // lblGameOver
             // 
             this.lblGameOver.AutoSize = true;
@@ -411,24 +424,12 @@
             this.pbBg1.TabIndex = 52;
             this.pbBg1.TabStop = false;
             // 
-            // lblRestart
-            // 
-            this.lblRestart.AutoSize = true;
-            this.lblRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
-            this.lblRestart.Font = new System.Drawing.Font("Harmonic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRestart.ForeColor = System.Drawing.Color.White;
-            this.lblRestart.Location = new System.Drawing.Point(34, 272);
-            this.lblRestart.Name = "lblRestart";
-            this.lblRestart.Size = new System.Drawing.Size(280, 24);
-            this.lblRestart.TabIndex = 25;
-            this.lblRestart.Text = "Please enter to restart";
-            this.lblRestart.Visible = false;
-            // 
             // UberGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 713);
+            this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.pbAmmoCrate);
             this.Controls.Add(this.pbEnemyBig0);
             this.Controls.Add(this.pbEnemyMedium1);
@@ -444,7 +445,6 @@
             this.Controls.Add(this.lblBullet);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblScoreText);
-            this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.pbBg1);
             this.Controls.Add(this.pbBg0);
             this.DoubleBuffered = true;

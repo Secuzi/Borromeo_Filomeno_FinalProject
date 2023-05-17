@@ -44,6 +44,7 @@
             this.lbl_p1_score = new System.Windows.Forms.Label();
             this.lblTurn = new System.Windows.Forms.Label();
             this.lblDigit = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_p2_name = new System.Windows.Forms.Label();
             this.lbl_p1_Name = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.lbl_Problem = new System.Windows.Forms.Label();
             this.txt_Answer = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_Operators.SuspendLayout();
@@ -247,7 +247,7 @@
             this.lblTurn.BackColor = System.Drawing.Color.Transparent;
             this.lblTurn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTurn.ForeColor = System.Drawing.Color.White;
-            this.lblTurn.Location = new System.Drawing.Point(273, 254);
+            this.lblTurn.Location = new System.Drawing.Point(278, 254);
             this.lblTurn.Name = "lblTurn";
             this.lblTurn.Size = new System.Drawing.Size(98, 26);
             this.lblTurn.TabIndex = 11;
@@ -265,6 +265,18 @@
             this.lblDigit.TabIndex = 11;
             this.lblDigit.Text = "The clue is from the 2nd digit";
             this.lblDigit.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(207, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(177, 26);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "First to 10 wins!";
             // 
             // label6
             // 
@@ -403,18 +415,6 @@
             this.txt_Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Answer.Click += new System.EventHandler(this.txt_Answer_Click);
             this.txt_Answer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Answer_KeyDown);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(207, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 26);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "First to 10 wins!";
             // 
             // MathZilla
             // 

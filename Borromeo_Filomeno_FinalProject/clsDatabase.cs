@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Security.Principal;
+using Borromeo_Filomeno_FinalProject.Properties;
 
 namespace Borromeo_Filomeno_FinalProject
 {
     public class clsDatabase
     {
-        private const string filePath = @"D:\Harold Sheesh\Desktop\Please\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
+        private const string filePath = @"D:\Harold Sheesh\Desktop\shshs\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 
-        private const string filePathForm = @"D:\Harold Sheesh\Desktop\Please\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
+        private const string filePathForm = @"D:\Harold Sheesh\Desktop\shshs\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
 
 
 

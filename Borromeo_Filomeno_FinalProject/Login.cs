@@ -37,9 +37,8 @@ namespace Borromeo_Filomeno_FinalProject
         {
             string logInput = txtUsername_Login.Text;
             string password = txtPassword_Login.Text;
-
             
-
+            //When the user leaves the textboxes empty they won't be able to proceed to the homepage.
             if (logInput.Length < 1)
             {
                 errorProviderLogInput.SetError(txtUsername_Login, "Please populate this field!");            
@@ -50,6 +49,9 @@ namespace Borromeo_Filomeno_FinalProject
             }
             else
             {
+                //If the input is valid CheckLoginStatus will be called and if the input is in the storage then
+                //They can now proceed to the homepage
+
                 bool check = logIn.CheckLoginStatus(logInput, password);
                 if (check)
                 {
@@ -63,14 +65,10 @@ namespace Borromeo_Filomeno_FinalProject
                     errorProviderLogInput.Dispose();
                     errorProviderPassword.Dispose();
                 }
+                
                 errorProviderLogInput.Dispose();
                 errorProviderPassword.Dispose();
-            }
-            
-
-
-
-
+            }           
         }
 
         private void chkbox_ShowPassword_CheckedChanged(object sender, EventArgs e)
