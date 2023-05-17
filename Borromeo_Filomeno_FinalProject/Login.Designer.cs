@@ -40,7 +40,7 @@
             this.errorProviderPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.chkbox_ShowPassword = new System.Windows.Forms.CheckBox();
             this.btnCreateaccount = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_hide = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Logo)).BeginInit();
@@ -175,13 +175,13 @@
             this.btnCreateaccount.UseVisualStyleBackColor = false;
             this.btnCreateaccount.Click += new System.EventHandler(this.btnCreateaccount_Click);
             // 
-            // panel1
+            // panel_hide
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(613, 369);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 23;
+            this.panel_hide.BackColor = System.Drawing.Color.Transparent;
+            this.panel_hide.Location = new System.Drawing.Point(613, 369);
+            this.panel_hide.Name = "panel_hide";
+            this.panel_hide.Size = new System.Drawing.Size(200, 100);
+            this.panel_hide.TabIndex = 23;
             // 
             // LoginForm
             // 
@@ -198,7 +198,7 @@
             this.Controls.Add(this.picbox_Username);
             this.Controls.Add(this.chkbox_ShowPassword);
             this.Controls.Add(this.btnCreateaccount);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_hide);
             this.Controls.Add(this.picbox_Logo);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -228,7 +228,7 @@
         private System.Windows.Forms.ErrorProvider errorProviderLogInput;
         private System.Windows.Forms.CheckBox chkbox_ShowPassword;
         private System.Windows.Forms.Button btnCreateaccount;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_hide;
         private System.Windows.Forms.ErrorProvider errorProviderPassword;
     }
 }
