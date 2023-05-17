@@ -15,7 +15,7 @@ namespace Borromeo_Filomeno_FinalProject
     public partial class UberGame : Form
     {
         clsDatabase uberGameData;
-        public string User { get; set; }
+        
         public List<clsAccount> accounts;
       
 
@@ -32,7 +32,9 @@ namespace Borromeo_Filomeno_FinalProject
 
             //This will get the unique instance made from logging in
             
-            User = uberGameData.GetAccountFromForm();
+            game.User = uberGameData.GetAccountFromForm();
+
+            
             
             
             GameStart();
@@ -107,11 +109,12 @@ namespace Borromeo_Filomeno_FinalProject
             clsAccount playerG = new clsAccount();
 
             //Finds if the Username or Email of the user exists in the Accounts database.                                           
-            playerG = accounts.Find(a => a.Username == User || a.Email == User);
+            playerG = accounts.Find(a => a.Username == game.User || a.Email == game.User);
                                             
             player = new UVPlayer(pbPlayer, 6);
 
-            player.Name = User;
+            player.Name = game.User;
+
             player.HighScore = playerG.Score;
 
             player.IsShooting = false;
@@ -149,7 +152,7 @@ namespace Borromeo_Filomeno_FinalProject
                 {
                     player.HighScore = player.Score;
                                              
-                    uberGameData.ScoreChanges(User, player.HighScore, accounts);
+                    uberGameData.ScoreChanges(player.Name, player.HighScore, accounts);
                 }
 
 
@@ -221,7 +224,7 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 player.HighScore = player.Score;
                 
-                uberGameData.ScoreChanges(User, player.HighScore, accounts);
+                uberGameData.ScoreChanges(player.Name, player.HighScore, accounts);
             }
             //This will destory the text that we have uniquely imported to the AccountForm database
             uberGameData.DestoryText();
@@ -237,7 +240,7 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 player.HighScore = player.Score;
                 //Change this to User when production na
-                uberGameData.ScoreChanges(User, player.HighScore, accounts);
+                uberGameData.ScoreChanges(player.Name, player.HighScore, accounts);
             }
 
             //Instantiates the homepage form
