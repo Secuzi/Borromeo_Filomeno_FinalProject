@@ -14,10 +14,10 @@ namespace Borromeo_Filomeno_FinalProject
 
         public bool IsShooting { get; set; }
         public bool IsGameOver { get; set; }
+        public string User { get; set; }
 
         public int PlayerSpeed { get; set; }
-        public int EnemySpeed { get; set; }
-
+        public int EnemySpeed { get; set; }      
         public int Score { get; set; }
 
         public static List<UVEnemy> Enemies { get; set; }

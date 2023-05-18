@@ -13,10 +13,10 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsDatabase
     {
-        private const string filePath = @"D:\c#\school\Final Project\final v3\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 
-        private const string filePathForm = @"D:\c#\school\Final Project\final v3\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
+        private const string filePath = @"D:\Harold Sheesh\Desktop\TestFinalClone\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 
+        private const string filePathForm = @"D:\Harold Sheesh\Desktop\TestFinalClone\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
 
         //Returns the accounts from the database
         public List<clsAccount> GetAccountsInDatabase()
@@ -132,10 +132,10 @@ namespace Borromeo_Filomeno_FinalProject
 
                 if (strSplit[0] == username || strSplit[2] == username)
                 {
-                    account = accounts.Find(user => user.Username == username || user.Email == username);
-
-                    account.Score = score;
-                    output.Add($"{account.Username},{account.Password},{account.Email},{account.Score}");
+                    
+                    strSplit[3] = score.ToString();
+                    
+                    output.Add($"{strSplit[0]},{strSplit[1]},{strSplit[2]},{strSplit[3]}");
 
                 }
                 else
