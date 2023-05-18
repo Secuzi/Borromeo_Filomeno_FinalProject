@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UberGame));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbEnemyBig3 = new System.Windows.Forms.PictureBox();
+            this.pbEnemyMedium3 = new System.Windows.Forms.PictureBox();
             this.pbEnemySmall2 = new System.Windows.Forms.PictureBox();
             this.pbEnemyBig0 = new System.Windows.Forms.PictureBox();
             this.pbAmmoCrate = new System.Windows.Forms.PictureBox();
@@ -39,9 +39,9 @@
             this.pbEnemyMedium1 = new System.Windows.Forms.PictureBox();
             this.lblHighscore = new System.Windows.Forms.Label();
             this.pbBack = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_HighScore = new System.Windows.Forms.Label();
             this.pbResume = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_CurrentScore = new System.Windows.Forms.Label();
             this.pbPauseIcon = new System.Windows.Forms.PictureBox();
             this.pbBullet = new System.Windows.Forms.PictureBox();
             this.pbEnemyMedium0 = new System.Windows.Forms.PictureBox();
@@ -59,8 +59,8 @@
             this.timerGame = new System.Windows.Forms.Timer(this.components);
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pbBg1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnemyBig3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnemyMedium3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemySmall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemyBig0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAmmoCrate)).BeginInit();
@@ -79,29 +79,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBg1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // pbEnemyBig3
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(330, 32);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 55;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "enemyBig";
+            this.pbEnemyBig3.BackColor = System.Drawing.Color.Black;
+            this.pbEnemyBig3.Image = ((System.Drawing.Image)(resources.GetObject("pbEnemyBig3.Image")));
+            this.pbEnemyBig3.Location = new System.Drawing.Point(330, 32);
+            this.pbEnemyBig3.Name = "pbEnemyBig3";
+            this.pbEnemyBig3.Size = new System.Drawing.Size(52, 64);
+            this.pbEnemyBig3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbEnemyBig3.TabIndex = 55;
+            this.pbEnemyBig3.TabStop = false;
+            this.pbEnemyBig3.Tag = "enemyBig";
             // 
-            // pictureBox1
+            // pbEnemyMedium3
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(160, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 54;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "enemyMedium";
+            this.pbEnemyMedium3.BackColor = System.Drawing.Color.Black;
+            this.pbEnemyMedium3.Image = ((System.Drawing.Image)(resources.GetObject("pbEnemyMedium3.Image")));
+            this.pbEnemyMedium3.Location = new System.Drawing.Point(160, 32);
+            this.pbEnemyMedium3.Name = "pbEnemyMedium3";
+            this.pbEnemyMedium3.Size = new System.Drawing.Size(64, 32);
+            this.pbEnemyMedium3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbEnemyMedium3.TabIndex = 54;
+            this.pbEnemyMedium3.TabStop = false;
+            this.pbEnemyMedium3.Tag = "enemyMedium";
             // 
             // pbEnemySmall2
             // 
@@ -187,17 +187,17 @@
             this.pbBack.TabStop = false;
             this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
             // 
-            // label1
+            // lbl_HighScore
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
-            this.label1.Font = new System.Drawing.Font("Harmonic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(107, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 19);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Highscore:";
+            this.lbl_HighScore.AutoSize = true;
+            this.lbl_HighScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
+            this.lbl_HighScore.Font = new System.Drawing.Font("Harmonic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HighScore.ForeColor = System.Drawing.Color.White;
+            this.lbl_HighScore.Location = new System.Drawing.Point(107, 119);
+            this.lbl_HighScore.Name = "lbl_HighScore";
+            this.lbl_HighScore.Size = new System.Drawing.Size(94, 19);
+            this.lbl_HighScore.TabIndex = 23;
+            this.lbl_HighScore.Text = "Highscore:";
             // 
             // pbResume
             // 
@@ -211,17 +211,17 @@
             this.pbResume.TabStop = false;
             this.pbResume.Click += new System.EventHandler(this.pbResume_Click);
             // 
-            // label2
+            // lbl_CurrentScore
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
-            this.label2.Font = new System.Drawing.Font("Harmonic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(66, 173);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 24);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Current Score:";
+            this.lbl_CurrentScore.AutoSize = true;
+            this.lbl_CurrentScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(32)))), ((int)(((byte)(63)))));
+            this.lbl_CurrentScore.Font = new System.Drawing.Font("Harmonic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentScore.ForeColor = System.Drawing.Color.White;
+            this.lbl_CurrentScore.Location = new System.Drawing.Point(66, 173);
+            this.lbl_CurrentScore.Name = "lbl_CurrentScore";
+            this.lbl_CurrentScore.Size = new System.Drawing.Size(172, 24);
+            this.lbl_CurrentScore.TabIndex = 25;
+            this.lbl_CurrentScore.Text = "Current Score:";
             // 
             // pbPauseIcon
             // 
@@ -300,9 +300,9 @@
             this.panelOptions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelOptions.Controls.Add(this.lblCurrentScore);
             this.panelOptions.Controls.Add(this.lblHighscore);
-            this.panelOptions.Controls.Add(this.label1);
+            this.panelOptions.Controls.Add(this.lbl_HighScore);
             this.panelOptions.Controls.Add(this.lblRestart);
-            this.panelOptions.Controls.Add(this.label2);
+            this.panelOptions.Controls.Add(this.lbl_CurrentScore);
             this.panelOptions.Controls.Add(this.pbBack);
             this.panelOptions.Controls.Add(this.pbResume);
             this.panelOptions.Controls.Add(this.pbPauseIcon);
@@ -435,8 +435,8 @@
             this.Controls.Add(this.pbEnemyBig0);
             this.Controls.Add(this.pbEnemyMedium1);
             this.Controls.Add(this.pbEnemySmall0);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbEnemyBig3);
+            this.Controls.Add(this.pbEnemyMedium3);
             this.Controls.Add(this.pbEnemyMedium0);
             this.Controls.Add(this.pbEnemyBig1);
             this.Controls.Add(this.pbEnemySmall2);
@@ -455,8 +455,8 @@
             this.Text = "UberGame";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnemyBig3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnemyMedium3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemySmall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnemyBig0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAmmoCrate)).EndInit();
@@ -481,8 +481,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbEnemyBig3;
+        private System.Windows.Forms.PictureBox pbEnemyMedium3;
         private System.Windows.Forms.PictureBox pbEnemySmall2;
         private System.Windows.Forms.PictureBox pbEnemyBig0;
         private System.Windows.Forms.PictureBox pbAmmoCrate;
@@ -490,9 +490,9 @@
         private System.Windows.Forms.PictureBox pbEnemyMedium1;
         private System.Windows.Forms.Label lblHighscore;
         private System.Windows.Forms.PictureBox pbBack;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_HighScore;
         private System.Windows.Forms.PictureBox pbResume;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_CurrentScore;
         private System.Windows.Forms.PictureBox pbPauseIcon;
         private System.Windows.Forms.PictureBox pbBullet;
         private System.Windows.Forms.PictureBox pbEnemyMedium0;

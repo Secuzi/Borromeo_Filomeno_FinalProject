@@ -13,10 +13,10 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsDatabase
     {
+
         private const string filePath = @"D:\Harold Sheesh\Desktop\TestFinalClone\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
 
         private const string filePathForm = @"D:\Harold Sheesh\Desktop\TestFinalClone\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
-
 
         //Returns the accounts from the database
         public List<clsAccount> GetAccountsInDatabase()
