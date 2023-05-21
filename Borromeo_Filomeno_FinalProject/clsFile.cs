@@ -18,7 +18,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         private const string filePathForm = @"D:\Harold Sheesh\Desktop\testset\Borromeo_Filomeno_FinalProject\File\AccountForm.txt";
 
-        //Returns the accounts from the database
+        //Returns the accounts from the file
         public List<clsAccount> GetAccountsinFile()
         {
             List<string> lines = File.ReadAllLines(filePath).ToList();
@@ -80,7 +80,7 @@ namespace Borromeo_Filomeno_FinalProject
         }
 
 
-        //Import Account to the database
+        //Import Account to the file
         public void ImportAccountsToFile(List<clsAccount> accounts)
         {
             List<string> output = new List<string>();
