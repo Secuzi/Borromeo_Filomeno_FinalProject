@@ -14,47 +14,51 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class UberGame : Form
     {
-        clsDatabase uberGameData;
-        
-        public List<clsAccount> accounts;
-      
+        clsFile uberGameData;
+
+        List<clsAccount> accounts;
+
+        List<PictureBox> enemies;
+
+
 
         UVPlayer player;
         Uber_Form_Game game = new Uber_Form_Game();
         Bullet bullet = new Bullet();
         public UberGame()
         {
-            //When the form loads it will get the accounts from the Database
+            //When the form loads it will get the accounts from the file
 
             InitializeComponent();
-            uberGameData = new clsDatabase();
-            accounts = new List<clsAccount>(uberGameData.GetAccountsInDatabase());
+            uberGameData = new clsFile();
+
 
             //This will get the unique instance made from logging in
-            
+
             game.User = uberGameData.GetAccountFromForm();
 
-            
-            
-            
+            enemies = UVEnemy.SortEnemies(this.Controls);
+
+
             GameStart();
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
             //When the left or right arrow is held then the player will move acordingly
-            player.KeyIsUpEvent(e);
+            player.KeyIsUpEvent(e, pbPlayer, pbBullet);
 
             //If the IsGameOver is true then the player is eligible to restart the game
             if (e.KeyCode == Keys.Enter && game.IsGameOver)
             {
                 pbResume.Enabled = true;
-                lblGameOver.Visible = false;            
+                lblGameOver.Visible = false;
                 lblRestart.Visible = false;
+
                 GameStart();
             }
         }
-        
+
 
 
         private void KeyIsDown(object sender, KeyEventArgs e)
@@ -98,20 +102,20 @@ namespace Borromeo_Filomeno_FinalProject
             //When the form loads the cursor will be set to the image that I imported to resources.
             Cursor customCursor = new Cursor(Resources.sCursor.GetHicon());
             this.Cursor = customCursor;
+            accounts = new List<clsAccount>(uberGameData.GetAccountsinFile());
 
-            
             panelOptions.Enabled = false;
             panelOptions.Visible = false;
 
             game.IsGameOver = false;
             pbPlayer.Image = Resources.playerIdle;
-            
+
             clsAccount playerG = new clsAccount();
 
-            //Finds if the Username or Email of the user exists in the Accounts database.                                           
+            //Finds if the Username or Email of the user exists in the Accounts file.                                           
             playerG = accounts.Find(a => a.Username == game.User || a.Email == game.User);
-                                            
-            player = new UVPlayer(pbPlayer, 6);
+
+            player = new UVPlayer(6);
 
             player.Name = game.User;
 
@@ -119,19 +123,25 @@ namespace Borromeo_Filomeno_FinalProject
 
             player.IsShooting = false;
             player.bullet = bullet;
-            //Gets the enemies from this form and specifically instantiates it depending on the enemies' tag property.
-            UVEnemy.SortEnemies(this.Controls);
+
             //Resets the Enemy to the top of the canvas
-            UVEnemy.ResetEnemies();
+            UVEnemy.ResetEnemies(enemies);
             player.Score = 0;
-            bullet.PbBullet = pbBullet;
+
+            //bullet.PbBullet = pbBullet;
             bullet.BulletSpeed = 0;
-            bullet.PbBullet.Left = -300;
+
+            //bullet.PbBullet.Left = -300;
+
+            pbBullet.Left = -300;
+
+
+
             pbAmmoCrate.Top = -500;
             bullet.BulletCount = 30;
             lblBulletCount.Text = bullet.BulletCount.ToString();
             lblScore.Text = player.Score.ToString();
-            
+            lblHighscore.Text = playerG.Score.ToString();
 
             timerGame.Start();
 
@@ -140,18 +150,18 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void timerGame_Tick(object sender, EventArgs e)
         {
-            
+
             if (game.IsGameOver == true)
             {
                 timerGame.Stop();
-                
+
                 //When the game is over it will check if the current score of the player is greater than the highscore
                 //If so then the value will be replaced
 
                 if (player.Score > player.HighScore)
                 {
                     player.HighScore = player.Score;
-                                             
+
                     uberGameData.ScoreChanges(player.Name, player.HighScore, accounts);
                 }
 
@@ -163,18 +173,18 @@ namespace Borromeo_Filomeno_FinalProject
                 panelOptions.Enabled = true;
                 panelOptions.Visible = true;
                 lblRestart.Visible = true;
-                
-                
+
+
             }
             else
             {
                 //This will be the main mechanics for movement and attacks for the player.
 
-                player.GameTimerTickEvent(pbPlayer, this);
-                
-                UVEnemy.EnemyMovement(player, game);
-                
-                UVPlayer.SpawnAmmoCrate(pbAmmoCrate, player);
+                player.GameTimerTickEvent(pbPlayer, this, enemies, pbBullet);
+
+                UVEnemy.EnemyMovement(pbPlayer, game, enemies);
+
+                UVPlayer.SpawnAmmoCrate(pbAmmoCrate, pbPlayer, player);
 
                 //Changes the color depending on how many bullets the player has left.
                 player.ChangeBulletColor(lblBulletCount);
@@ -207,13 +217,13 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void pbResume_Click(object sender, EventArgs e)
         {
-            
+
             if (panelOptions.Visible)
             {
                 panelOptions.Enabled = false;
                 panelOptions.Visible = false;
                 timerGame.Start();
-                
+
             }
         }
 
@@ -223,10 +233,10 @@ namespace Borromeo_Filomeno_FinalProject
             if (player.Score > player.HighScore)
             {
                 player.HighScore = player.Score;
-                
+
                 uberGameData.ScoreChanges(player.Name, player.HighScore, accounts);
             }
-            //This will destory the text that we have uniquely imported to the AccountForm database
+            //This will destory the text that we have uniquely imported to the AccountForm file
             uberGameData.DestoryText();
 
             Application.Exit();

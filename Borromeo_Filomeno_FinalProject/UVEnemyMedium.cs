@@ -9,7 +9,7 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class UVEnemyMedium : UVEnemy
     {
-        public UVEnemyMedium(PictureBox pbEnemy) : base(pbEnemy)
+        public UVEnemyMedium()
         {
 
         }
@@ -18,21 +18,19 @@ namespace Borromeo_Filomeno_FinalProject
         {
             EnemySpeed = speed;
         }
-        public override void ResetEnemy()
+        public override void ResetEnemy(PictureBox enemy)
         {
             Random rnd = new Random();
-            PbEnemy.Visible = false;
-            PbEnemy.Left = rnd.Next(12, 741);
-            PbEnemy.Top = rnd.Next(0, 1200) * -1;
+            enemy.Visible = false;
+            enemy.Left = rnd.Next(12, 741);
+            enemy.Top = rnd.Next(0, 1200) * -1;
         }
-        public override void MoveEnemy()
+        public override void MoveEnemy(PictureBox enemy)
         {
-            if ((string)PbEnemy.Tag == "enemyMedium")
-            {
-                PbEnemy.Top += EnemySpeed;
-            }
-        }
 
+            enemy.Top += EnemySpeed;
+
+        }
 
     }
 }

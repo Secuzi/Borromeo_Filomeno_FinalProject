@@ -168,30 +168,5 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-
-        public void Game_Start()
-        {
-            if (Game_Mode == "Addition")
-            {
-                while (Playing)
-                {
-                    
-                }
-            }
-            else if (Game_Mode == "Subtraction")
-            {
-
-            }
-            else if (Game_Mode == "Multiplcation")
-            {
-
-            }
-            else if (Game_Mode == "Division")
-            {
-
-            }
-            
-
-        }
     }
 }

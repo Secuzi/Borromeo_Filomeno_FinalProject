@@ -11,9 +11,8 @@ namespace Borromeo_Filomeno_FinalProject
     {
         public int BulletSpeed { get; set; }
         public int BulletCount { get; set; }
-        public PictureBox PbBullet { get; set; }
 
-        public static int GetBulletCount { get; }
+        
 
         public Bullet()
         {

@@ -13,11 +13,11 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public partial class UberGameHomepage : Form
     {
-        public bool IsPlayClicked;
+        public bool IsPlayClicked { get; set; }
 
-        public bool IsFormHidden;
+        public bool IsFormHidden { get; set; }
 
-        public bool IsHelpClicked;
+        public bool IsHelpClicked { get; set; }
         public string User { get; set; }
 
         public UberGameHomepage()
@@ -48,7 +48,7 @@ namespace Borromeo_Filomeno_FinalProject
             }
 
             //Iterates through each of the controls in this form
-            foreach(Control ctr in this.Controls)
+            foreach (Control ctr in this.Controls)
             {
 
                 //If we don't use the "as" keyword then there's a possibility that label will be stored as the player picturebox
@@ -79,13 +79,13 @@ namespace Borromeo_Filomeno_FinalProject
                 timerHomePageUB.Stop();
 
                 UberGame game = new UberGame();
-                
+
                 game.ShowDialog();
-                
+
                 this.Close();
-                
+
             }
-        
+
         }
 
         private void lblHelp_Click(object sender, EventArgs e)
@@ -99,9 +99,9 @@ namespace Borromeo_Filomeno_FinalProject
 
         private void lblExit_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
-            
+
         }
     }
 }

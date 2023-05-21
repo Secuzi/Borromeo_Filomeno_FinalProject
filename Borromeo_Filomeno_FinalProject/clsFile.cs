@@ -11,15 +11,15 @@ using Borromeo_Filomeno_FinalProject.Properties;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    public class clsDatabase
+    public class clsFile
     {
 
-        private const string filePath = @"D:\Harold Sheesh\Desktop\TestFinalClone\Borromeo_Filomeno_FinalProject\Database\Accounts.txt";
+        private const string filePath = @"D:\Harold Sheesh\Desktop\testset\Borromeo_Filomeno_FinalProject\File\Accounts.txt";
 
-        private const string filePathForm = @"D:\Harold Sheesh\Desktop\TestFinalClone\Borromeo_Filomeno_FinalProject\Database\AccountForm.txt";
+        private const string filePathForm = @"D:\Harold Sheesh\Desktop\testset\Borromeo_Filomeno_FinalProject\File\AccountForm.txt";
 
         //Returns the accounts from the database
-        public List<clsAccount> GetAccountsInDatabase()
+        public List<clsAccount> GetAccountsinFile()
         {
             List<string> lines = File.ReadAllLines(filePath).ToList();
             List<clsAccount> accountsList = new List<clsAccount>();
@@ -81,7 +81,7 @@ namespace Borromeo_Filomeno_FinalProject
 
 
         //Import Account to the database
-        public void ImportAccountsToDatabase(List<clsAccount> accounts)
+        public void ImportAccountsToFile(List<clsAccount> accounts)
         {
             List<string> output = new List<string>();
 
@@ -100,8 +100,7 @@ namespace Borromeo_Filomeno_FinalProject
             List<string> lines = File.ReadAllLines(filePath).ToList();
             List<string> output = new List<string>();
 
-            clsAccount account = new clsAccount();
-            //Checking if the account username is in the database
+            //Checking if the account username is in the file
             foreach (var line in lines)
             {
                 string[] strSplit = line.Split(',');

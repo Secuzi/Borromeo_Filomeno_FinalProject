@@ -59,13 +59,6 @@ namespace Borromeo_Filomeno_FinalProject
             
             OpenForm(game = new UberGameHomepage());
 
-            //this.Hide();
-            //UberGame game = new UberGame();
-            //game.User = Username;
-            //game.ShowDialog();
-            //this.Close();
-
-
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

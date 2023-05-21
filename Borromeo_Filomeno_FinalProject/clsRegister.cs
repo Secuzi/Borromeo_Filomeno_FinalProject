@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    public class clsRegister : clsAccount, IAuthentication
+    public class clsRegister : clsAccount
     {
         //Encapsulate these fields
-        clsDatabase db;
+        clsFile db;
 
         List<clsAccount> accounts;
         public clsRegister()
         {
-            db = new clsDatabase();
-            accounts = db.GetAccountsInDatabase();
+            db = new clsFile();
+            accounts = db.GetAccountsinFile();
         }
         
         public bool IsPasswordValid(ErrorProvider errorChange, TextBox txtChange)

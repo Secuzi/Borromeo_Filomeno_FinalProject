@@ -15,13 +15,9 @@ namespace Borromeo_Filomeno_FinalProject
         public string Name { get; set; }
         public int HighScore { get; set; }
 
-        public PictureBox PbPlayer { get; set; }
+        //public PictureBox PbPlayer { get; set; }
 
         public Bullet bullet { get; set; }
-
-        SoundPlayer gunSound = new SoundPlayer(Resources.gunShot);
-
-        SoundPlayer noAmmoSound = new SoundPlayer(Resources.noBullets);
 
 
         public void ChangeBulletColor(Label text)
@@ -80,13 +76,12 @@ namespace Borromeo_Filomeno_FinalProject
         }
 
 
-        public UVPlayer(PictureBox pbPlayer, int speed)
+        public UVPlayer(int speed)
         {
-            PbPlayer = pbPlayer;
             PlayerSpeed = speed;
         }
 
-        public static void SpawnAmmoCrate(PictureBox ammoCrate, UVPlayer player)
+        public static void SpawnAmmoCrate(PictureBox ammoCrate, PictureBox pbPlayer, UVPlayer player)
         {
             Random rnd = new Random();
             SoundPlayer getAmmo = new SoundPlayer(Resources.getAmmoCrate);
@@ -101,7 +96,7 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 //Else the ammoCrate will continue to move.
                 ammoCrate.Top += 1;
-                if (ammoCrate.Bounds.IntersectsWith(player.PbPlayer.Bounds))
+                if (ammoCrate.Bounds.IntersectsWith(pbPlayer.Bounds))
                 {
                     getAmmo.Play();
                     ammoCrate.Top = -1000;
@@ -115,7 +110,7 @@ namespace Borromeo_Filomeno_FinalProject
 
 
 
-        public void GameTimerTickEvent(PictureBox pbPlayer, Form form)
+        public void GameTimerTickEvent(PictureBox pbPlayer, Form form, List<PictureBox> enemies, PictureBox pbBullet)
         {
             if (IsMovingLeft == true && pbPlayer.Left > 12)
             {
@@ -127,23 +122,23 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 pbPlayer.Left += PlayerSpeed;
             }
-            
+
             if (IsShooting)
             {
                 //If IsShooting is true then the bullet will travel 25 pixels per gameTimer interval
                 bullet.BulletSpeed = 25;
-                bullet.PbBullet.Top -= bullet.BulletSpeed;
+                pbBullet.Top -= bullet.BulletSpeed;
 
 
             }
             else
             {
                 //If shooting is false then the picture bullet will leave the canvas
-                bullet.PbBullet.Left = -300;
+                pbBullet.Left = -300;
                 bullet.BulletSpeed = 0;
             }
-            
-            if (bullet.PbBullet.Top < -26)
+
+            if (pbBullet.Top < -26)
             {
                 //If the bullet leaves the canvas the IsShooting is false to negate spamming the attack button.
                 IsShooting = false;
@@ -154,7 +149,7 @@ namespace Borromeo_Filomeno_FinalProject
 
 
             //Checks if the bullet collides with the enemy
-            BulletCollision(Enemies);
+            BulletCollision(enemies, pbBullet);
             form.Invalidate();
         }
 
@@ -176,7 +171,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-        public void KeyIsUpEvent(KeyEventArgs e)
+        public void KeyIsUpEvent(KeyEventArgs e, PictureBox pbPlayer, PictureBox pbBullet)
         {
             if (e.KeyCode == Keys.Right)
             {
@@ -189,19 +184,19 @@ namespace Borromeo_Filomeno_FinalProject
             }
 
 
-            
+
             if (e.KeyCode == Keys.Space && bullet.BulletCount > 0 && !IsShooting)
             {
                 //When IsShooting is true it will then go to the GamerTickTimer event and will continue to move until it intersects with an enemy
                 //Or when it leaves the canvas.
                 IsShooting = true;
-
+                SoundPlayer gunSound = new SoundPlayer(Resources.gunShot);
                 gunSound.Play();
                 bullet.BulletCount -= 1;
 
                 //This makes the bullet project in front of the player
-                bullet.PbBullet.Top = PbPlayer.Top - 10;
-                bullet.PbBullet.Left = PbPlayer.Left + 10;
+                pbBullet.Top = pbPlayer.Top - 10;
+                pbBullet.Left = pbPlayer.Left + 10;
             }
 
 
@@ -209,6 +204,7 @@ namespace Borromeo_Filomeno_FinalProject
             //Plays a sound if there are no bullets left.
             if (e.KeyCode == Keys.Space && bullet.BulletCount == 0 && !IsShooting)
             {
+                SoundPlayer noAmmoSound = new SoundPlayer(Resources.noBullets);
                 noAmmoSound.Play();
             }
 
@@ -216,24 +212,54 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-        public void BulletCollision(List<UVEnemy> enemies)
+        public void BulletCollision(List<PictureBox> pbEnemies, PictureBox pbBullet)
         {
-            foreach (var enemy in enemies)
+            //foreach (var enemy in enemies)
+            //{
+            //    if (bullet.PbBullet.Bounds.IntersectsWith(enemy.PbEnemy.Bounds))
+            //    {
+            //        Score++;
+
+            //        enemy.ResetEnemy();
+            //        //IsShooting is set to false so that it when the bullet collides with the enemy
+            //        //The bullet also disappears and lets you shoot again
+            //        IsShooting = false;
+            //    }
+            //}
+            UVEnemy small = new UVEnemySmall();
+            UVEnemy medium = new UVEnemyMedium();
+            UVEnemyBig big = new UVEnemyBig();
+
+
+
+
+            foreach (var enemy in pbEnemies)
             {
-                if (bullet.PbBullet.Bounds.IntersectsWith(enemy.PbEnemy.Bounds))
+                if (pbBullet.Bounds.IntersectsWith(enemy.Bounds))
                 {
                     Score++;
 
-                    enemy.ResetEnemy();
+                    if ((string)enemy.Tag == "enemySmall")
+                    {
+                        small.ResetEnemy(enemy);
+                    }
+                    else if ((string)enemy.Tag == "enemyMedium")
+                    {
+                        medium.ResetEnemy(enemy);
+                    }
+                    else
+                    {
+                        big.ResetEnemy(enemy);
+                    }
+
+
+
                     //IsShooting is set to false so that it when the bullet collides with the enemy
                     //The bullet also disappears and lets you shoot again
                     IsShooting = false;
                 }
             }
 
-
         }
-
-
     }
 }

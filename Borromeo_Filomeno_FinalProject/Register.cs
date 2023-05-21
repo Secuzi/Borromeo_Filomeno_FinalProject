@@ -16,7 +16,7 @@ namespace Borromeo_Filomeno_FinalProject
     public partial class Register_Form : Form
     {
         List<clsAccount> accounts;
-        clsDatabase db;
+        clsFile db;
         clsRegister account_Register;
         bool isPasswordValid = false;
         bool isUsernameValid = false;
@@ -30,10 +30,10 @@ namespace Borromeo_Filomeno_FinalProject
         private void Form1_Load(object sender, EventArgs e)
         {
             txtPassword_Register.PasswordChar = '*';
-            db = new clsDatabase();
+            db = new clsFile();
             account_Register = new clsRegister();
             //The accounts from the storage will be added in this list
-            accounts = new List<clsAccount>(db.GetAccountsInDatabase());
+            accounts = new List<clsAccount>(db.GetAccountsinFile());
 
             //accounts.Add(new clsAccount() { Username = "Harold", Email = "wtf@gmail.com", Password = "Secret" });
             //accounts.Add(new clsAccount() { Username = "Afterparty", Email = "zzz@gmail.com", Password = "Secret" });
@@ -79,7 +79,7 @@ namespace Borromeo_Filomeno_FinalProject
                 accounts.Add(new clsAccount(username, password, email));
 
                 //Overwrites the textfile from the accounts.txt with all the accounts from the storage and the registered account.
-                db.ImportAccountsToDatabase(accounts);
+                db.ImportAccountsToFile(accounts);
 
                 MessageBox.Show("Done");
                 chkbox_ShowPassword.Checked = false;

@@ -11,55 +11,53 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public abstract class UVEnemy : Uber_Form_Game
     {
-        public string EnemyTag { get; set; }
-
-        public static int Instances { get; set; }
-
-        public PictureBox PbEnemy { get; set; }
-
-
-        public void IsColliding(UVPlayer player, Uber_Form_Game game)
+        public static void IsColliding(PictureBox player, Uber_Form_Game game, List<PictureBox> enemies)
         {
 
-            if (player.PbPlayer.Bounds.IntersectsWith(PbEnemy.Bounds))
+            foreach (var enemy in enemies)
             {
-                SoundPlayer explosionSound = new SoundPlayer(Resources.explosionsound);
-                explosionSound.Play();
-                game.IsGameOver = true;
-                
+                if (player.Bounds.IntersectsWith(enemy.Bounds))
+                {
+                    SoundPlayer explosionSound = new SoundPlayer(Resources.explosionsound);
+                    explosionSound.Play();
+                    game.IsGameOver = true;
+
+                }
             }
+
+
 
         }
 
 
-        public abstract void ResetEnemy();
+        public abstract void ResetEnemy(PictureBox enemy);
 
 
-        public static void ResetEnemies()
+        public static void ResetEnemies(List<PictureBox> enemies)
         {
             Random rnd = new Random();
 
-            foreach (var enemy in Enemies)
+            foreach (var enemy in enemies)
             {
-                if (enemy is UVEnemySmall)
+                if ((string)enemy.Tag == "enemySmall")
                 {
                     //top 50
-                    enemy.PbEnemy.Left = rnd.Next(12, 772);
-                    enemy.PbEnemy.Top = rnd.Next(0, 1600) * -1;
+                    enemy.Left = rnd.Next(12, 772);
+                    enemy.Top = rnd.Next(0, 1600) * -1;
                 }
 
-                if (enemy is UVEnemyMedium)
+                if ((string)enemy.Tag == "enemyMedium")
                 {
                     //top 60
-                    enemy.PbEnemy.Left = rnd.Next(12, 740);
-                    enemy.PbEnemy.Top = rnd.Next(0, 1200) * -1;
+                    enemy.Left = rnd.Next(12, 740);
+                    enemy.Top = rnd.Next(0, 1200) * -1;
                 }
 
-                if (enemy is UVEnemyBig)
+                if ((string)enemy.Tag == "enemyBig")
                 {
                     //top 100
-                    enemy.PbEnemy.Left = rnd.Next(12, 752);
-                    enemy.PbEnemy.Top = rnd.Next(0, 1000) * -1;
+                    enemy.Left = rnd.Next(12, 752);
+                    enemy.Top = rnd.Next(0, 1000) * -1;
                 }
 
             }
@@ -67,37 +65,58 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-        public static void EnemyMovement(UVPlayer player, Uber_Form_Game game)
+        public static void EnemyMovement(PictureBox player, Uber_Form_Game game, List<PictureBox> enemies)
         {
+            UVEnemy big = new UVEnemyBig();
+            UVEnemy medium = new UVEnemyMedium();
+            UVEnemy small = new UVEnemySmall();
 
-
-            foreach (var enemy in Enemies)
+            foreach (var enemy in enemies)
             {
                 //changes
-                enemy.PbEnemy.Visible = true;
-                enemy.IsColliding(player, game);
+                enemy.Visible = true;
+                IsColliding(player, game, enemies);
 
 
-                if (enemy.PbEnemy.Top > 712) enemy.ResetEnemy();
-
-                if (enemy is UVEnemySmall)
+                if (enemy.Top > 712)
                 {
-                    enemy.SetEnemySpeed(3);
-                    enemy.MoveEnemy();
+                    if ((string)enemy.Tag == "enemySmall")
+                    {
+                        small.ResetEnemy(enemy);
+
+                    }
+
+                    if ((string)enemy.Tag == "enemyMedium")
+                    {
+
+                        medium.ResetEnemy(enemy);
+                    }
+
+                    if ((string)enemy.Tag == "enemyBig")
+                    {
+                        big.ResetEnemy(enemy);
+
+                    }
+                }
+
+                if ((string)enemy.Tag == "enemySmall")
+                {
+                    small.SetEnemySpeed(4);
+                    small.MoveEnemy(enemy);
 
                 }
 
-                if (enemy is UVEnemyBig)
+                if ((string)enemy.Tag == "enemyBig")
                 {
-                    enemy.SetEnemySpeed(3);
-                    enemy.MoveEnemy();
+                    big.SetEnemySpeed(2);
+                    big.MoveEnemy(enemy);
 
                 }
 
-                if (enemy is UVEnemyMedium)
+                if ((string)enemy.Tag == "enemyMedium")
                 {
-                    enemy.SetEnemySpeed(3);
-                    enemy.MoveEnemy();
+                    medium.SetEnemySpeed(3);
+                    medium.MoveEnemy(enemy);
 
                 }
 
@@ -106,54 +125,48 @@ namespace Borromeo_Filomeno_FinalProject
         }
 
 
-        public UVEnemy(PictureBox pbEnemy)
+        public UVEnemy()
         {
 
-            PbEnemy = pbEnemy;
-            Instances++;
         }
 
         public abstract void SetEnemySpeed(int speed);
 
-        public static void SortEnemies(Control.ControlCollection Controls)
+        #region lastTime
+        public static List<PictureBox> SortEnemies(Control.ControlCollection Controls)
         {
-            //Instantiates the properties from the Uber_Form_Game so that it can be used for the UVPlayer class
-            Enemies = new List<UVEnemy>();
-            
-            foreach (var enemy in Controls)
+            List<PictureBox> list = new List<PictureBox>();
+            foreach (var ctr in Controls)
             {
-                if (enemy is PictureBox)
+                PictureBox enemy = ctr as PictureBox;
+
+                if (enemy != null)
                 {
-                    var pbEnemy = (PictureBox)enemy;
-
-
-                    if ((string)pbEnemy.Tag == "enemyBig")
+                    if ((string)enemy.Tag == "enemySmall")
                     {
-                        Enemies.Add(new UVEnemyBig(pbEnemy));
-
+                        list.Add(enemy);
+                    }
+                    if ((string)enemy.Tag == "enemyMedium")
+                    {
+                        list.Add(enemy);
                     }
 
-                    if ((string)pbEnemy.Tag == "enemyMedium")
+                    if ((string)enemy.Tag == "enemyBig")
                     {
-                        Enemies.Add(new UVEnemyMedium(pbEnemy));
-
-                    }
-
-                    if ((string)pbEnemy.Tag == "enemySmall")
-                    {
-                        Enemies.Add(new UVEnemySmall(pbEnemy));
-
+                        list.Add(enemy);
                     }
 
                 }
 
+
             }
+
+            return list;
         }
+        #endregion
 
 
-
-        public abstract void MoveEnemy();
-
+        public abstract void MoveEnemy(PictureBox enemy);
 
 
 
