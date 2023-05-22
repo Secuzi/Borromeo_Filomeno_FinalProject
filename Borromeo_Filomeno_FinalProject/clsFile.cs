@@ -74,7 +74,7 @@ namespace Borromeo_Filomeno_FinalProject
         }
 
         //Overwrites the textfile to empty
-        public void DestoryText()
+        public void RemoveText()
         {
             File.WriteAllText(filePathForm, string.Empty);
         }

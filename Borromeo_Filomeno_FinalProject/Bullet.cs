@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    public class Bullet : Uber_Form_Game
+    public class Bullet
     {
         public int BulletSpeed { get; set; }
         public int BulletCount { get; set; }

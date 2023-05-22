@@ -109,7 +109,6 @@
     <Compile Include="UberGameHomepage.Designer.cs">
       <DependentUpon>UberGameHomepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uber_Form_Game.cs" />
     <Compile Include="UVEnemy.cs" />
     <Compile Include="UVEnemyBig.cs" />
     <Compile Include="UVEnemyMedium.cs" />

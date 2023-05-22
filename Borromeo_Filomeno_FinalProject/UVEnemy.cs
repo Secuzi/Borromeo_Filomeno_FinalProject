@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    public abstract class UVEnemy : Uber_Form_Game
+    public abstract class UVEnemy
     {
         public int EnemySpeed { get; set; }
-        public static void IsColliding(PictureBox player, Uber_Form_Game game, List<PictureBox> enemies)
+        public static void IsColliding(PictureBox player, UVPlayer game, List<PictureBox> enemies)
         {
 
             foreach (var enemy in enemies)
@@ -25,8 +25,6 @@ namespace Borromeo_Filomeno_FinalProject
 
                 }
             }
-
-
 
         }
 
@@ -66,7 +64,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-        public static void EnemyMovement(PictureBox player, Uber_Form_Game game, List<PictureBox> enemies)
+        public static void EnemyMovement(PictureBox player, UVPlayer game, List<PictureBox> enemies)
         {
             UVEnemy big = new UVEnemyBig();
             UVEnemy medium = new UVEnemyMedium();

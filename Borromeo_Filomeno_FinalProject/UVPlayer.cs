@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace Borromeo_Filomeno_FinalProject
 {
-    public class UVPlayer : Uber_Form_Game
+    public class UVPlayer
     {
+        public bool IsGameOver { get; set; }
         public bool IsMovingRight { get; set; }
         public bool IsMovingLeft { get; set; }
         public bool IsShooting { get; set; }
@@ -74,6 +75,11 @@ namespace Borromeo_Filomeno_FinalProject
                 text.ForeColor = Color.FromArgb(211, 12, 12);
             else
                 text.ForeColor = Color.FromArgb(209, 0, 0);
+
+        }
+
+        public UVPlayer()
+        {
 
         }
 
@@ -215,19 +221,7 @@ namespace Borromeo_Filomeno_FinalProject
         }
 
         public void BulletCollision(List<PictureBox> pbEnemies, PictureBox pbBullet)
-        {
-            //foreach (var enemy in enemies)
-            //{
-            //    if (bullet.PbBullet.Bounds.IntersectsWith(enemy.PbEnemy.Bounds))
-            //    {
-            //        Score++;
-
-            //        enemy.ResetEnemy();
-            //        //IsShooting is set to false so that it when the bullet collides with the enemy
-            //        //The bullet also disappears and lets you shoot again
-            //        IsShooting = false;
-            //    }
-            //}
+        {           
             UVEnemy small = new UVEnemySmall();
             UVEnemy medium = new UVEnemyMedium();
             UVEnemyBig big = new UVEnemyBig();

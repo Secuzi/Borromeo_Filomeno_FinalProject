@@ -20,10 +20,9 @@ namespace Borromeo_Filomeno_FinalProject
 
         List<PictureBox> enemies;
 
+        UVPlayer player = new UVPlayer(6);
 
-
-        UVPlayer player;
-        Uber_Form_Game game = new Uber_Form_Game();
+        
         Bullet bullet = new Bullet();
         public UberGame()
         {
@@ -31,11 +30,6 @@ namespace Borromeo_Filomeno_FinalProject
 
             InitializeComponent();
             uberGameData = new clsFile();
-
-
-            //This will get the unique instance made from logging in
-
-            game.User = uberGameData.GetAccountFromForm();
 
             enemies = UVEnemy.SortEnemies(this.Controls);
 
@@ -49,7 +43,7 @@ namespace Borromeo_Filomeno_FinalProject
             player.KeyIsUpEvent(e, pbPlayer, pbBullet);
 
             //If the IsGameOver is true then the player is eligible to restart the game
-            if (e.KeyCode == Keys.Enter && game.IsGameOver)
+            if (e.KeyCode == Keys.Enter && player.IsGameOver)
             {
                 pbResume.Enabled = true;
                 lblGameOver.Visible = false;
@@ -69,7 +63,7 @@ namespace Borromeo_Filomeno_FinalProject
             if (e.KeyCode == Keys.Escape)
             {
                 //If the user tries to resume the game while the game is over then it won't happen
-                if (game.IsGameOver)
+                if (player.IsGameOver)
                 {
                     pbResume.Enabled = false;
                     panelOptions.Enabled = true;
@@ -107,17 +101,17 @@ namespace Borromeo_Filomeno_FinalProject
             panelOptions.Enabled = false;
             panelOptions.Visible = false;
 
-            game.IsGameOver = false;
+            player.IsGameOver = false;
             pbPlayer.Image = Resources.playerIdle;
 
             clsAccount playerG = new clsAccount();
 
+
+            //This will get the unique instance made from logging in
+            player.Name = uberGameData.GetAccountFromForm();
+
             //Finds if the Username or Email of the user exists in the Accounts file.                                           
-            playerG = accounts.Find(a => a.Username == game.User || a.Email == game.User);
-
-            player = new UVPlayer(6);
-
-            player.Name = game.User;
+            playerG = accounts.Find(a => a.Username == player.Name || a.Email == player.Name);
 
             player.HighScore = playerG.Score;
 
@@ -151,7 +145,7 @@ namespace Borromeo_Filomeno_FinalProject
         private void timerGame_Tick(object sender, EventArgs e)
         {
 
-            if (game.IsGameOver == true)
+            if (player.IsGameOver == true)
             {
                 timerGame.Stop();
 
@@ -181,8 +175,9 @@ namespace Borromeo_Filomeno_FinalProject
                 //This will be the main mechanics for movement and attacks for the player.
 
                 player.GameTimerTickEvent(pbPlayer, this, enemies, pbBullet);
+                
 
-                UVEnemy.EnemyMovement(pbPlayer, game, enemies);
+                UVEnemy.EnemyMovement(pbPlayer, player, enemies);
 
                 UVPlayer.SpawnAmmoCrate(pbAmmoCrate, pbPlayer, player);
 
@@ -237,7 +232,7 @@ namespace Borromeo_Filomeno_FinalProject
                 uberGameData.ScoreChanges(player.Name, player.HighScore, accounts);
             }
             //This will destory the text that we have uniquely imported to the AccountForm file
-            uberGameData.DestoryText();
+            uberGameData.RemoveText();
 
             Application.Exit();
         }
