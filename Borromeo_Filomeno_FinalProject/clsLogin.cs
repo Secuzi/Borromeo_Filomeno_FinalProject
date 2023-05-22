@@ -10,7 +10,7 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsLogin : clsAccount
     {
-        public List<clsAccount> accounts;
+        
 
         public clsLogin()
         {

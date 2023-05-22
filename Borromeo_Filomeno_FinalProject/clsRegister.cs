@@ -10,13 +10,13 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class clsRegister : clsAccount
     {
-        //Encapsulate these fields
-        clsFile db;
+        
+       
 
-        List<clsAccount> accounts;
+        
         public clsRegister()
         {
-            db = new clsFile();
+            clsFile db = new clsFile();
             accounts = db.GetAccountsinFile();
         }
         

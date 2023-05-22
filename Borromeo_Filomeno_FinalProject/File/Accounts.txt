@@ -1,2 +1,3 @@
-lucky,lucky@123,luck@gmail.com,27
+lucky,lucky@123,luck@gmail.com,96
 Kayes,Kayes@123,kayes@gmail.com,25
+bruno,bruno@123,bruno@gmail.com,5

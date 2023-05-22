@@ -12,11 +12,13 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public class UVPlayer : Uber_Form_Game
     {
+        public bool IsMovingRight { get; set; }
+        public bool IsMovingLeft { get; set; }
+        public bool IsShooting { get; set; }
+        public int PlayerSpeed { get; set; }
+        public int Score { get; set; }
         public string Name { get; set; }
         public int HighScore { get; set; }
-
-        //public PictureBox PbPlayer { get; set; }
-
         public Bullet bullet { get; set; }
 
 

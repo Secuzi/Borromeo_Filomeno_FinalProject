@@ -22,6 +22,8 @@ namespace Borromeo_Filomeno_FinalProject
         public int Score { get { return score; } set { score = value; } }
         public string Username { get { return username; } set { username = value; } }
 
+        public List<clsAccount> accounts { get; set; }
+
 
         public clsAccount()
         {

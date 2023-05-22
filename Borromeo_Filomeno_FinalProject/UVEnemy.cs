@@ -11,6 +11,7 @@ namespace Borromeo_Filomeno_FinalProject
 {
     public abstract class UVEnemy : Uber_Form_Game
     {
+        public int EnemySpeed { get; set; }
         public static void IsColliding(PictureBox player, Uber_Form_Game game, List<PictureBox> enemies)
         {
 
