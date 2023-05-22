@@ -14,8 +14,8 @@ namespace Borromeo_Filomeno_FinalProject
         public string Player1_Name { get; set; }
         public string Player2_Name { get; set; }
         public string Game_Mode { get; set; }
-        public int p1_ans { get; set; }
-        public int p2_ans { get; set; }
+        public int P1_ans { get; set; }
+        public int P2_ans { get; set; }
         public int Num1 { get; set; }
         public int Num2 { get; set; }
 
@@ -93,14 +93,14 @@ namespace Borromeo_Filomeno_FinalProject
         public bool CheckPlayer1Answer(clsMathZilla player)
         {
             
-            return (player.p1_ans == Result) ? true : false;
+            return (player.P1_ans == Result) ? true : false;
 
         }
 
         public bool CheckPlayer2Answer(clsMathZilla player)
         {
 
-            return (player.p2_ans == Result) ? true : false;
+            return (player.P2_ans == Result) ? true : false;
 
         }
 

@@ -39,7 +39,7 @@ namespace Borromeo_Filomeno_FinalProject
                 //Checks if it is player 1's turn
                 if (player.P1Turn)
                 {
-                    player.p1_ans = playerInput;
+                    player.P1_ans = playerInput;
 
                     bool IsCorrect = player.CheckPlayer1Answer(player);
 
@@ -55,7 +55,7 @@ namespace Borromeo_Filomeno_FinalProject
 
                 if (player.P2Turn)
                 {
-                    player.p2_ans = playerInput;
+                    player.P2_ans = playerInput;
 
                     bool IsCorrect = player.CheckPlayer2Answer(player);
                     if (IsCorrect)
