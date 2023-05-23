@@ -15,8 +15,6 @@ namespace Borromeo_Filomeno_FinalProject
         private int score;
         
 
-        //Make another class that accepts clsAccount to form a list
-
         public string Password { get { return password; } set { password = value; } }
         public string Email { get { return email; } set { email = value; } }
         public int Score { get { return score; } set { score = value; } }

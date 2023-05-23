@@ -34,8 +34,7 @@ namespace Borromeo_Filomeno_FinalProject
                 return false;
             }
             else if ((userValid && !passwordValid) || (emailValid && !passwordValid))
-            {
-                //if (logInput == Email && password != Password)
+            {               
                 MessageBox.Show($"Wrong password, please try again");
                 return false;
             }
