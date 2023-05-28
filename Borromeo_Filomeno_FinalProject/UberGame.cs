@@ -122,10 +122,7 @@ namespace Borromeo_Filomeno_FinalProject
             UVEnemy.ResetEnemies(enemies);
             player.Score = 0;
 
-            //bullet.PbBullet = pbBullet;
             bullet.BulletSpeed = 0;
-
-            //bullet.PbBullet.Left = -300;
 
             pbBullet.Left = -300;
 

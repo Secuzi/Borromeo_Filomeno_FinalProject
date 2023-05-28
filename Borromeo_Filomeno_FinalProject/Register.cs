@@ -32,11 +32,9 @@ namespace Borromeo_Filomeno_FinalProject
             txtPassword_Register.PasswordChar = '*';
             db = new clsFile();
             account_Register = new clsRegister();
-            //The accounts from the storage will be added in this list
+            //The accounts from the file will be added in this list
             accounts = new List<clsAccount>(db.GetAccountsinFile());
 
-            //accounts.Add(new clsAccount() { Username = "Harold", Email = "wtf@gmail.com", Password = "Secret" });
-            //accounts.Add(new clsAccount() { Username = "Afterparty", Email = "zzz@gmail.com", Password = "Secret" });
         }
 
         private void chkbox_ShowPassword_CheckedChanged(object sender, EventArgs e)

@@ -14,9 +14,9 @@ namespace Borromeo_Filomeno_FinalProject
     public class clsFile
     {
 
-        private const string filePath = @"D:\Harold Sheesh\Desktop\testset\Borromeo_Filomeno_FinalProject\File\Accounts.txt";
+        private const string filePath = @"C:\Users\ACT-STUDENT\Desktop\FinalProj\Borromeo_Filomeno_FinalProject\File\Accounts.txt";
 
-        private const string filePathForm = @"D:\Harold Sheesh\Desktop\testset\Borromeo_Filomeno_FinalProject\File\AccountForm.txt";
+        private const string filePathForm = @"C:\Users\ACT-STUDENT\Desktop\FinalProj\Borromeo_Filomeno_FinalProject\File\AccountForm.txt";
 
         //Returns the accounts from the file
         public List<clsAccount> GetAccountsinFile()
