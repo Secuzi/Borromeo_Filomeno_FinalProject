@@ -131,7 +131,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         public abstract void SetEnemySpeed(int speed);
 
-        #region lastTime
+        
         public static List<PictureBox> SortEnemies(Control.ControlCollection Controls)
         {
             List<PictureBox> list = new List<PictureBox>();
@@ -162,7 +162,7 @@ namespace Borromeo_Filomeno_FinalProject
 
             return list;
         }
-        #endregion
+     
 
 
         public abstract void MoveEnemy(PictureBox enemy);

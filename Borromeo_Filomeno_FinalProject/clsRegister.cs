@@ -20,33 +20,33 @@ namespace Borromeo_Filomeno_FinalProject
             accounts = db.GetAccountsinFile();
         }
         
-        public bool IsPasswordValid(ErrorProvider errorChange, TextBox txtChange)
+        public bool IsPasswordValid(ErrorProvider errorChangePass, TextBox txtChangePass)
         {
             //For Password
-            bool check = Regex.IsMatch(txtChange.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
+            bool check = Regex.IsMatch(txtChangePass.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
 
 
 
-            if (txtChange.Text.Length < 8 && txtChange.Text.Length > 0)
+            if (txtChangePass.Text.Length < 8 && txtChangePass.Text.Length > 0)
             {
 
-                if (!check && !txtChange.Text.Contains(""))
+                if (!check && !txtChangePass.Text.Contains(""))
                 {
-                    errorChange.SetError(txtChange, "Use at least 1 special character and password must be at least 8 characters long!");
-                    errorChange.Tag = "0";
+                    errorChangePass.SetError(txtChangePass, "Use at least 1 special character and password must be at least 8 characters long!");
+                    errorChangePass.Tag = "0";
                     return false;
                 }
-                else if (txtChange.Text.Contains(' '))
+                else if (txtChangePass.Text.Contains(' '))
                 {
-                    errorChange.SetError(txtChange, "Do not use space please");
-                    errorChange.Tag = "0";
+                    errorChangePass.SetError(txtChangePass, "Do not use space please");
+                    errorChangePass.Tag = "0";
                     return false;
 
                 }
                 else
                 {
-                    errorChange.SetError(txtChange, "Password must be at least 8 characters long");
-                    errorChange.Tag = "0";
+                    errorChangePass.SetError(txtChangePass, "Password must be at least 8 characters long");
+                    errorChangePass.Tag = "0";
                     return false;
                 }
                 
@@ -55,33 +55,33 @@ namespace Borromeo_Filomeno_FinalProject
             else
             {
 
-                if (!check && !(txtChange.Text.Length == 0))
+                if (!check && !(txtChangePass.Text.Length == 0))
                 {                 
-                    if (txtChange.Text.Contains(' '))
+                    if (txtChangePass.Text.Contains(' '))
                     {
-                        errorChange.SetError(txtChange, "Do not use space please");
-                        errorChange.Tag = "0";
+                        errorChangePass.SetError(txtChangePass, "Do not use space please");
+                        errorChangePass.Tag = "0";
                         return false;
 
                     }
                     else
                     {
-                        errorChange.SetError(txtChange, "Use at least 1 special character!");
-                        errorChange.Tag = "0";
+                        errorChangePass.SetError(txtChangePass, "Use at least 1 special character!");
+                        errorChangePass.Tag = "0";
                         return false;
                     }
 
                 }               
-                else if (txtChange.Text.Length == 0)
+                else if (txtChangePass.Text.Length == 0)
                 {
-                    errorChange.Tag = "0";
-                    errorChange.SetError(txtChange, "Please populate this field!");
+                    errorChangePass.Tag = "0";
+                    errorChangePass.SetError(txtChangePass, "Please populate this field!");
                     return false;
                 }
                 else
                 {
-                    errorChange.Dispose();
-                    errorChange.Tag = "1";
+                    errorChangePass.Dispose();
+                    errorChangePass.Tag = "1";
                     return true;
                 }
 
@@ -93,30 +93,30 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
         
-        public bool IsUsernameValid(ErrorProvider errorChange, TextBox txtChange)
+        public bool IsUsernameValid(ErrorProvider errorChangeUser, TextBox txtChangeUser)
         {
-            bool check = Regex.IsMatch(txtChange.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
+            bool check = Regex.IsMatch(txtChangeUser.Text, "[!@#$%^&*`\"()_+[{}\\],./;':|?/<>=-]");
             
-            bool checkUser = accounts.Any(a => a.Username == txtChange.Text);
+            bool checkUser = accounts.Any(a => a.Username == txtChangeUser.Text);
 
-            if (txtChange.Text.Length == 0)
+            if (txtChangeUser.Text.Length == 0)
             {
-                errorChange.Tag = "0";
-                errorChange.SetError(txtChange, "Please populate this field!");
+                errorChangeUser.Tag = "0";
+                errorChangeUser.SetError(txtChangeUser, "Please populate this field!");
                 return false;
             }
             else if (check)
             {               
-                if (txtChange.Text.Contains(' '))
+                if (txtChangeUser.Text.Contains(' '))
                 {
-                    errorChange.SetError(txtChange, "Do not use space please");
-                    errorChange.Tag = "0";
+                    errorChangeUser.SetError(txtChangeUser, "Do not use space please");
+                    errorChangeUser.Tag = "0";
                     return false;
                 }
                 else
                 {
-                    errorChange.SetError(txtChange, "No special characters please!");
-                    errorChange.Tag = "0";
+                    errorChangeUser.SetError(txtChangeUser, "No special characters please!");
+                    errorChangeUser.Tag = "0";
                     return false;
                 }
             }
@@ -126,14 +126,14 @@ namespace Borromeo_Filomeno_FinalProject
 
                 if (checkUser)
                 {
-                    errorChange.SetError(txtChange, "Username is already taken!");
-                    errorChange.Tag = "0";
+                    errorChangeUser.SetError(txtChangeUser, "Username is already taken!");
+                    errorChangeUser.Tag = "0";
                     return false;
                 }
                 else
                 {
-                    errorChange.Dispose();
-                    errorChange.Tag = "1";
+                    errorChangeUser.Dispose();
+                    errorChangeUser.Tag = "1";
                     return true;
                 }
 
@@ -141,32 +141,32 @@ namespace Borromeo_Filomeno_FinalProject
 
         }
 
-        public bool IsEmailValid(ErrorProvider errorChange, TextBox txtChange)
+        public bool IsEmailValid(ErrorProvider errorChangeEmail, TextBox txtChangeEmail)
         {
-            bool check = Regex.IsMatch(txtChange.Text, "[!#$%^&*`\"()_+[{}\\],/;':|?/<>=-]$");
+            bool check = Regex.IsMatch(txtChangeEmail.Text, "[!#$%^&*`\"()_+[{}\\],/;':|?/<>=-]$");
             
-            bool checkUser = accounts.Any(a => a.Email == txtChange.Text);
+            bool checkUser = accounts.Any(a => a.Email == txtChangeEmail.Text);
 
             
-            if (txtChange.Text.Length == 0)
+            if (txtChangeEmail.Text.Length == 0)
             {
-                errorChange.Tag = "0";
-                errorChange.SetError(txtChange, "Please populate this field!");
+                errorChangeEmail.Tag = "0";
+                errorChangeEmail.SetError(txtChangeEmail, "Please populate this field!");
                 return false;
             }
-            else if (check || !txtChange.Text.Contains('@'))
+            else if (check || !txtChangeEmail.Text.Contains('@'))
             {
 
-                if (txtChange.Text.Contains(" "))
+                if (txtChangeEmail.Text.Contains(" "))
                 {
-                    errorChange.SetError(txtChange, "Do not use space please");
-                    errorChange.Tag = "0";
+                    errorChangeEmail.SetError(txtChangeEmail, "Do not use space please");
+                    errorChangeEmail.Tag = "0";
                     return false;
                 }
                 else
                 {
-                    errorChange.SetError(txtChange, "Invalid email!");
-                    errorChange.Tag = "0";
+                    errorChangeEmail.SetError(txtChangeEmail, "Invalid email!");
+                    errorChangeEmail.Tag = "0";
                     return false;
                 }
             }
@@ -174,14 +174,14 @@ namespace Borromeo_Filomeno_FinalProject
             {
                 if (checkUser)
                 {
-                    errorChange.SetError(txtChange, "Email is already taken!");
-                    errorChange.Tag = "0";
+                    errorChangeEmail.SetError(txtChangeEmail, "Email is already taken!");
+                    errorChangeEmail.Tag = "0";
                     return false;
                 }
                 else
                 {
-                    errorChange.Dispose();
-                    errorChange.Tag = "1";
+                    errorChangeEmail.Dispose();
+                    errorChangeEmail.Tag = "1";
                     return true;
                 }
             }

@@ -12,8 +12,7 @@ namespace Borromeo_Filomeno_FinalProject
     internal class clsMathZilla
     {
         public string Player1_Name { get; set; }
-        public string Player2_Name { get; set; }
-        public string Game_Mode { get; set; }
+        public string Player2_Name { get; set; }    
         public int P1_ans { get; set; }
         public int P2_ans { get; set; }
         public int Num1 { get; set; }
@@ -50,9 +49,7 @@ namespace Borromeo_Filomeno_FinalProject
 
         public int Result { get; set; }
         public bool P1Turn { get; set; }
-        public bool P2Turn { get; set; }
-        public bool Playing { get; set; }
-
+        public bool P2Turn { get; set; }     
 
         public void GetWinner(Label score1, Label score2)
         {
@@ -74,6 +71,8 @@ namespace Borromeo_Filomeno_FinalProject
                 MessageBox.Show("Player 2 wins!");
                 P1Score = 0;
                 P2Score = 0;
+                score1.Text = p1Score.ToString();
+                score2.Text = p2Score.ToString();
             }
 
 
@@ -84,9 +83,7 @@ namespace Borromeo_Filomeno_FinalProject
         public clsMathZilla()
         {
             Player1_Name = null;
-            Player2_Name = null;
-            Game_Mode = null;
-            Playing = false;
+            Player2_Name = null;          
         }
 
 

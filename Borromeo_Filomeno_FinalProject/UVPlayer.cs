@@ -20,7 +20,7 @@ namespace Borromeo_Filomeno_FinalProject
         public int Score { get; set; }
         public string Name { get; set; }
         public int HighScore { get; set; }
-        public Bullet bullet { get; set; }
+        public Bullet bullet;
 
 
         public void ChangeBulletColor(Label text)
